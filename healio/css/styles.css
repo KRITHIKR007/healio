@@ -1095,36 +1095,36 @@ footer::after {
 
 .developer-credit {
   text-align: right;
-  font-size: 0.9rem;
-  color: #7a8b9a;
+  font-size: 0.95rem;
+  color: #9aa5b1;
+  font-weight: 500;
 }
 
 .developer-credit a {
-  color: var(--accent-color);
+  color: var(--primary-color);
   font-weight: 600;
   text-decoration: none;
   transition: all 0.3s ease;
   position: relative;
 }
 
-.developer-credit a::before {
+.developer-credit a::after {
   content: '';
   position: absolute;
   bottom: -2px;
   left: 0;
   width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--accent-color), var(--primary-color));
+  height: 1px;
+  background: var(--primary-color);
   transition: width 0.3s ease;
 }
 
-.developer-credit a:hover::before {
+.developer-credit a:hover::after {
   width: 100%;
 }
 
 .developer-credit a:hover {
-  color: var(--primary-color);
-  text-shadow: 0 0 8px rgba(26, 35, 126, 0.4);
+  color: #64ffda;
 }
 
 /* Responsive Design */
