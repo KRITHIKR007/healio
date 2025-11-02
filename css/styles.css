@@ -98,22 +98,17 @@ nav {
 }
 
 .logo {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 2rem;
-  font-weight: 700;
-  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  display: flex;
+  align-items: center;
   text-decoration: none;
   position: relative;
 }
 
-.logo::after {
-  content: '⚕️';
-  margin-left: 0.5rem;
-  font-size: 1.2rem;
-  filter: drop-shadow(0 2px 4px rgba(0, 150, 136, 0.3));
+.logo-img {
+  height: 50px;
+  width: auto;
+  max-width: 150px;
+  object-fit: contain;
 }
 
 .nav-links {
@@ -1299,6 +1294,11 @@ footer::after {
   
   .testimonials-grid {
     grid-template-columns: 1fr;
+  }
+  
+  .logo-img {
+    height: 40px;
+    max-width: 120px;
   }
   
   .nav-links {
