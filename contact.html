@@ -51,6 +51,97 @@
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
+    <style>
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes glow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(0, 150, 136, 0.3);
+            }
+
+            50% {
+                box-shadow: 0 0 40px rgba(0, 150, 136, 0.6), 0 0 60px rgba(0, 150, 136, 0.4);
+            }
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .animate-gradient {
+            background-size: 200% 200%;
+            animation: gradient 8s ease infinite;
+        }
+
+        .contact-card {
+            transition: all 0.4s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 30px 70px rgba(0, 150, 136, 0.2);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #009688;
+            box-shadow: 0 0 0 3px rgba(0, 150, 136, 0.1);
+        }
+    </style>
+
     <!-- Vercel Web Analytics -->
     <script>
         window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
@@ -59,240 +150,396 @@
 </head>
 
 <body>
-    <!-- Header -->
-    <header>
-        <nav class="container">
-            <a href="index.html" class="logo">
+    <!-- ULTRA PREMIUM NAVBAR -->
+    <header
+        style="position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: white; box-shadow: 0 2px 15px rgba(0,0,0,0.06); transition: all 0.3s ease;">
+        <nav class="container"
+            style="display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 2rem;">
+            <a href="index.html" class="logo" style="display: flex; align-items: center; text-decoration: none;">
                 <img src="assets/icons/WhatsApp_Image_2025-11-01_at_11.50.08_1a0ff362-removebg-preview.png"
-                    alt="Healio - Global Healthcare Platform Logo" class="logo-img">
+                    alt="Healio Logo" style="height: 40px; width: auto;">
             </a>
-
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="how-it-works.html">How It Works</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="contact.html" class="nav-cta"><span>Book Consultation</span></a></li>
+            <ul class="nav-links"
+                style="display: flex; gap: 2.5rem; list-style: none; margin: 0; padding: 0; align-items: center;">
+                <li><a href="index.html"
+                        style="color: #0f172a; text-decoration: none; font-weight: 500; font-size: 0.9rem; transition: all 0.3s ease;">Home</a>
+                </li>
+                <li><a href="about.html"
+                        style="color: #0f172a; text-decoration: none; font-weight: 500; font-size: 0.9rem; transition: all 0.3s ease;">About</a>
+                </li>
+                <li><a href="services.html"
+                        style="color: #0f172a; text-decoration: none; font-weight: 500; font-size: 0.9rem; transition: all 0.3s ease;">Services</a>
+                </li>
+                <li><a href="how-it-works.html"
+                        style="color: #0f172a; text-decoration: none; font-weight: 500; font-size: 0.9rem; transition: all 0.3s ease;">How
+                        It Works</a></li>
+                <li><a href="contact.html"
+                        style="color: #009688; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: all 0.3s ease; position: relative; padding-bottom: 0.2rem; border-bottom: 2px solid #009688;">Contact</a>
+                </li>
+                <li><a href="contact.html"
+                        style="display: inline-block; background: linear-gradient(135deg, #009688 0%, #00796b 100%); color: white; padding: 0.65rem 1.8rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.85rem; box-shadow: 0 4px 15px rgba(0,150,136,0.2); transition: all 0.3s ease;">Book
+                        Consultation</a></li>
             </ul>
-
-            <button class="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
+            <button class="menu-toggle" style="display: none; background: none; border: none; cursor: pointer;">
+                <span style="display: block; width: 22px; height: 2px; background: #0f172a; margin: 4px 0;"></span>
+                <span style="display: block; width: 22px; height: 2px; background: #0f172a; margin: 4px 0;"></span>
+                <span style="display: block; width: 22px; height: 2px; background: #0f172a; margin: 4px 0;"></span>
             </button>
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1>We're Here to Help</h1>
-            <p>Let's talk about your health journey. Our team of medical experts is ready to guide you toward the best
-                healthcare solutions.</p>
+    <!-- ULTRA PREMIUM HERO -->
+    <section
+        style="position: relative; min-height: 90vh; display: flex; align-items: center; overflow: hidden; background: linear-gradient(135deg, #000000 0%, #0a1f1c 50%, #001a14 100%);">
+        <!-- Animated Background -->
+        <div class="animate-gradient"
+            style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,150,136,0.2) 0%, rgba(0,0,0,0) 30%, rgba(77,182,172,0.15) 60%, rgba(0,0,0,0) 100%); z-index: 1;">
         </div>
-    </section>
 
-    <!-- Contact Form & Info -->
-    <section class="container">
-        <div class="grid grid-2" style="gap: 4rem; align-items: flex-start;">
-            <!-- Contact Form -->
-            <div>
-                <h2>Get Your Free Consultation</h2>
-                <p style="margin-bottom: 2rem; color: #666;">Fill out the form below and our medical advisors will
-                    contact you within 24 hours to discuss your healthcare needs.</p>
+        <!-- Multiple Floating Shapes -->
+        <div
+            style="position: absolute; top: 10%; right: 15%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(0,255,170,0.3) 0%, transparent 70%); border-radius: 50%; animation: float 6s ease-in-out infinite; z-index: 2;">
+        </div>
+        <div
+            style="position: absolute; bottom: 10%; left: 10%; width: 350px; height: 350px; background: radial-gradient(circle, rgba(0,229,255,0.25) 0%, transparent 70%); border-radius: 50%; animation: float 8s ease-in-out infinite; z-index: 2;">
+        </div>
+        <div
+            style="position: absolute; top: 50%; left: 50%; width: 250px; height: 250px; background: radial-gradient(circle, rgba(77,182,172,0.15) 0%, transparent 70%); border-radius: 50%; animation: float 10s ease-in-out infinite; z-index: 2; transform: translate(-50%, -50%);">
+        </div>
 
-                <form id="contact-form" action="https://formspree.io/f/your-form-id" method="POST"
-                    style="background-color: white; padding: 2rem; border-radius: 10px; box-shadow: var(--shadow);">
-                    <div class="form-group">
-                        <label for="name">Full Name *</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="country">Country</label>
-                        <select id="country" name="country">
-                            <option value="">Select your country</option>
-                            <option value="US">United States</option>
-                            <option value="UK">United Kingdom</option>
-                            <option value="CA">Canada</option>
-                            <option value="AU">Australia</option>
-                            <option value="IN">India</option>
-                            <option value="SG">Singapore</option>
-                            <option value="AE">United Arab Emirates</option>
-                            <option value="SA">Saudi Arabia</option>
-                            <option value="DE">Germany</option>
-                            <option value="FR">France</option>
-                            <option value="NL">Netherlands</option>
-                            <option value="CH">Switzerland</option>
-                            <option value="JP">Japan</option>
-                            <option value="KR">South Korea</option>
-                            <option value="BR">Brazil</option>
-                            <option value="MX">Mexico</option>
-                            <option value="ZA">South Africa</option>
-                            <option value="EG">Egypt</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="service">Service Needed *</label>
-                        <select id="service" name="service" required>
-                            <option value="">Select a service</option>
-                            <option value="second-opinion">Medical Second Opinion</option>
-                            <option value="medical-tourism">Medical Tourism</option>
-                            <option value="nursing-care">Skilled Nursing Care</option>
-                            <option value="general-consultation">General Healthcare Consultation</option>
-                            <option value="multiple">Multiple Services</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="condition">Medical Condition/Concern</label>
-                        <input type="text" id="condition" name="condition"
-                            placeholder="e.g., Heart disease, Cancer, Orthopedic surgery, etc.">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="urgency">Urgency Level</label>
-                        <select id="urgency" name="urgency">
-                            <option value="">Select urgency</option>
-                            <option value="urgent">Urgent (within 24 hours)</option>
-                            <option value="soon">Soon (within a week)</option>
-                            <option value="flexible">Flexible (within a month)</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">Message *</label>
-                        <textarea id="message" name="message" required
-                            placeholder="Please describe your situation, current symptoms, or specific questions you have. The more details you provide, the better we can assist you."></textarea>
-                    </div>
-
-                    <div class="form-group">
-                        <label style="display: flex; align-items: flex-start; cursor: pointer;">
-                            <input type="checkbox" name="privacy" required
-                                style="margin-right: 0.5rem; margin-top: 0.2rem;">
-                            <span style="font-size: 0.9rem; color: #666;">I agree to the <a href="#"
-                                    style="color: var(--primary-color);">Privacy Policy</a> and consent to Healio
-                                contacting me about my healthcare needs.</span>
-                        </label>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
-
-                    <p style="margin-top: 1rem; font-size: 0.9rem; color: #666; text-align: center;">
-                        <i class="fas fa-lock" style="color: var(--primary-color); margin-right: 0.5rem;"></i>
-                        Your information is secure and confidential
-                    </p>
-                </form>
+        <div class="container" style="position: relative; z-index: 10; text-align: center; padding: 3rem 2rem;">
+            <div
+                style="display: inline-block; background: rgba(0,150,136,0.2); backdrop-filter: blur(10px); border: 2px solid rgba(0,255,170,0.4); border-radius: 50px; padding: 0.6rem 2rem; margin-bottom: 2rem; animation: slideInUp 1s ease-out; box-shadow: 0 10px 30px rgba(0,255,170,0.2);">
+                <span style="color: #00ffaa; font-weight: 700; font-size: 1rem; letter-spacing: 2px;">✨ WE'RE HERE TO
+                    HELP</span>
             </div>
 
-            <!-- Contact Information -->
-            <div>
-                <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    <p style="margin-bottom: 2rem; color: #666;">Reach out to us through any of these channels. We're
-                        available 24/7 to assist with your healthcare needs.</p>
+            <h1
+                style="color: white; font-size: clamp(3.5rem, 9vw, 6.5rem); font-weight: 900; line-height: 1.05; margin-bottom: 2rem; letter-spacing: -3px; animation: slideInUp 1s ease-out 0.1s both;">
+                Your Health Journey<br>
+                <span
+                    style="background: linear-gradient(135deg, #00ffaa 0%, #00e5ff 50%, #4db6ac 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; display: inline-block;">Starts
+                    Here</span>
+            </h1>
 
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div>
-                            <strong>Email</strong>
-                            <p>info@heliowellnes.com</p>
-                            <small style="color: #666;">We respond within 2 hours</small>
-                        </div>
-                    </div>
+            <p
+                style="color: #cbd5e1; font-size: clamp(1.2rem, 2.2vw, 1.6rem); max-width: 850px; margin: 0 auto 3rem; line-height: 1.8; font-weight: 400; animation: slideInUp 1s ease-out 0.2s both;">
+                One conversation can change everything. Connect with our medical experts today and take the first step
+                toward better health.
+            </p>
 
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div>
-                            <strong>Phone</strong>
-                            <p>+91-98765-43210</p>
-                            <small style="color: #666;">Available 24/7</small>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fab fa-whatsapp"></i>
-                        </div>
-                        <div>
-                            <strong>WhatsApp</strong>
-                            <p>+91-98765-43210</p>
-                            <small style="color: #666;">Quick and convenient messaging</small>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div>
-                            <strong>Response Time</strong>
-                            <p>Within 24 hours</p>
-                            <small style="color: #666;">Usually much faster</small>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Emergency Contact -->
+            <!-- Enhanced Quick Stats Grid -->
+            <div
+                style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; max-width: 1000px; margin: 0 auto 3rem; animation: slideInUp 1s ease-out 0.3s both;">
                 <div
-                    style="background-color: #fff3cd; border: 1px solid #ffeaa7; padding: 1.5rem; border-radius: 10px; margin-top: 2rem;">
-                    <h4 style="color: #856404; margin-bottom: 1rem;">
-                        <i class="fas fa-exclamation-triangle" style="margin-right: 0.5rem;"></i>
-                        Medical Emergency?
-                    </h4>
-                    <p style="color: #856404; font-size: 0.9rem; margin-bottom: 1rem;">If you're experiencing a medical
-                        emergency, please contact your local emergency services immediately.</p>
-                    <div style="display: flex; gap: 1rem;">
-                        <strong style="color: #856404;">US/CA: 911</strong>
-                        <strong style="color: #856404;">UK: 999</strong>
-                        <strong style="color: #856404;">AU: 000</strong>
+                    style="background: rgba(255,255,255,0.06); backdrop-filter: blur(15px); border: 2px solid rgba(0,255,170,0.3); border-radius: 25px; padding: 2rem 1.5rem; transition: all 0.3s ease;">
+                    <div
+                        style="font-size: 3rem; font-weight: 900; background: linear-gradient(135deg, #00ffaa 0%, #4db6ac 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.75rem; line-height: 1;">
+                        24/7</div>
+                    <div style="color: #e0e7ff; font-size: 1rem; font-weight: 600;">Always Available</div>
+                </div>
+                <div
+                    style="background: rgba(255,255,255,0.06); backdrop-filter: blur(15px); border: 2px solid rgba(0,229,255,0.3); border-radius: 25px; padding: 2rem 1.5rem; transition: all 0.3s ease; transform: translateY(-10px);">
+                    <div
+                        style="font-size: 3rem; font-weight: 900; background: linear-gradient(135deg, #00e5ff 0%, #4db6ac 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.75rem; line-height: 1;">
+                        2hr</div>
+                    <div style="color: #e0e7ff; font-size: 1rem; font-weight: 600;">Response Time</div>
+                </div>
+                <div
+                    style="background: rgba(255,255,255,0.06); backdrop-filter: blur(15px); border: 2px solid rgba(77,182,172,0.3); border-radius: 25px; padding: 2rem 1.5rem; transition: all 0.3s ease;">
+                    <div
+                        style="font-size: 3rem; font-weight: 900; background: linear-gradient(135deg, #4db6ac 0%, #009688 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.75rem; line-height: 1;">
+                        100%</div>
+                    <div style="color: #e0e7ff; font-size: 1rem; font-weight: 600;">Free Consultation</div>
+                </div>
+                <div
+                    style="background: rgba(255,255,255,0.06); backdrop-filter: blur(15px); border: 2px solid rgba(0,150,136,0.3); border-radius: 25px; padding: 2rem 1.5rem; transition: all 0.3s ease; transform: translateY(-10px);">
+                    <div
+                        style="font-size: 3rem; font-weight: 900; background: linear-gradient(135deg, #009688 0%, #00ffaa 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.75rem; line-height: 1;">
+                        50+</div>
+                    <div style="color: #e0e7ff; font-size: 1rem; font-weight: 600;">Countries Served</div>
+                </div>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div
+                style="display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 3rem; animation: slideInUp 1s ease-out 0.4s both; flex-wrap: wrap;">
+                <a href="#contact-form"
+                    style="display: inline-flex; align-items: center; gap: 0.75rem; background: linear-gradient(135deg, #009688 0%, #00796b 100%); color: white; padding: 1.3rem 3.5rem; font-size: 1.15rem; font-weight: 700; border-radius: 60px; text-decoration: none; box-shadow: 0 20px 50px rgba(0,150,136,0.5); animation: glow 3s ease-in-out infinite; transition: all 0.3s ease;">
+                    <i class="fas fa-paper-plane"></i>
+                    Send Message Now
+                </a>
+                <a href="tel:+918762204773"
+                    style="display: inline-flex; align-items: center; gap: 0.75rem; background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); color: white; padding: 1.3rem 3.5rem; font-size: 1.15rem; font-weight: 700; border-radius: 60px; text-decoration: none; border: 2px solid rgba(255,255,255,0.3); transition: all 0.3s ease;">
+                    <i class="fas fa-phone-alt"></i>
+                    Call Now
+                </a>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div style="animation: slideInUp 1s ease-out 0.5s both;">
+                <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; opacity: 0.7;">
+                    <span
+                        style="color: #94a3b8; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1.5px;">Scroll
+                        to explore</span>
+                    <div
+                        style="width: 2px; height: 40px; background: linear-gradient(to bottom, #00ffaa, transparent); animation: float 3s ease-in-out infinite;">
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <!-- FAQ Quick Links -->
-                <div
-                    style="background-color: white; padding: 2rem; border-radius: 10px; box-shadow: var(--shadow); margin-top: 2rem;">
-                    <h4>Quick Questions?</h4>
-                    <div style="margin-top: 1.5rem;">
-                        <div style="margin-bottom: 1rem;">
-                            <strong style="color: var(--primary-color);">How much does a consultation cost?</strong>
-                            <p style="margin: 0.3rem 0 0 0; color: #666; font-size: 0.9rem;">Initial consultations are
-                                completely free with no obligations.</p>
+    <!-- CONTACT FORM & INFO SECTION -->
+    <section style="padding: 5rem 0; background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;">
+                <!-- CONTACT FORM -->
+                <div style="animation: slideInUp 1s ease-out;">
+                    <div
+                        style="display: inline-block; background: linear-gradient(135deg, rgba(0,150,136,0.1) 0%, rgba(77,182,172,0.1) 100%); border-radius: 10px; padding: 0.4rem 1.2rem; margin-bottom: 1rem;">
+                        <span style="color: #009688; font-weight: 700; font-size: 0.85rem; letter-spacing: 1.5px;">FREE
+                            CONSULTATION</span>
+                    </div>
+
+                    <h2
+                        style="font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 800; color: #0f172a; line-height: 1.2; margin-bottom: 1rem;">
+                        Get Your Personalized <span
+                            style="background: linear-gradient(135deg, #009688 0%, #4db6ac 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Healthcare
+                            Plan</span>
+                    </h2>
+
+                    <p style="color: #64748b; font-size: 1.05rem; margin-bottom: 2rem; line-height: 1.7;">
+                        Fill out the form below and our medical advisors will contact you within 24 hours to discuss
+                        your healthcare needs.
+                    </p>
+
+                    <form id="contact-form" action="https://formspree.io/f/your-form-id" method="POST"
+                        style="background: white; padding: 3rem; border-radius: 25px; box-shadow: 0 20px 60px rgba(0,0,0,0.08); border: 2px solid rgba(0,150,136,0.1);">
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label for="name"
+                                style="display: block; font-weight: 600; color: #0f172a; margin-bottom: 0.5rem; font-size: 0.95rem;">Full
+                                Name *</label>
+                            <input type="text" id="name" name="name" required
+                                style="width: 100%; padding: 0.9rem 1.2rem; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 1rem; outline: none;">
                         </div>
 
-                        <div style="margin-bottom: 1rem;">
-                            <strong style="color: var(--primary-color);">How long does the process take?</strong>
-                            <p style="margin: 0.3rem 0 0 0; color: #666; font-size: 0.9rem;">Second opinions: 5-7 days.
-                                Medical tourism planning: 2-3 weeks.</p>
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label for="email"
+                                style="display: block; font-weight: 600; color: #0f172a; margin-bottom: 0.5rem; font-size: 0.95rem;">Email
+                                Address *</label>
+                            <input type="email" id="email" name="email" required
+                                style="width: 100%; padding: 0.9rem 1.2rem; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 1rem; outline: none;">
                         </div>
 
-                        <div style="margin-bottom: 1rem;">
-                            <strong style="color: var(--primary-color);">Do you work with insurance?</strong>
-                            <p style="margin: 0.3rem 0 0 0; color: #666; font-size: 0.9rem;">We provide documentation
-                                for insurance reimbursement where applicable.</p>
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label for="phone"
+                                style="display: block; font-weight: 600; color: #0f172a; margin-bottom: 0.5rem; font-size: 0.95rem;">Phone
+                                Number</label>
+                            <input type="tel" id="phone" name="phone"
+                                style="width: 100%; padding: 0.9rem 1.2rem; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 1rem; outline: none;">
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label for="country"
+                                style="display: block; font-weight: 600; color: #0f172a; margin-bottom: 0.5rem; font-size: 0.95rem;">Country</label>
+                            <select id="country" name="country"
+                                style="width: 100%; padding: 0.9rem 1.2rem; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 1rem; outline: none;">
+                                <option value="">Select your country</option>
+                                <option value="US">United States</option>
+                                <option value="UK">United Kingdom</option>
+                                <option value="CA">Canada</option>
+                                <option value="AU">Australia</option>
+                                <option value="IN">India</option>
+                                <option value="SG">Singapore</option>
+                                <option value="AE">United Arab Emirates</option>
+                                <option value="SA">Saudi Arabia</option>
+                                <option value="DE">Germany</option>
+                                <option value="FR">France</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label for="service"
+                                style="display: block; font-weight: 600; color: #0f172a; margin-bottom: 0.5rem; font-size: 0.95rem;">Service
+                                Needed *</label>
+                            <select id="service" name="service" required
+                                style="width: 100%; padding: 0.9rem 1.2rem; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 1rem; outline: none;">
+                                <option value="">Select a service</option>
+                                <option value="second-opinion">Medical Second Opinion</option>
+                                <option value="medical-tourism">Medical Tourism</option>
+                                <option value="nursing-care">Skilled Nursing Care</option>
+                                <option value="general-consultation">General Healthcare Consultation</option>
+                                <option value="multiple">Multiple Services</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label for="condition"
+                                style="display: block; font-weight: 600; color: #0f172a; margin-bottom: 0.5rem; font-size: 0.95rem;">Medical
+                                Condition/Concern</label>
+                            <input type="text" id="condition" name="condition"
+                                placeholder="e.g., Heart disease, Cancer, Orthopedic surgery"
+                                style="width: 100%; padding: 0.9rem 1.2rem; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 1rem; outline: none;">
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label for="urgency"
+                                style="display: block; font-weight: 600; color: #0f172a; margin-bottom: 0.5rem; font-size: 0.95rem;">Urgency
+                                Level</label>
+                            <select id="urgency" name="urgency"
+                                style="width: 100%; padding: 0.9rem 1.2rem; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 1rem; outline: none;">
+                                <option value="">Select urgency</option>
+                                <option value="urgent">Urgent (within 24 hours)</option>
+                                <option value="soon">Soon (within a week)</option>
+                                <option value="flexible">Flexible (within a month)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label for="message"
+                                style="display: block; font-weight: 600; color: #0f172a; margin-bottom: 0.5rem; font-size: 0.95rem;">Message
+                                *</label>
+                            <textarea id="message" name="message" required rows="4"
+                                placeholder="Please describe your situation, current symptoms, or specific questions..."
+                                style="width: 100%; padding: 0.9rem 1.2rem; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 1rem; outline: none; resize: vertical;"></textarea>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 2rem;">
+                            <label style="display: flex; align-items: flex-start; cursor: pointer;">
+                                <input type="checkbox" name="privacy" required
+                                    style="margin-right: 0.75rem; margin-top: 0.3rem; width: 18px; height: 18px; cursor: pointer;">
+                                <span style="font-size: 0.95rem; color: #64748b; line-height: 1.6;">I agree to the <a
+                                        href="#" style="color: #009688; font-weight: 600;">Privacy Policy</a> and
+                                    consent to Healio contacting me about my healthcare needs.</span>
+                            </label>
+                        </div>
+
+                        <button type="submit"
+                            style="width: 100%; background: linear-gradient(135deg, #009688 0%, #00796b 100%); color: white; padding: 1.2rem; border-radius: 15px; font-size: 1.05rem; font-weight: 700; border: none; cursor: pointer; box-shadow: 0 15px 35px rgba(0,150,136,0.3); transition: all 0.3s ease; animation: glow 3s ease-in-out infinite;">
+                            Send Message →
+                        </button>
+
+                        <p style="margin-top: 1.5rem; font-size: 0.95rem; color: #64748b; text-align: center;">
+                            <i class="fas fa-lock" style="color: #009688; margin-right: 0.5rem;"></i>
+                            Your information is secure and confidential
+                        </p>
+                    </form>
+                </div>
+
+                <!-- CONTACT INFO SIDEBAR -->
+                <div style="animation: slideInUp 1s ease-out 0.2s both;">
+                    <!-- Contact Methods -->
+                    <div
+                        style="background: white; border-radius: 25px; padding: 3rem; box-shadow: 0 20px 60px rgba(0,0,0,0.08); margin-bottom: 2rem; border: 2px solid rgba(0,150,136,0.05);">
+                        <h3 style="font-size: 1.8rem; font-weight: 800; color: #0f172a; margin-bottom: 2rem;">Other Ways
+                            to Reach Us</h3>
+
+                        <!-- Email -->
+                        <div class="contact-card"
+                            style="display: flex; gap: 1.5rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(0,150,136,0.05) 0%, rgba(77,182,172,0.03) 100%); border-radius: 20px; margin-bottom: 1.5rem; border: 2px solid rgba(0,150,136,0.1);">
+                            <div
+                                style="width: 55px; height: 55px; background: linear-gradient(135deg, #009688 0%, #00796b 100%); border-radius: 15px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i class="fas fa-envelope" style="font-size: 1.5rem; color: white;"></i>
+                            </div>
+                            <div style="flex: 1;">
+                                <strong
+                                    style="color: #0f172a; font-size: 1.1rem; display: block; margin-bottom: 0.5rem;">Email
+                                    Us</strong>
+                                <p style="color: #009688; font-weight: 600; margin: 0 0 0.3rem 0;">
+                                    healiowelness@gmail.com</p>
+                                <small style="color: #64748b;">We respond within 2 hours</small>
+                            </div>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="contact-card"
+                            style="display: flex; gap: 1.5rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(0,229,255,0.05) 0%, rgba(77,182,172,0.03) 100%); border-radius: 20px; margin-bottom: 1.5rem; border: 2px solid rgba(0,229,255,0.1);">
+                            <div
+                                style="width: 55px; height: 55px; background: linear-gradient(135deg, #00e5ff 0%, #009688 100%); border-radius: 15px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i class="fas fa-phone" style="font-size: 1.5rem; color: white;"></i>
+                            </div>
+                            <div style="flex: 1;">
+                                <strong
+                                    style="color: #0f172a; font-size: 1.1rem; display: block; margin-bottom: 0.5rem;">Call
+                                    Us</strong>
+                                <p style="color: #009688; font-weight: 600; margin: 0 0 0.3rem 0;">+91-8762204773
+                                </p>
+                                <small style="color: #64748b;">Available 24/7</small>
+                            </div>
+                        </div>
+
+                        <!-- WhatsApp -->
+                        <div class="contact-card"
+                            style="display: flex; gap: 1.5rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(0,255,170,0.05) 0%, rgba(77,182,172,0.03) 100%); border-radius: 20px; border: 2px solid rgba(0,255,170,0.1);">
+                            <div
+                                style="width: 55px; height: 55px; background: linear-gradient(135deg, #25D366 0%, #128C7E 100%); border-radius: 15px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i class="fab fa-whatsapp" style="font-size: 1.5rem; color: white;"></i>
+                            </div>
+                            <div style="flex: 1;">
+                                <strong
+                                    style="color: #0f172a; font-size: 1.1rem; display: block; margin-bottom: 0.5rem;">WhatsApp</strong>
+                                <p style="color: #009688; font-weight: 600; margin: 0 0 0.3rem 0;">+91-8762204773
+                                </p>
+                                <small style="color: #64748b;">Quick and convenient messaging</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Emergency Notice -->
+                    <div
+                        style="background: linear-gradient(135deg, #fff3cd 0%, #ffe8a1 100%); border: 2px solid #ffc107; padding: 2rem; border-radius: 20px; margin-bottom: 2rem;">
+                        <h4 style="color: #856404; margin-bottom: 1rem; font-size: 1.3rem; font-weight: 700;">
+                            <i class="fas fa-exclamation-triangle" style="margin-right: 0.5rem;"></i>
+                            Medical Emergency?
+                        </h4>
+                        <p style="color: #856404; font-size: 0.95rem; margin-bottom: 1rem; line-height: 1.6;">If you're
+                            experiencing a medical emergency, please contact your local emergency services immediately.
+                        </p>
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                            <strong style="color: #856404; font-size: 0.95rem;">US/CA: 911</strong>
+                            <strong style="color: #856404; font-size: 0.95rem;">UK: 999</strong>
+                            <strong style="color: #856404; font-size: 0.95rem;">AU: 000</strong>
+                        </div>
+                    </div>
+
+                    <!-- FAQ -->
+                    <div
+                        style="background: white; border-radius: 25px; padding: 3rem; box-shadow: 0 20px 60px rgba(0,0,0,0.08); border: 2px solid rgba(0,150,136,0.05);">
+                        <h4 style="font-size: 1.6rem; font-weight: 800; color: #0f172a; margin-bottom: 2rem;">Quick
+                            Questions?</h4>
+
+                        <div style="margin-bottom: 1.5rem;">
+                            <strong
+                                style="color: #009688; font-size: 1.05rem; display: block; margin-bottom: 0.5rem;">How
+                                much does a consultation cost?</strong>
+                            <p style="margin: 0; color: #64748b; line-height: 1.6;">Initial consultations are completely
+                                free with no obligations.</p>
+                        </div>
+
+                        <div style="margin-bottom: 1.5rem;">
+                            <strong
+                                style="color: #009688; font-size: 1.05rem; display: block; margin-bottom: 0.5rem;">How
+                                long does the process take?</strong>
+                            <p style="margin: 0; color: #64748b; line-height: 1.6;">Second opinions: 5-7 days. Medical
+                                tourism planning: 2-3 weeks.</p>
+                        </div>
+
+                        <div style="margin-bottom: 1.5rem;">
+                            <strong
+                                style="color: #009688; font-size: 1.05rem; display: block; margin-bottom: 0.5rem;">Do
+                                you work with insurance?</strong>
+                            <p style="margin: 0; color: #64748b; line-height: 1.6;">We provide documentation for
+                                insurance reimbursement where applicable.</p>
                         </div>
 
                         <div>
-                            <strong style="color: var(--primary-color);">Is my information secure?</strong>
-                            <p style="margin: 0.3rem 0 0 0; color: #666; font-size: 0.9rem;">Yes, we use bank-level
-                                encryption and are HIPAA compliant.</p>
+                            <strong
+                                style="color: #009688; font-size: 1.05rem; display: block; margin-bottom: 0.5rem;">Is
+                                my information secure?</strong>
+                            <p style="margin: 0; color: #64748b; line-height: 1.6;">Yes, we use bank-level encryption
+                                and are HIPAA compliant.</p>
                         </div>
                     </div>
                 </div>
@@ -300,80 +547,156 @@
         </div>
     </section>
 
-    <!-- Location/Office Info -->
-    <section style="background-color: var(--light-gray);">
-        <div class="container">
-            <h2 class="section-title">Our Global Presence</h2>
-            <p class="section-subtitle">While we operate globally, our main coordination centers ensure seamless support
-                worldwide.</p>
+    <!-- GLOBAL PRESENCE -->
+    <section
+        style="padding: 4rem 0; background: linear-gradient(135deg, #0a1f1c 0%, #000000 100%); position: relative; overflow: hidden;">
+        <!-- Background Effects -->
+        <div
+            style="position: absolute; top: 20%; left: 10%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(0,150,136,0.2) 0%, transparent 70%); filter: blur(60px);">
+        </div>
 
-            <div class="grid grid-3">
-                <div class="card">
-                    <h4 style="color: var(--primary-color); margin-bottom: 1rem;">
-                        <i class="fas fa-map-marker-alt" style="margin-right: 0.5rem;"></i>
-                        Headquarters
-                    </h4>
-                    <p><strong>Mumbai, India</strong></p>
-                    <p style="color: #666; font-size: 0.9rem;">Global operations and medical coordination center</p>
-                </div>
+        <div class="container" style="position: relative; z-index: 10;">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h2
+                    style="color: white; font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 1rem; letter-spacing: -1px;">
+                    Our Global <span
+                        style="background: linear-gradient(135deg, #00ffaa 0%, #4db6ac 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Presence</span>
+                </h2>
+                <p style="color: #94a3b8; font-size: 1.1rem; max-width: 700px; margin: 0 auto;">
+                    While we operate globally, our main coordination centers ensure seamless support worldwide.
+                </p>
+            </div>
 
-                <div class="card">
-                    <h4 style="color: var(--primary-color); margin-bottom: 1rem;">
-                        <i class="fas fa-map-marker-alt" style="margin-right: 0.5rem;"></i>
-                        North America
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+                <!-- Location 1 -->
+                <div
+                    style="background: rgba(255,255,255,0.03); backdrop-filter: blur(20px); border: 2px solid rgba(0,150,136,0.2); border-radius: 25px; padding: 3rem 2.5rem; text-align: center;">
+                    <div
+                        style="width: 70px; height: 70px; background: linear-gradient(135deg, #00ffaa 0%, #009688 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; box-shadow: 0 15px 35px rgba(0,255,170,0.4);">
+                        <i class="fas fa-map-marker-alt" style="font-size: 2rem; color: white;"></i>
+                    </div>
+                    <h4 style="color: white; font-size: 1.5rem; font-weight: 700; margin-bottom: 0.75rem;">Headquarters
                     </h4>
-                    <p><strong>Toronto, Canada</strong></p>
-                    <p style="color: #666; font-size: 0.9rem;">Regional support for US and Canadian patients</p>
-                </div>
-
-                <div class="card">
-                    <h4 style="color: var(--primary-color); margin-bottom: 1rem;">
-                        <i class="fas fa-map-marker-alt" style="margin-right: 0.5rem;"></i>
-                        Europe & Middle East
-                    </h4>
-                    <p><strong>Dubai, UAE</strong></p>
-                    <p style="color: #666; font-size: 0.9rem;">Regional support for European and Middle Eastern patients
+                    <p style="color: #00ffaa; font-weight: 600; font-size: 1.1rem; margin-bottom: 0.5rem;">Mumbai, India
                     </p>
+                    <p style="color: #94a3b8; font-size: 0.95rem;">Global operations and medical coordination center</p>
+                </div>
+
+                <!-- Location 2 -->
+                <div
+                    style="background: rgba(255,255,255,0.03); backdrop-filter: blur(20px); border: 2px solid rgba(0,229,255,0.2); border-radius: 25px; padding: 3rem 2.5rem; text-align: center; transform: translateY(-15px);">
+                    <div
+                        style="width: 70px; height: 70px; background: linear-gradient(135deg, #00e5ff 0%, #009688 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; box-shadow: 0 15px 35px rgba(0,229,255,0.4);">
+                        <i class="fas fa-map-marker-alt" style="font-size: 2rem; color: white;"></i>
+                    </div>
+                    <h4 style="color: white; font-size: 1.5rem; font-weight: 700; margin-bottom: 0.75rem;">North America
+                    </h4>
+                    <p style="color: #00e5ff; font-weight: 600; font-size: 1.1rem; margin-bottom: 0.5rem;">Toronto,
+                        Canada</p>
+                    <p style="color: #94a3b8; font-size: 0.95rem;">Regional support for US and Canadian patients</p>
+                </div>
+
+                <!-- Location 3 -->
+                <div
+                    style="background: rgba(255,255,255,0.03); backdrop-filter: blur(20px); border: 2px solid rgba(77,182,172,0.2); border-radius: 25px; padding: 3rem 2.5rem; text-align: center;">
+                    <div
+                        style="width: 70px; height: 70px; background: linear-gradient(135deg, #4db6ac 0%, #009688 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; box-shadow: 0 15px 35px rgba(77,182,172,0.4);">
+                        <i class="fas fa-map-marker-alt" style="font-size: 2rem; color: white;"></i>
+                    </div>
+                    <h4 style="color: white; font-size: 1.5rem; font-weight: 700; margin-bottom: 0.75rem;">Europe &
+                        Middle East</h4>
+                    <p style="color: #4db6ac; font-weight: 600; font-size: 1.1rem; margin-bottom: 0.5rem;">Dubai, UAE
+                    </p>
+                    <p style="color: #94a3b8; font-size: 0.95rem;">Regional support for European and Middle Eastern
+                        patients</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials from Contact Experience -->
-    <section class="container">
-        <h2 class="section-title">What Patients Say About Our Support</h2>
-
-        <div class="grid grid-2">
-            <div class="testimonial">
-                <div class="testimonial-quote">
-                    "The Healio team was incredibly responsive and helpful from the very first contact. They answered
-                    all my questions and made the entire process stress-free."
-                </div>
-                <div class="testimonial-author">- Jennifer Adams, UK</div>
+    <!-- TESTIMONIALS -->
+    <section style="padding: 4rem 0; background: linear-gradient(180deg, #ffffff 0%, #f0f9ff 100%);">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h2
+                    style="font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 900; color: #0f172a; margin-bottom: 1rem; letter-spacing: -1px;">
+                    What Patients Say <span
+                        style="background: linear-gradient(135deg, #009688 0%, #4db6ac 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">About
+                        Us</span>
+                </h2>
+                <p style="color: #64748b; font-size: 1.1rem;">Real experiences from patients who found hope and healing
+                </p>
             </div>
 
-            <div class="testimonial">
-                <div class="testimonial-quote">
-                    "I was amazed by how quickly they got back to me. Within hours, I had a detailed plan for my medical
-                    tourism journey to India. Exceptional service!"
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;">
+                <!-- Testimonial 1 -->
+                <div
+                    style="background: white; border-radius: 25px; padding: 2.5rem; box-shadow: 0 20px 60px rgba(0,0,0,0.08); border-left: 5px solid #009688;">
+                    <div style="color: #fbbf24; font-size: 1.2rem; margin-bottom: 1rem;">★★★★★</div>
+                    <p
+                        style="color: #475569; line-height: 1.7; font-style: italic; font-size: 1.05rem; margin-bottom: 1.5rem;">
+                        "The Healio team was incredibly responsive and helpful from the very first contact. They
+                        answered
+                        all my questions and made the entire process stress-free."</p>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616c27ae1cd?auto=format&fit=crop&w=100&q=80"
+                            alt="Jennifer" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+                        <div>
+                            <div style="font-weight: 700; color: #0f172a;">Jennifer Adams</div>
+                            <div style="color: #64748b; font-size: 0.9rem;">United Kingdom</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="testimonial-author">- Robert Kim, USA</div>
+
+                <!-- Testimonial 2 -->
+                <div
+                    style="background: white; border-radius: 25px; padding: 2.5rem; box-shadow: 0 20px 60px rgba(0,0,0,0.08); border-left: 5px solid #00e5ff;">
+                    <div style="color: #fbbf24; font-size: 1.2rem; margin-bottom: 1rem;">★★★★★</div>
+                    <p
+                        style="color: #475569; line-height: 1.7; font-style: italic; font-size: 1.05rem; margin-bottom: 1.5rem;">
+                        "I was amazed by how quickly they got back to me. Within hours, I had a detailed plan for my
+                        medical tourism journey to India. Exceptional service!"</p>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=100&q=80"
+                            alt="Robert" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+                        <div>
+                            <div style="font-weight: 700; color: #0f172a;">Robert Kim</div>
+                            <div style="color: #64748b; font-size: 0.9rem;">United States</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Call to Action -->
-    <section style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-color) 100%);">
-        <div class="container text-center" style="color: white;">
-            <h2 style="color: white; margin-bottom: 1rem;">Ready to Take the Next Step?</h2>
-            <p style="font-size: 1.1rem; margin-bottom: 2rem; color: #E0F2F1;">Don't wait when it comes to your health.
-                Get expert guidance and start your journey to better healthcare today.</p>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                <a href="#contact-form" class="btn"
-                    style="background-color: white; color: var(--primary-color); font-weight: 600;">Fill Out Form
-                    Above</a>
-                <a href="tel:+919876543210" class="btn"
-                    style="background-color: transparent; color: white; border: 2px solid white;">Call Now</a>
+    <!-- MEGA CTA -->
+    <section
+        style="padding: 5rem 0; background: linear-gradient(135deg, #000000 0%, #0a1f1c 100%); position: relative; overflow: hidden;">
+        <div
+            style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 800px; height: 800px; background: radial-gradient(circle, rgba(0,255,170,0.15) 0%, transparent 70%); animation: float 8s ease-in-out infinite;">
+        </div>
+
+        <div class="container text-center" style="position: relative; z-index: 10;">
+            <h2
+                style="color: white; font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 900; margin-bottom: 1.5rem; line-height: 1.2; letter-spacing: -1px;">
+                Ready to Take the<br>
+                <span
+                    style="background: linear-gradient(135deg, #00ffaa 0%, #00e5ff 50%, #4db6ac 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Next
+                    Step?</span>
+            </h2>
+            <p
+                style="font-size: 1.2rem; color: #94a3b8; margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                Don't wait when it comes to your health. Get expert guidance and start your journey to better healthcare
+                today.</p>
+            <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+                <a href="#contact-form"
+                    style="display: inline-block; background: linear-gradient(135deg, #009688 0%, #00796b 100%); color: white; padding: 1.3rem 4rem; font-size: 1.2rem; font-weight: 700; border-radius: 60px; text-decoration: none; box-shadow: 0 20px 50px rgba(0,150,136,0.5); animation: glow 3s ease-in-out infinite;">
+                    Fill Out Form Above ↑
+                </a>
+                <a href="tel:+918762204773"
+                    style="display: inline-block; background: transparent; color: white; padding: 1.3rem 4rem; font-size: 1.2rem; font-weight: 700; border-radius: 60px; text-decoration: none; border: 2px solid white; transition: all 0.3s ease;">
+                    Call Now
+                </a>
             </div>
         </div>
     </section>
@@ -418,8 +741,8 @@
                 <h3>Contact Info</h3>
                 <ul>
                     <li><i class="fas fa-envelope"></i> healiowelness@gmail.com</li>
-                    <li><i class="fas fa-phone"></i> +91-98765-43210</li>
-                    <li><i class="fab fa-whatsapp"></i> WhatsApp: +91-98765-43210</li>
+                    <li><i class="fas fa-phone"></i> +91-8762204773</li>
+                    <li><i class="fab fa-whatsapp"></i> WhatsApp: +91-8762204773</li>
                 </ul>
             </div>
         </div>
@@ -436,8 +759,8 @@
     </footer>
 
     <!-- WhatsApp Floating Button -->
-    <a href="#" class="whatsapp-float"
-        style="position: fixed; bottom: 20px; right: 20px; background-color: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; text-decoration: none; box-shadow: var(--shadow-hover); z-index: 1000; transition: var(--transition);">
+    <a href="https://wa.me/918762204773" class="whatsapp-float"
+        style="position: fixed; bottom: 20px; right: 20px; background-color: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; text-decoration: none; box-shadow: 0 10px 30px rgba(37,211,102,0.4); z-index: 1000; transition: all 0.3s ease; animation: pulse 2s ease-in-out infinite;">
         <i class="fab fa-whatsapp"></i>
     </a>
 

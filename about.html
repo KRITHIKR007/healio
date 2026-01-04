@@ -13,7 +13,7 @@
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://heliowellnes.com/about.html">
 
-    <!-- Open Graph tags for social sharing -->
+    <!-- Open Graph tags -->
     <meta property="og:title" content="About Healio - Our Mission to Democratize Global Healthcare">
     <meta property="og:description"
         content="Learn about Healio's mission to make global healthcare accessible. Trusted by 5,000+ patients across 45 countries.">
@@ -21,42 +21,83 @@
     <meta property="og:url" content="https://heliowellnes.com/about.html">
     <meta property="og:image"
         content="https://heliowellnes.com/assets/icons/WhatsApp_Image_2025-11-01_at_11.50.08_1a0ff362-removebg-preview.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Healio team and mission">
-    <meta property="og:site_name" content="Healio">
-
-    <!-- Twitter Card tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@Healiowelness">
-    <meta name="twitter:title" content="About Healio - Our Healthcare Mission">
-    <meta name="twitter:description"
-        content="Trusted by 5,000+ patients across 45 countries. Learn about our mission to democratize global healthcare.">
-    <meta name="twitter:image"
-        content="https://heliowellnes.com/assets/icons/WhatsApp_Image_2025-11-01_at_11.50.08_1a0ff362-removebg-preview.png">
-
-    <!-- Additional SEO meta tags -->
-    <meta name="theme-color" content="#009688">
-    <meta name="msapplication-TileColor" content="#009688">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png"
         href="assets/icons/WhatsApp_Image_2025-11-01_at_11.50.08_1a0ff362-removebg-preview.png">
 
-    <!-- Sitemap and Robots -->
-    <link rel="sitemap" type="application/xml" href="sitemap.xml">
-
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/styles.css">
-
-    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-    <!-- Vercel Web Analytics -->
-    <script>
-        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-    </script>
-    <script defer src="/_vercel/insights/script.js"></script>
+    <style>
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes glow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(0, 150, 136, 0.3);
+            }
+
+            50% {
+                box-shadow: 0 0 40px rgba(0, 150, 136, 0.6), 0 0 60px rgba(0, 150, 136, 0.4);
+            }
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .animate-gradient {
+            background-size: 200% 200%;
+            animation: gradient 8s ease infinite;
+        }
+    </style>
 </head>
 
 <body>
@@ -85,223 +126,446 @@
         </nav>
     </header>
 
-    <!-- Breadcrumb Navigation -->
-    <nav class="breadcrumb" style="background-color: #f8f9fa; padding: 1rem 0; font-size: 0.9rem;">
-        <div class="container">
-            <ol style="display: flex; list-style: none; padding: 0; margin: 0; align-items: center;">
-                <li><a href="index.html" style="color: var(--primary-color); text-decoration: none;">Home</a></li>
-                <li style="margin: 0 0.5rem; color: #666;">></li>
-                <li style="color: #666;">About Us</li>
-            </ol>
+    <!-- ULTRA PREMIUM HERO -->
+    <section
+        style="position: relative; min-height: 85vh; display: flex; align-items: center; overflow: hidden; background: linear-gradient(135deg, #000000 0%, #0a1f1c 50%, #001a14 100%);">
+        <!-- Animated Background -->
+        <div class="animate-gradient"
+            style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,150,136,0.15) 0%, rgba(0,0,0,0) 30%, rgba(77,182,172,0.1) 60%, rgba(0,0,0,0) 100%); z-index: 1;">
         </div>
-    </nav>
 
-    <!-- Hero Banner -->
-    <section class="hero">
-        <div class="container">
-            <h1>Our Mission: Accessible, Informed Healthcare for All</h1>
-            <p>Healio connects patients to the right doctors and care networks globally, breaking down barriers to
-                world-class healthcare.</p>
+        <!-- Floating Shapes -->
+        <div
+            style="position: absolute; top: 10%; right: 10%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(0,150,136,0.3) 0%, transparent 70%); border-radius: 50%; animation: float 6s ease-in-out infinite; z-index: 2;">
         </div>
-    </section>
+        <div
+            style="position: absolute; bottom: 15%; left: 5%; width: 200px; height: 200px; background: radial-gradient(circle, rgba(77,182,172,0.2) 0%, transparent 70%); border-radius: 50%; animation: float 8s ease-in-out infinite; z-index: 2;">
+        </div>
 
-    <!-- Company Story -->
-    <section class="container">
-        <div class="grid grid-2" style="align-items: center; gap: 4rem;">
-            <div>
-                <h2>Our Story</h2>
-                <p>Healio was founded on a simple yet powerful realization: patients needed more than just medical
-                    information — they needed guidance, support, and access to the best care possible, regardless of
-                    geographic boundaries.</p>
-
-                <p>After witnessing countless stories of patients struggling to navigate complex healthcare systems,
-                    facing limited local options, or receiving conflicting medical advice, we knew there had to be a
-                    better way.</p>
-
-                <p>Today, Healio bridges the gap between diagnosis, treatment, and recovery by connecting patients with
-                    a global network of medical experts, facilitating access to world-class treatments, and providing
-                    comprehensive care support throughout the entire healthcare journey.</p>
-
-                <p><strong>We believe that everyone deserves access to the best healthcare possible, and we're here to
-                        make that belief a reality.</strong></p>
+        <div class="container" style="position: relative; z-index: 10; text-align: center; padding: 2rem 2rem;">
+            <div
+                style="display: inline-block; background: rgba(0,150,136,0.15); backdrop-filter: blur(10px); border: 1px solid rgba(0,150,136,0.3); border-radius: 50px; padding: 0.5rem 1.5rem; margin-bottom: 1rem;">
+                <span style="color: #4db6ac; font-weight: 600; font-size: 0.95rem; letter-spacing: 2px;">ABOUT
+                    HEALIO</span>
             </div>
 
-            <div style="text-align: center;">
+            <h1
+                style="color: white; font-size: clamp(3rem, 8vw, 5.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem; letter-spacing: -2px;">
+                Our Mission:<br>
+                <span
+                    style="background: linear-gradient(135deg, #00ffaa 0%, #00e5ff 50%, #4db6ac 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; display: inline-block;">Accessible
+                    Healthcare</span><br>
+                for Everyone
+            </h1>
+
+            <p
+                style="color: #94a3b8; font-size: clamp(1.1rem, 2vw, 1.4rem); max-width: 750px; margin: 0 auto 2rem; line-height: 1.7; font-weight: 300;">
+                Breaking down barriers to world-class healthcare. Connecting patients to the right doctors and care
+                networks globally.
+            </p>
+
+            <!-- Scroll Indicator -->
+            <div style="margin-top: 2rem;">
                 <div
-                    style="width: 300px; height: 200px; background: linear-gradient(135deg, var(--light-color) 0%, #E0F2F1 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
-                    <i class="fas fa-globe-americas" style="font-size: 4rem; color: var(--primary-color);"></i>
+                    style="width: 2px; height: 50px; background: linear-gradient(to bottom, #009688, transparent); margin: 0 auto; animation: float 3s ease-in-out infinite;">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Vision, Mission, Values -->
-    <section style="background-color: var(--light-gray);">
+    <!-- DYNAMIC STORY SECTION -->
+    <section
+        style="padding: 4rem 0; background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%); position: relative; overflow: hidden;">
+        <!-- Decorative Elements -->
+        <div
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.03; background-image: repeating-linear-gradient(45deg, #009688 0px, #009688 2px, transparent 2px, transparent 10px);">
+        </div>
+
         <div class="container">
-            <h2 class="section-title">Our Foundation</h2>
-
-            <div class="grid grid-3">
-                <div class="card">
-                    <div class="card-icon">
-                        <i class="fas fa-eye"></i>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+                <!-- Image Side with Effects -->
+                <div style="position: relative; animation: slideInLeft 1s ease-out;">
+                    <div
+                        style="position: absolute; inset: -20px; background: linear-gradient(135deg, #009688, #4db6ac); border-radius: 30px; opacity: 0.1; transform: rotate(-3deg); z-index: 1;">
                     </div>
-                    <h3>Our Vision</h3>
-                    <p>To create a world where geographical boundaries don't limit access to quality healthcare. We
+                    <div
+                        style="position: relative; z-index: 2; border-radius: 30px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.2);">
+                        <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=900&q=80"
+                            alt="Healio Team" style="width: 100%; display: block; transition: transform 0.5s ease;">
+                    </div>
+                    <!-- Accent Badge -->
+                    <div
+                        style="position: absolute; bottom: -20px; right: -20px; background: linear-gradient(135deg, #009688 0%, #00796b 100%); color: white; padding: 2rem; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,150,136,0.4); z-index: 3; animation: glow 3s ease-in-out infinite;">
+                        <div style="font-size: 2.5rem; font-weight: 800; line-height: 1;">5K+</div>
+                        <div style="font-size: 0.9rem; opacity: 0.9; margin-top: 0.5rem;">Patients Served</div>
+                    </div>
+                </div>
+
+                <!-- Content Side -->
+                <div style="animation: slideInRight 1s ease-out;">
+                    <div
+                        style="display: inline-block; background: linear-gradient(135deg, rgba(0,150,136,0.1) 0%, rgba(77,182,172,0.1) 100%); border-radius: 10px; padding: 0.4rem 1.2rem; margin-bottom: 1rem;">
+                        <span style="color: #009688; font-weight: 700; font-size: 0.85rem; letter-spacing: 1.5px;">OUR
+                            STORY</span>
+                    </div>
+
+                    <h2
+                        style="font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 800; color: #0f172a; line-height: 1.2; margin-bottom: 1.5rem;">
+                        Founded on a <span
+                            style="background: linear-gradient(135deg, #009688 0%, #4db6ac 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Powerful
+                            Vision</span>
+                    </h2>
+
+                    <div
+                        style="display: flex; flex-direction: column; gap: 1.2rem; font-size: 1.05rem; line-height: 1.7; color: #475569;">
+                        <p style="border-left: 4px solid #009688; padding-left: 1.5rem; margin: 0;">
+                            Healio was founded on a simple yet powerful realization: patients needed more than just
+                            medical information — they needed guidance, support, and access to the best care possible,
+                            regardless of geographic boundaries.
+                        </p>
+
+                        <p>
+                            After witnessing countless stories of patients struggling to navigate complex healthcare
+                            systems, facing limited local options, or receiving conflicting medical advice, we knew
+                            there had to be a better way.
+                        </p>
+
+                        <div
+                            style="background: linear-gradient(135deg, rgba(0,150,136,0.08) 0%, rgba(77,182,172,0.05) 100%); border-radius: 20px; padding: 2rem; border: 2px solid rgba(0,150,136,0.2);">
+                            <p style="margin: 0; font-weight: 600; color: #0f172a; font-size: 1.15rem;">
+                                Today, Healio bridges the gap between diagnosis, treatment, and recovery by connecting
+                                patients with a global network of medical experts.
+                            </p>
+                        </div>
+
+                        <p style="font-size: 1.3rem; font-weight: 700; color: #009688; margin: 0;">
+                            We believe that everyone deserves access to the best healthcare possible, and we're here to
+                            make that reality.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOUNDATION - BOLD CARDS -->
+    <section
+        style="padding: 4rem 0; background: radial-gradient(circle at top, #0a1f1c 0%, #000000 100%); position: relative; overflow: hidden;">
+        <!-- Glow Effects -->
+        <div
+            style="position: absolute; top: 20%; left: 10%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(0,150,136,0.2) 0%, transparent 70%); filter: blur(60px);">
+        </div>
+        <div
+            style="position: absolute; bottom: 20%; right: 10%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(77,182,172,0.15) 0%, transparent 70%); filter: blur(60px);">
+        </div>
+
+        <div class="container" style="position: relative; z-index: 10;">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h2
+                    style="color: white; font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 0.75rem; letter-spacing: -1px;">
+                    Our <span
+                        style="background: linear-gradient(135deg, #00ffaa 0%, #4db6ac 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Foundation</span>
+                </h2>
+                <p style="color: #94a3b8; font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
+                    The core principles that drive everything we do
+                </p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+                <!-- Vision Card -->
+                <div
+                    style="background: linear-gradient(135deg, rgba(0,150,136,0.15) 0%, rgba(0,0,0,0.3) 100%); backdrop-filter: blur(20px); border: 2px solid rgba(0,150,136,0.3); border-radius: 30px; padding: 3rem 2.5rem; position: relative; overflow: hidden; transition: all 0.4s ease;">
+                    <div
+                        style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(0,150,136,0.3) 0%, transparent 70%); border-radius: 50%;">
+                    </div>
+
+                    <div
+                        style="width: 80px; height: 80px; background: linear-gradient(135deg, #00ffaa 0%, #009688 100%); border-radius: 25px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; box-shadow: 0 15px 35px rgba(0,255,170,0.4); position: relative;">
+                        <i class="fas fa-eye" style="font-size: 2.5rem; color: white;"></i>
+                    </div>
+
+                    <h3 style="color: white; font-size: 1.8rem; font-weight: 800; margin-bottom: 1.2rem;">Our Vision
+                    </h3>
+                    <p style="color: #cbd5e1; line-height: 1.8; font-size: 1.05rem;">
+                        To create a world where geographical boundaries don't limit access to quality healthcare. We
                         envision a future where every patient can connect with the right medical expertise, regardless
-                        of where they live.</p>
+                        of where they live.
+                    </p>
                 </div>
 
-                <div class="card">
-                    <div class="card-icon">
-                        <i class="fas fa-compass"></i>
+                <!-- Mission Card -->
+                <div
+                    style="background: linear-gradient(135deg, rgba(77,182,172,0.15) 0%, rgba(0,0,0,0.3) 100%); backdrop-filter: blur(20px); border: 2px solid rgba(77,182,172,0.3); border-radius: 30px; padding: 2.5rem 2rem; position: relative; overflow: hidden; transition: all 0.4s ease; transform: translateY(-15px);">
+                    <div
+                        style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(77,182,172,0.3) 0%, transparent 70%); border-radius: 50%;">
                     </div>
-                    <h3>Our Mission</h3>
-                    <p>To democratize healthcare by providing personalized medical guidance, facilitating access to
+
+                    <div
+                        style="width: 80px; height: 80px; background: linear-gradient(135deg, #4db6ac 0%, #009688 100%); border-radius: 25px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; box-shadow: 0 15px 35px rgba(77,182,172,0.4); position: relative;">
+                        <i class="fas fa-compass" style="font-size: 2.5rem; color: white;"></i>
+                    </div>
+
+                    <h3 style="color: white; font-size: 1.8rem; font-weight: 800; margin-bottom: 1.2rem;">Our Mission
+                    </h3>
+                    <p style="color: #cbd5e1; line-height: 1.8; font-size: 1.05rem;">
+                        To democratize healthcare by providing personalized medical guidance, facilitating access to
                         global treatment options, and supporting patients throughout their entire healthcare journey
-                        with compassion and expertise.</p>
+                        with compassion and expertise.
+                    </p>
                 </div>
 
-                <div class="card">
-                    <div class="card-icon">
-                        <i class="fas fa-heart"></i>
+                <!-- Values Card -->
+                <div
+                    style="background: linear-gradient(135deg, rgba(0,150,136,0.15) 0%, rgba(0,0,0,0.3) 100%); backdrop-filter: blur(20px); border: 2px solid rgba(0,150,136,0.3); border-radius: 30px; padding: 3rem 2.5rem; position: relative; overflow: hidden; transition: all 0.4s ease;">
+                    <div
+                        style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(0,150,136,0.3) 0%, transparent 70%); border-radius: 50%;">
                     </div>
-                    <h3>Our Values</h3>
-                    <ul style="text-align: left; list-style: none; padding: 0;">
-                        <li style="margin-bottom: 0.5rem;">✓ <strong>Patient-First:</strong> Every decision centers on
-                            patient wellbeing</li>
-                        <li style="margin-bottom: 0.5rem;">✓ <strong>Transparency:</strong> Clear, honest communication
-                            always</li>
-                        <li style="margin-bottom: 0.5rem;">✓ <strong>Excellence:</strong> Connecting with only the best
-                            medical professionals</li>
-                        <li style="margin-bottom: 0.5rem;">✓ <strong>Compassion:</strong> Understanding the human side
-                            of healthcare</li>
-                        <li>✓ <strong>Innovation:</strong> Continuously improving healthcare accessibility</li>
+
+                    <div
+                        style="width: 80px; height: 80px; background: linear-gradient(135deg, #00e5ff 0%, #009688 100%); border-radius: 25px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; box-shadow: 0 15px 35px rgba(0,229,255,0.4); position: relative;">
+                        <i class="fas fa-heart" style="font-size: 2.5rem; color: white;"></i>
+                    </div>
+
+                    <h3 style="color: white; font-size: 1.8rem; font-weight: 800; margin-bottom: 1.2rem;">Our Values
+                    </h3>
+                    <ul style="list-style: none; padding: 0; color: #cbd5e1; font-size: 1.05rem;">
+                        <li style="margin-bottom: 1rem; display: flex; align-items: flex-start; gap: 1rem;">
+                            <span style="color: #00ffaa; font-size: 1.5rem; line-height: 1;">✓</span>
+                            <span><strong style="color: white;">Patient-First:</strong> Every decision centers on
+                                patient wellbeing</span>
+                        </li>
+                        <li style="margin-bottom: 1rem; display: flex; align-items: flex-start; gap: 1rem;">
+                            <span style="color: #00ffaa; font-size: 1.5rem; line-height: 1;">✓</span>
+                            <span><strong style="color: white;">Transparency:</strong> Clear, honest communication
+                                always</span>
+                        </li>
+                        <li style="margin-bottom: 1rem; display: flex; align-items: flex-start; gap: 1rem;">
+                            <span style="color: #00ffaa; font-size: 1.5rem; line-height: 1;">✓</span>
+                            <span><strong style="color: white;">Excellence:</strong> Connecting with only the best
+                                medical professionals</span>
+                        </li>
+                        <li style="margin-bottom: 1rem; display: flex; align-items: flex-start; gap: 1rem;">
+                            <span style="color: #00ffaa; font-size: 1.5rem; line-height: 1;">✓</span>
+                            <span><strong style="color: white;">Compassion:</strong> Understanding the human side of
+                                healthcare</span>
+                        </li>
+                        <li style="display: flex; align-items: flex-start; gap: 1rem;">
+                            <span style="color: #00ffaa; font-size: 1.5rem; line-height: 1;">✓</span>
+                            <span><strong style="color: white;">Innovation:</strong> Continuously improving healthcare
+                                accessibility</span>
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- What Makes Us Different -->
-    <section class="container">
-        <h2 class="section-title">What Makes Healio Different</h2>
-
-        <div class="grid grid-2" style="gap: 3rem;">
-            <div class="card" style="text-align: left;">
-                <h3 style="display: flex; align-items: center; gap: 1rem;">
-                    <i class="fas fa-network-wired" style="color: var(--primary-color);"></i>
-                    Global Network
-                </h3>
-                <p>We've built partnerships with leading medical institutions and specialists across multiple countries,
-                    giving you access to a truly global healthcare network.</p>
-            </div>
-
-            <div class="card" style="text-align: left;">
-                <h3 style="display: flex; align-items: center; gap: 1rem;">
-                    <i class="fas fa-user-md" style="color: var(--primary-color);"></i>
-                    Personalized Care
-                </h3>
-                <p>Every patient receives individualized attention. We take time to understand your unique situation and
-                    match you with the most appropriate care options.</p>
-            </div>
-
-            <div class="card" style="text-align: left;">
-                <h3 style="display: flex; align-items: center; gap: 1rem;">
-                    <i class="fas fa-shield-alt" style="color: var(--primary-color);"></i>
-                    Quality Assurance
-                </h3>
-                <p>All our partner healthcare providers are rigorously vetted for quality, safety standards, and patient
-                    satisfaction to ensure you receive the best care possible.</p>
-            </div>
-
-            <div class="card" style="text-align: left;">
-                <h3 style="display: flex; align-items: center; gap: 1rem;">
-                    <i class="fas fa-hands-helping" style="color: var(--primary-color);"></i>
-                    End-to-End Support
-                </h3>
-                <p>From initial consultation to post-treatment follow-up, we're with you every step of the way, handling
-                    logistics so you can focus on your health.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Our Impact -->
-    <section style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-color) 100%);">
-        <div class="container text-center" style="color: white;">
-            <h2 style="color: white; margin-bottom: 3rem;">Our Impact by the Numbers</h2>
-
-            <div class="grid grid-3">
-                <div style="text-align: center;">
-                    <div style="font-size: 3rem; font-weight: 700; margin-bottom: 1rem;">5,000+</div>
-                    <h3 style="color: #E0F2F1;">Patients Helped</h3>
-                    <p style="color: #E0F2F1;">Across 45 countries worldwide</p>
-                </div>
-
-                <div style="text-align: center;">
-                    <div style="font-size: 3rem; font-weight: 700; margin-bottom: 1rem;">95%</div>
-                    <h3 style="color: #E0F2F1;">Satisfaction Rate</h3>
-                    <p style="color: #E0F2F1;">Patients recommend our services</p>
-                </div>
-
-                <div style="text-align: center;">
-                    <div style="font-size: 3rem; font-weight: 700; margin-bottom: 1rem;">200+</div>
-                    <h3 style="color: #E0F2F1;">Medical Partners</h3>
-                    <p style="color: #E0F2F1;">Specialists and healthcare facilities</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Team Section -->
-    <section class="container">
-        <h2 class="section-title">Leadership Team</h2>
-        <p class="section-subtitle">Meet the dedicated professionals working to transform global healthcare
-            accessibility.</p>
-
-        <div class="grid grid-3">
-            <div class="card">
+    <!-- WHAT MAKES US DIFFERENT - FEATURE BLOCKS -->
+    <section style="padding: 4rem 0; background: linear-gradient(180deg, #ffffff 0%, #f0f9ff 100%);">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 3rem;">
                 <div
-                    style="width: 100px; height: 100px; background: linear-gradient(135deg, var(--light-color) 0%, #E0F2F1 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-                    <i class="fas fa-user-tie" style="font-size: 2rem; color: var(--primary-color);"></i>
+                    style="display: inline-block; background: linear-gradient(135deg, rgba(0,150,136,0.1) 0%, rgba(77,182,172,0.1) 100%); border-radius: 50px; padding: 0.5rem 1.5rem; margin-bottom: 1rem;">
+                    <span style="color: #009688; font-weight: 700; font-size: 0.9rem; letter-spacing: 2px;">WHY CHOOSE
+                        HEALIO</span>
                 </div>
-                <h3>Dr. Sarah Mitchell</h3>
-                <p style="color: var(--primary-color); font-weight: 600; margin-bottom: 1rem;">Chief Medical Officer</p>
-                <p>Former Johns Hopkins specialist with 20+ years in international healthcare coordination and patient
-                    advocacy.</p>
-            </div>
-
-            <div class="card">
-                <div
-                    style="width: 100px; height: 100px; background: linear-gradient(135deg, var(--light-color) 0%, #E0F2F1 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-                    <i class="fas fa-user-tie" style="font-size: 2rem; color: var(--primary-color);"></i>
-                </div>
-                <h3>Raj Patel</h3>
-                <p style="color: var(--primary-color); font-weight: 600; margin-bottom: 1rem;">CEO & Founder</p>
-                <p>Healthcare entrepreneur with expertise in medical tourism and global healthcare networks. MIT
-                    Business School alumnus.</p>
-            </div>
-
-            <div class="card">
-                <div
-                    style="width: 100px; height: 100px; background: linear-gradient(135deg, var(--light-color) 0%, #E0F2F1 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-                    <i class="fas fa-user-tie" style="font-size: 2rem; color: var(--primary-color);"></i>
-                </div>
-                <h3>Maria Rodriguez</h3>
-                <p style="color: var(--primary-color); font-weight: 600; margin-bottom: 1rem;">Head of Patient Services
+                <h2
+                    style="font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 900; color: #0f172a; margin-bottom: 0.75rem; letter-spacing: -1px;">
+                    What Makes Us <span
+                        style="background: linear-gradient(135deg, #009688 0%, #4db6ac 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Different</span>
+                </h2>
+                <p style="color: #64748b; font-size: 1.1rem; max-width: 700px; margin: 0 auto;">
+                    Exceptional care powered by innovation and compassion
                 </p>
-                <p>Registered nurse with 15+ years in patient care coordination and international healthcare logistics
-                    management.</p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;">
+                <!-- Feature 1 -->
+                <div
+                    style="background: white; border-radius: 25px; padding: 3rem; box-shadow: 0 20px 60px rgba(0,0,0,0.08); border: 2px solid transparent; transition: all 0.4s ease; position: relative; overflow: hidden;">
+                    <div
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, #009688 0%, #4db6ac 100%);">
+                    </div>
+                    <div
+                        style="width: 70px; height: 70px; background: linear-gradient(135deg, rgba(0,150,136,0.15) 0%, rgba(77,182,172,0.1) 100%); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                        <i class="fas fa-network-wired" style="font-size: 2.5rem; color: #009688;"></i>
+                    </div>
+                    <h3 style="font-size: 1.7rem; font-weight: 800; color: #0f172a; margin-bottom: 1.2rem;">Global
+                        Network</h3>
+                    <p style="color: #64748b; line-height: 1.8; font-size: 1.05rem;">
+                        We've built partnerships with leading medical institutions and specialists across multiple
+                        countries, giving you access to a truly global healthcare network.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div
+                    style="background: white; border-radius: 25px; padding: 3rem; box-shadow: 0 20px 60px rgba(0,0,0,0.08); border: 2px solid transparent; transition: all 0.4s ease; position: relative; overflow: hidden;">
+                    <div
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, #4db6ac 0%, #009688 100%);">
+                    </div>
+                    <div
+                        style="width: 70px; height: 70px; background: linear-gradient(135deg, rgba(77,182,172,0.15) 0%, rgba(0,150,136,0.1) 100%); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                        <i class="fas fa-user-md" style="font-size: 2.5rem; color: #009688;"></i>
+                    </div>
+                    <h3 style="font-size: 1.7rem; font-weight: 800; color: #0f172a; margin-bottom: 1.2rem;">Personalized
+                        Care</h3>
+                    <p style="color: #64748b; line-height: 1.8; font-size: 1.05rem;">
+                        Every patient receives individualized attention. We take time to understand your unique
+                        situation and match you with the most appropriate care options.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div
+                    style="background: white; border-radius: 25px; padding: 3rem; box-shadow: 0 20px 60px rgba(0,0,0,0.08); border: 2px solid transparent; transition: all 0.4s ease; position: relative; overflow: hidden;">
+                    <div
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, #00e5ff 0%, #009688 100%);">
+                    </div>
+                    <div
+                        style="width: 70px; height: 70px; background: linear-gradient(135deg, rgba(0,229,255,0.15) 0%, rgba(0,150,136,0.1) 100%); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                        <i class="fas fa-shield-alt" style="font-size: 2.5rem; color: #009688;"></i>
+                    </div>
+                    <h3 style="font-size: 1.7rem; font-weight: 800; color: #0f172a; margin-bottom: 1.2rem;">Quality
+                        Assurance</h3>
+                    <p style="color: #64748b; line-height: 1.8; font-size: 1.05rem;">
+                        All our partner healthcare providers are rigorously vetted for quality, safety standards, and
+                        patient satisfaction to ensure you receive the best care possible.
+                    </p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div
+                    style="background: white; border-radius: 25px; padding: 3rem; box-shadow: 0 20px 60px rgba(0,0,0,0.08); border: 2px solid transparent; transition: all 0.4s ease; position: relative; overflow: hidden;">
+                    <div
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, #00ffaa 0%, #4db6ac 100%);">
+                    </div>
+                    <div
+                        style="width: 70px; height: 70px; background: linear-gradient(135deg, rgba(0,255,170,0.15) 0%, rgba(77,182,172,0.1) 100%); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                        <i class="fas fa-hands-helping" style="font-size: 2.5rem; color: #009688;"></i>
+                    </div>
+                    <h3 style="font-size: 1.7rem; font-weight: 800; color: #0f172a; margin-bottom: 1.2rem;">End-to-End
+                        Support</h3>
+                    <p style="color: #64748b; line-height: 1.8; font-size: 1.05rem;">
+                        From initial consultation to post-treatment follow-up, we're with you every step of the way,
+                        handling logistics so you can focus on your health.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Call to Action -->
-    <section style="background-color: var(--light-gray);">
-        <div class="container text-center">
-            <h2>Ready to Experience the Healio Difference?</h2>
-            <p style="font-size: 1.1rem; margin-bottom: 2rem;">Join thousands of patients who have found better
-                healthcare solutions with our personalized approach.</p>
-            <a href="contact.html" class="btn btn-primary">Get Your Free Consultation</a>
+    <!-- IMPACT NUMBERS - ULTRA BOLD -->
+    <section
+        style="padding: 4rem 0; background: linear-gradient(135deg, #000000 0%, #0a1f1c 100%); position: relative; overflow: hidden;">
+        <!-- Animated Background -->
+        <div class="animate-gradient"
+            style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,150,136,0.2) 0%, transparent 40%, rgba(77,182,172,0.15) 70%, transparent 100%); background-size: 200% 200%;">
+        </div>
+
+        <!-- Glowing Orbs -->
+        <div
+            style="position: absolute; top: 10%; left: 10%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(0,255,170,0.2) 0%, transparent 70%); filter: blur(80px); animation: float 10s ease-in-out infinite;">
+        </div>
+        <div
+            style="position: absolute; bottom: 10%; right: 10%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(0,229,255,0.15) 0%, transparent 70%); filter: blur(80px); animation: float 12s ease-in-out infinite;">
+        </div>
+
+        <div class="container" style="position: relative; z-index: 10;">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h2
+                    style="color: white; font-size: clamp(2.5rem, 5vw, 3.8rem); font-weight: 900; margin-bottom: 1rem; letter-spacing: -1px;">
+                    Our Impact by the <span
+                        style="background: linear-gradient(135deg, #00ffaa 0%, #00e5ff 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Numbers</span>
+                </h2>
+                <p style="color: #94a3b8; font-size: 1.15rem; max-width: 650px; margin: 0 auto;">
+                    Real results from our commitment to accessible healthcare
+                </p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+                <!-- Stat 1 -->
+                <div
+                    style="text-align: center; background: rgba(255,255,255,0.03); backdrop-filter: blur(20px); border: 2px solid rgba(0,255,170,0.3); border-radius: 30px; padding: 3rem 2rem; position: relative; overflow: hidden; animation: glow 4s ease-in-out infinite;">
+                    <div
+                        style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,255,170,0.1) 0%, transparent 100%); z-index: 1;">
+                    </div>
+                    <div style="position: relative; z-index: 2;">
+                        <div
+                            style="font-size: clamp(3.5rem, 7vw, 5rem); font-weight: 900; background: linear-gradient(135deg, #00ffaa 0%, #4db6ac 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.75rem; line-height: 1;">
+                            5,000+
+                        </div>
+                        <h3 style="color: white; font-size: 1.8rem; font-weight: 700; margin-bottom: 1rem;">Patients
+                            Helped</h3>
+                        <p style="color: #94a3b8; font-size: 1.1rem;">Across 45 countries worldwide</p>
+                    </div>
+                </div>
+
+                <!-- Stat 2 -->
+                <div
+                    style="text-align: center; background: rgba(255,255,255,0.03); backdrop-filter: blur(20px); border: 2px solid rgba(0,229,255,0.3); border-radius: 30px; padding: 3rem 2rem; position: relative; overflow: hidden; animation: glow 4s ease-in-out infinite; animation-delay: 0.5s; transform: translateY(-20px);">
+                    <div
+                        style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,229,255,0.1) 0%, transparent 100%); z-index: 1;">
+                    </div>
+                    <div style="position: relative; z-index: 2;">
+                        <div
+                            style="font-size: clamp(3.5rem, 7vw, 5rem); font-weight: 900; background: linear-gradient(135deg, #00e5ff 0%, #4db6ac 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.75rem; line-height: 1;">
+                            95%
+                        </div>
+                        <h3 style="color: white; font-size: 1.8rem; font-weight: 700; margin-bottom: 1rem;">Satisfaction
+                            Rate</h3>
+                        <p style="color: #94a3b8; font-size: 1.1rem;">Patients recommend our services</p>
+                    </div>
+                </div>
+
+                <!-- Stat 3 -->
+                <div
+                    style="text-align: center; background: rgba(255,255,255,0.03); backdrop-filter: blur(20px); border: 2px solid rgba(77,182,172,0.3); border-radius: 30px; padding: 3rem 2rem; position: relative; overflow: hidden; animation: glow 4s ease-in-out infinite; animation-delay: 1s;">
+                    <div
+                        style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(77,182,172,0.1) 0%, transparent 100%); z-index: 1;">
+                    </div>
+                    <div style="position: relative; z-index: 2;">
+                        <div
+                            style="font-size: clamp(3.5rem, 7vw, 5rem); font-weight: 900; background: linear-gradient(135deg, #4db6ac 0%, #009688 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.75rem; line-height: 1;">
+                            200+
+                        </div>
+                        <h3 style="color: white; font-size: 1.8rem; font-weight: 700; margin-bottom: 1rem;">Medical
+                            Partners</h3>
+                        <p style="color: #94a3b8; font-size: 1.1rem;">Specialists and healthcare facilities</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MEGA CTA -->
+    <section
+        style="padding: 4rem 0; background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%); position: relative; overflow: hidden;">
+        <div
+            style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 800px; height: 800px; background: radial-gradient(circle, rgba(0,150,136,0.1) 0%, transparent 70%); animation: float 8s ease-in-out infinite;">
+        </div>
+
+        <div class="container text-center" style="position: relative; z-index: 10;">
+            <div style="max-width: 900px; margin: 0 auto;">
+                <h2
+                    style="font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 900; color: #0f172a; margin-bottom: 1.5rem; line-height: 1.2; letter-spacing: -1px;">
+                    Ready to Experience the<br>
+                    <span
+                        style="background: linear-gradient(135deg, #009688 0%, #00e5ff 50%, #4db6ac 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Healio
+                        Difference?</span>
+                </h2>
+
+                <p
+                    style="font-size: 1.2rem; color: #64748b; margin-bottom: 2.5rem; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.7;">
+                    Join thousands of patients who have found better healthcare solutions with our personalized
+                    approach.
+                </p>
+
+                <a href="contact.html"
+                    style="display: inline-block; background: linear-gradient(135deg, #009688 0%, #00796b 100%); color: white; padding: 1.5rem 4rem; font-size: 1.2rem; font-weight: 700; border-radius: 60px; text-decoration: none; box-shadow: 0 20px 50px rgba(0,150,136,0.4); transition: all 0.3s ease; letter-spacing: 0.5px; border: 2px solid transparent; animation: glow 3s ease-in-out infinite;">
+                    Get Your Free Consultation →
+                </a>
+            </div>
         </div>
     </section>
 
@@ -345,8 +609,8 @@
                 <h3>Contact Info</h3>
                 <ul>
                     <li><i class="fas fa-envelope"></i> healiowelness@gmail.com</li>
-                    <li><i class="fas fa-phone"></i> +91-98765-43210</li>
-                    <li><i class="fab fa-whatsapp"></i> WhatsApp: +91-98765-43210</li>
+                    <li><i class="fas fa-phone"></i> +91-8762204773</li>
+                    <li><i class="fab fa-whatsapp"></i> WhatsApp: +91-8762204773</li>
                 </ul>
             </div>
         </div>
@@ -360,11 +624,10 @@
                 </div>
             </div>
         </div>
-        </div>
     </footer>
 
     <!-- WhatsApp Floating Button -->
-    <a href="#" class="whatsapp-float"
+    <a href="https://wa.me/918762204773" class="whatsapp-float"
         style="position: fixed; bottom: 20px; right: 20px; background-color: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; text-decoration: none; box-shadow: var(--shadow-hover); z-index: 1000; transition: var(--transition);">
         <i class="fab fa-whatsapp"></i>
     </a>

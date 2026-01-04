@@ -13,61 +13,73 @@
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://heliowellnes.com/services.html">
 
-    <!-- Open Graph tags for social sharing -->
-    <meta property="og:title" content="Healio Healthcare Services - Medical Tourism, Second Opinions & Nursing Care">
-    <meta property="og:description"
-        content="Comprehensive healthcare services: Expert medical second opinions, affordable medical tourism, skilled nursing care, and HydraFacial treatments.">
+    <!-- Meta tags -->
+    <meta property="og:title" content="Healio Healthcare Services">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://heliowellnes.com/services.html">
-    <meta property="og:image"
-        content="https://heliowellnes.com/assets/icons/WhatsApp_Image_2025-11-01_at_11.50.08_1a0ff362-removebg-preview.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Healio healthcare services overview">
-    <meta property="og:site_name" content="Healio">
-
-    <!-- Twitter Card tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@Healiowelness">
-    <meta name="twitter:title" content="Healio Healthcare Services">
-    <meta name="twitter:description"
-        content="Expert medical opinions, affordable medical tourism, skilled nursing care, and advanced HydraFacial treatments.">
-    <meta name="twitter:image"
-        content="https://heliowellnes.com/assets/icons/WhatsApp_Image_2025-11-01_at_11.50.08_1a0ff362-removebg-preview.png">
-
-    <!-- Additional SEO meta tags -->
     <meta name="theme-color" content="#009688">
-    <meta name="msapplication-TileColor" content="#009688">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png"
         href="assets/icons/WhatsApp_Image_2025-11-01_at_11.50.08_1a0ff362-removebg-preview.png">
 
-    <!-- Sitemap and Robots -->
-    <link rel="sitemap" type="application/xml" href="sitemap.xml">
-
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/styles.css">
-
-    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-    <!-- Vercel Web Analytics -->
-    <script>
-        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-    </script>
-    <script defer src="/_vercel/insights/script.js"></script>
+    <style>
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes glow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(0, 150, 136, 0.3);
+            }
+
+            50% {
+                box-shadow: 0 0 40px rgba(0, 150, 136, 0.6);
+            }
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .animate-gradient {
+            background-size: 200% 200%;
+            animation: gradient 8s ease infinite;
+        }
+    </style>
 </head>
 
 <body>
-    <!-- Header -->
     <header>
         <nav class="container">
             <a href="index.html" class="logo">
                 <img src="assets/icons/WhatsApp_Image_2025-11-01_at_11.50.08_1a0ff362-removebg-preview.png"
-                    alt="Healio - Global Healthcare Platform Logo" class="logo-img">
+                    alt="Healio Logo" class="logo-img">
             </a>
-
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
@@ -76,384 +88,563 @@
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="contact.html" class="nav-cta"><span>Book Consultation</span></a></li>
             </ul>
-
-            <button class="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <button class="menu-toggle"><span></span><span></span><span></span></button>
         </nav>
     </header>
 
-    <!-- Breadcrumb Navigation -->\n <nav class=\"breadcrumb\" style=\"background-color: #f8f9fa; padding: 1rem 0;
-        font-size: 0.9rem;\">\n <div class=\"container\">\n <ol style=\"display: flex; list-style: none; padding: 0;
-                margin: 0; align-items: center;\">\n <li><a href=\"index.html\" style=\"color: var(--primary-color);
-                        text-decoration: none;\">Home</a></li>\n <li style=\"margin: 0 0.5rem; color: #666;\">></li>\n
-                <li style=\"color: #666;\">Services</li>\n </ol>\n </div>\n </nav>\n\n <!-- Hero Section -->
-    <section class="hero">
+    <!-- HERO -->
+    <section
+        style="position: relative; min-height: 70vh; display: flex; align-items: center; background: linear-gradient(135deg, #000000 0%, #0a1f1c 100%); overflow: hidden;">
+        <div class="animate-gradient"
+            style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,150,136,0.2) 0%, transparent 40%, rgba(77,182,172,0.1) 100%); z-index: 1;">
+        </div>
+        <div
+            style="position: absolute; bottom: 20%; right: 10%; width: 350px; height: 350px; background: radial-gradient(circle, rgba(0,255,170,0.15) 0%, transparent 70%); border-radius: 50%; animation: float 6s ease-in-out infinite; z-index: 2;">
+        </div>
+
+        <div class="container" style="position: relative; z-index: 10; text-align: center; padding: 3rem 0;">
+            <div
+                style="display: inline-block; background: rgba(0,150,136,0.15); backdrop-filter: blur(10px); border: 1px solid rgba(0,150,136,0.3); border-radius: 50px; padding: 0.5rem 1.5rem; margin-bottom: 1.5rem;">
+                <span style="color: #4db6ac; font-weight: 600; font-size: 0.9rem; letter-spacing: 2px;">OUR
+                    SERVICES</span>
+            </div>
+            <h1
+                style="color: white; font-size: clamp(3rem, 7vw, 5rem); font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem; letter-spacing: -2px;">
+                Our Healthcare <span
+                    style="background: linear-gradient(135deg, #00ffaa 0%, #00e5ff 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Solutions</span>
+            </h1>
+            <p
+                style="color: #94a3b8; font-size: clamp(1.1rem, 2vw, 1.3rem); max-width: 750px; margin: 0 auto; line-height: 1.7;">
+                Comprehensive healthcare from diagnosis to recovery, connecting you with world-class medical expertise
+                globally.
+            </p>
+        </div>
+    </section>
+
+    <!-- QUICK LINKS -->
+    <section style="padding: 3rem 0; background: white;">
         <div class="container">
-            <h1>Our Healthcare Services</h1>
-            <p>Healio provides comprehensive healthcare solutions from diagnosis to recovery, connecting you with
-                world-class medical expertise globally.</p>
-        </div>
-    </section>
-
-    <!-- Services Overview -->
-    <section class="container">
-        <div class="grid grid-4">
-            <div class="card">
-                <div class="card-icon">
-                    <i class="fas fa-stethoscope"></i>
-                </div>
-                <h3>Medical Second Opinion</h3>
-                <p>Get clarity and confidence in your treatment decisions</p>
-                <a href="#second-opinion" class="btn btn-primary">Learn More</a>
-            </div>
-
-            <div class="card">
-                <div class="card-icon">
-                    <i class="fas fa-plane"></i>
-                </div>
-                <h3>Medical Tourism</h3>
-                <p>Access world-class treatments at affordable prices</p>
-                <a href="#medical-tourism" class="btn btn-primary">Learn More</a>
-            </div>
-
-            <div class="card">
-                <div class="card-icon">
-                    <i class="fas fa-heart"></i>
-                </div>
-                <h3>Skilled Nursing Care</h3>
-                <p>Professional care for recovery and ongoing health needs</p>
-                <a href="#nursing-care" class="btn btn-primary">Learn More</a>
-            </div>
-
-            <div class="card">
-                <div class="card-icon">
-                    <i class="fas fa-spa"></i>
-                </div>
-                <h3>HydraFacial Treatment</h3>
-                <p>Advanced skincare technology for radiant, healthy skin</p>
-                <a href="#hydrafacial" class="btn btn-primary">Learn More</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Service 1: Medical Second Opinion -->
-    <section id="second-opinion" class="container">
-        <div class="service-header">
-            <div class="service-image">
-                <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                    alt="Medical consultation and second opinion" class="service-img">
-            </div>
-            <div class="service-content">
-                <div class="service-badge">
-                    <i class="fas fa-stethoscope"></i>
-                    <span>Expert Medical Consultation</span>
-                </div>
-                <h2>Medical Second Opinion</h2>
-                <p class="service-subtitle">Get clarity and confidence in your treatment decisions with expert medical
-                    opinions from leading specialists worldwide.</p>
-
-                <div class="service-features">
-                    <div class="feature">
-                        <i class="fas fa-file-medical"></i>
-                        <div>
-                            <h4>Medical Record Review</h4>
-                            <p>Comprehensive analysis of your medical history and current condition</p>
-                        </div>
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;">
+                <a href="#second-opinion"
+                    style="background: linear-gradient(135deg, rgba(0,150,136,0.1) 0%, rgba(77,182,172,0.05) 100%); padding: 2rem 1.5rem; border-radius: 20px; text-decoration: none; text-align: center; border: 2px solid rgba(0,150,136,0.2); transition: all 0.3s ease;">
+                    <div
+                        style="width: 60px; height: 60px; background: linear-gradient(135deg, #009688 0%, #4db6ac 100%); border-radius: 15px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; box-shadow: 0 10px 25px rgba(0,150,136,0.3);">
+                        <i class="fas fa-stethoscope" style="font-size: 1.8rem; color: white;"></i>
                     </div>
-                    <div class="feature">
-                        <i class="fas fa-user-md"></i>
-                        <div>
-                            <h4>Specialist Consultation</h4>
-                            <p>Direct access to leading specialists in your condition</p>
-                        </div>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-clipboard-check"></i>
-                        <div>
-                            <h4>Treatment Options</h4>
-                            <p>Alternative treatment plans and latest medical advances</p>
-                        </div>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-shield-alt"></i>
-                        <div>
-                            <h4>Peace of Mind</h4>
-                            <p>Confidence in your medical decisions with expert validation</p>
-                        </div>
-                    </div>
-                </div>
+                    <h3 style="color: #0f172a; font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem;">Medical
+                        Second Opinion</h3>
+                    <p style="color: #64748b; font-size: 0.95rem; margin: 0;">Get clarity & confidence</p>
+                </a>
 
-                <div class="service-benefits">
-                    <h4>Key Benefits:</h4>
-                    <div class="benefits-grid">
-                        <span class="benefit-tag">Diagnosis Confirmation</span>
-                        <span class="benefit-tag">Alternative Options</span>
-                        <span class="benefit-tag">Latest Advances</span>
-                        <span class="benefit-tag">Error Prevention</span>
-                        <span class="benefit-tag">Expert Insights</span>
-                        <span class="benefit-tag">Treatment Clarity</span>
+                <a href="#medical-tourism"
+                    style="background: linear-gradient(135deg, rgba(0,229,255,0.1) 0%, rgba(0,150,136,0.05) 100%); padding: 2rem 1.5rem; border-radius: 20px; text-decoration: none; text-align: center; border: 2px solid rgba(0,229,255,0.2); transition: all 0.3s ease;">
+                    <div
+                        style="width: 60px; height: 60px; background: linear-gradient(135deg, #00e5ff 0%, #009688 100%); border-radius: 15px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; box-shadow: 0 10px 25px rgba(0,229,255,0.3);">
+                        <i class="fas fa-plane" style="font-size: 1.8rem; color: white;"></i>
                     </div>
-                </div>
+                    <h3 style="color: #0f172a; font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem;">Medical
+                        Tourism</h3>
+                    <p style="color: #64748b; font-size: 0.95rem; margin: 0;">World-class affordable care</p>
+                </a>
 
-                <div class="service-cta">
-                    <a href="contact.html" class="btn btn-primary">Get Second Opinion</a>
-                    <a href="contact.html" class="btn btn-secondary">Book Consultation</a>
-                </div>
+                <a href="#nursing-care"
+                    style="background: linear-gradient(135deg, rgba(77,182,172,0.1) 0%, rgba(0,150,136,0.05) 100%); padding: 2rem 1.5rem; border-radius: 20px; text-decoration: none; text-align: center; border: 2px solid rgba(77,182,172,0.2); transition: all 0.3s ease;">
+                    <div
+                        style="width: 60px; height: 60px; background: linear-gradient(135deg, #4db6ac 0%, #009688 100%); border-radius: 15px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; box-shadow: 0 10px 25px rgba(77,182,172,0.3);">
+                        <i class="fas fa-heart" style="font-size: 1.8rem; color: white;"></i>
+                    </div>
+                    <h3 style="color: #0f172a; font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem;">Skilled
+                        Nursing Care</h3>
+                    <p style="color: #64748b; font-size: 0.95rem; margin: 0;">Professional recovery care</p>
+                </a>
+
+                <a href="#hydrafacial"
+                    style="background: linear-gradient(135deg, rgba(0,255,170,0.1) 0%, rgba(77,182,172,0.05) 100%); padding: 2rem 1.5rem; border-radius: 20px; text-decoration: none; text-align: center; border: 2px solid rgba(0,255,170,0.2); transition: all 0.3s ease;">
+                    <div
+                        style="width: 60px; height: 60px; background: linear-gradient(135deg, #00ffaa 0%, #4db6ac 100%); border-radius: 15px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; box-shadow: 0 10px 25px rgba(0,255,170,0.3);">
+                        <i class="fas fa-spa" style="font-size: 1.8rem; color: white;"></i>
+                    </div>
+                    <h3 style="color: #0f172a; font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem;">HydraFacial
+                    </h3>
+                    <p style="color: #64748b; font-size: 0.95rem; margin: 0;">Advanced skincare tech</p>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Service 2: Medical Tourism -->
-    <section id="medical-tourism" style="background-color: var(--light-gray);">
+    <!-- SERVICE 1: SECOND OPINION -->
+    <section id="second-opinion"
+        style="padding: 4rem 0; background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);">
         <div class="container">
-            <div class="service-header">
-                <div class="service-image">
-                    <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                        alt="Medical tourism and international healthcare" class="service-img">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+                <div
+                    style="position: relative; border-radius: 30px; overflow: hidden; box-shadow: 0 25px 50px rgba(0,0,0,0.15);">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80"
+                        alt="Medical Second Opinion" style="width: 100%; display: block;">
+                    <div
+                        style="position: absolute; bottom: 20px; left: 20px; background: linear-gradient(135deg, rgba(0,150,136,0.95) 0%, rgba(0,0,0,0.9) 100%); backdrop-filter: blur(10px); padding: 1rem 1.5rem; border-radius: 15px;">
+                        <div style="display: flex; align-items: center; gap: 0.75rem;">
+                            <i class="fas fa-stethoscope" style="color: #00ffaa; font-size: 1.5rem;"></i>
+                            <span style="color: white; font-weight: 700;">Expert Medical Consultation</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-content">
-                    <div class="service-badge">
-                        <i class="fas fa-plane"></i>
-                        <span>Global Healthcare Access</span>
-                    </div>
-                    <h2>Medical Tourism</h2>
-                    <p class="service-subtitle">Access world-class medical treatments at affordable prices with
-                        comprehensive travel and care coordination.</p>
 
-                    <div class="service-features">
-                        <div class="feature">
-                            <i class="fas fa-hospital"></i>
+                <div>
+                    <h2
+                        style="font-size: 2.8rem; font-weight: 900; color: #0f172a; margin-bottom: 1.5rem; line-height: 1.2;">
+                        Medical <span
+                            style="background: linear-gradient(135deg, #009688 0%, #4db6ac 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Second
+                            Opinion</span>
+                    </h2>
+                    <p style="color: #64748b; font-size: 1.15rem; line-height: 1.8; margin-bottom: 2.5rem;">
+                        Get clarity and confidence in your treatment decisions with expert medical opinions from leading
+                        specialists worldwide.
+                    </p>
+
+                    <div style="display: grid; gap: 1.5rem; margin-bottom: 2.5rem;">
+                        <div style="display: flex; gap: 1rem; align-items: start;">
+                            <div
+                                style="width: 50px; height: 50px; background: linear-gradient(135deg, rgba(0,150,136,0.15) 0%, rgba(77,182,172,0.1) 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i class="fas fa-file-medical" style="color: #009688; font-size: 1.3rem;"></i>
+                            </div>
                             <div>
-                                <h4>Hospital Coordination</h4>
-                                <p>Direct partnerships with internationally accredited medical facilities</p>
+                                <h4 style="color: #0f172a; font-weight: 700; margin-bottom: 0.5rem;">Medical Record
+                                    Review</h4>
+                                <p style="color: #64748b; margin: 0;">Comprehensive analysis of your medical history and
+                                    current condition</p>
                             </div>
                         </div>
-                        <div class="feature">
-                            <i class="fas fa-plane-departure"></i>
+
+                        <div style="display: flex; gap: 1rem; align-items: start;">
+                            <div
+                                style="width: 50px; height: 50px; background: linear-gradient(135deg, rgba(0,150,136,0.15) 0%, rgba(77,182,172,0.1) 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i class="fas fa-user-md" style="color: #009688; font-size: 1.3rem;"></i>
+                            </div>
                             <div>
-                                <h4>Travel Arrangements</h4>
-                                <p>Complete travel planning including flights, visas, and accommodation</p>
+                                <h4 style="color: #0f172a; font-weight: 700; margin-bottom: 0.5rem;">Specialist
+                                    Consultation</h4>
+                                <p style="color: #64748b; margin: 0;">Direct access to leading specialists in your
+                                    condition</p>
                             </div>
                         </div>
-                        <div class="feature">
-                            <i class="fas fa-language"></i>
-                            <div>
-                                <h4>Language Support</h4>
-                                <p>Professional medical interpretation and communication assistance</p>
+
+                        <div style="display: flex; gap: 1rem; align-items: start;">
+                            <div
+                                style="width: 50px; height: 50px; background: linear-gradient(135deg, rgba(0,150,136,0.15) 0%, rgba(77,182,172,0.1) 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i class="fas fa-clipboard-check" style="color: #009688; font-size: 1.3rem;"></i>
                             </div>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-percent"></i>
                             <div>
-                                <h4>Cost Savings</h4>
-                                <p>Save 40-80% compared to US/UK treatment costs</p>
+                                <h4 style="color: #0f172a; font-weight: 700; margin-bottom: 0.5rem;">Treatment Options
+                                </h4>
+                                <p style="color: #64748b; margin: 0;">Alternative treatment plans and latest medical
+                                    advances</p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="service-benefits">
-                        <h4>Popular Destinations:</h4>
-                        <div class="benefits-grid">
-                            <span class="benefit-tag">India - Cardiac</span>
-                            <span class="benefit-tag">Thailand - Cosmetic</span>
-                            <span class="benefit-tag">Singapore - Cancer</span>
-                            <span class="benefit-tag">Turkey - Hair Transplant</span>
-                            <span class="benefit-tag">South Korea - Plastic Surgery</span>
-                            <span class="benefit-tag">Mexico - Dental</span>
+                    <div
+                        style="background: rgba(0,150,136,0.05); border-radius: 15px; padding: 1.5rem; margin-bottom: 2rem;">
+                        <h4 style="color: #0f172a; font-weight: 700; margin-bottom: 1rem;">Key Benefits:</h4>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
+                            <span
+                                style="background: white; color: #009688; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600; border: 1px solid rgba(0,150,136,0.2);">Diagnosis
+                                Confirmation</span>
+                            <span
+                                style="background: white; color:#009688; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600; border: 1px solid rgba(0,150,136,0.2);">Alternative
+                                Options</span>
+                            <span
+                                style="background: white; color: #009688; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600; border: 1px solid rgba(0,150,136,0.2);">Latest
+                                Advances</span>
+                            <span
+                                style="background: white; color: #009688; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600; border: 1px solid rgba(0,150,136,0.2);">Error
+                                Prevention</span>
+                            <span
+                                style="background: white; color: #009688; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600; border: 1px solid rgba(0,150,136,0.2);">Expert
+                                Insights</span>
+                            <span
+                                style="background: white; color: #009688; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600; border: 1px solid rgba(0,150,136,0.2);">Treatment
+                                Clarity</span>
                         </div>
                     </div>
 
-                    <div class="service-cta">
-                        <a href="contact.html" class="btn btn-primary">Plan Your Treatment</a>
-                        <a href="contact.html" class="btn btn-secondary">Get Quote</a>
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="contact.html"
+                            style="display: inline-block; background: linear-gradient(135deg, #009688 0%, #00796b 100%); color: white; padding: 1rem 2.5rem; font-weight: 700; border-radius: 50px; text-decoration: none; box-shadow: 0 10px 30px rgba(0,150,136,0.3);">Get
+                            Second Opinion</a>
+                        <a href="contact.html"
+                            style="display: inline-block; background: rgba(0,150,136,0.1); color: #009688; padding: 1rem 2.5rem; font-weight: 700; border-radius: 50px; text-decoration: none; border: 2px solid rgba(0,150,136,0.3);">Book
+                            Consultation</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Service 3: Skilled Nursing Care -->
-    <section id="nursing-care" class="container">
-        <div class="service-header">
-            <div class="service-image">
-                <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                    alt="Professional skilled nursing care services" class="service-img">
-            </div>
-            <div class="service-content">
-                <div class="service-badge">
-                    <i class="fas fa-user-nurse"></i>
-                    <span>Professional Care</span>
-                </div>
-                <h2>Skilled Nursing Care</h2>
-                <p class="service-subtitle">Professional medical support bridging hospital care and full recovery,
-                    providing specialized nursing services in home or facility settings.</p>
+    <!-- SERVICE 2: MEDICAL TOURISM -->
+    <section id="medical-tourism"
+        style="padding: 4rem 0; background: linear-gradient(135deg, #0e1e1b 0%, #000000 100%);">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+                <div>
+                    <div
+                        style="display: inline-block; background: rgba(0,229,255,0.15); backdrop-filter: blur(10px); padding: 0.5rem 1.2rem; border-radius: 25px; margin-bottom: 1.5rem; border: 1px solid rgba(0,229,255,0.3);">
+                        <span
+                            style="color: #00e5ff; font-weight: 600; font-size: 0.85rem; letter-spacing: 1.5px;">GLOBAL
+                            HEALTHCARE ACCESS</span>
+                    </div>
 
-                <div class="service-features">
-                    <div class="feature">
-                        <i class="fas fa-procedures"></i>
-                        <div>
-                            <h4>Post-Surgical Recovery</h4>
-                            <p>Specialized recovery care following major surgical procedures</p>
-                        </div>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-heartbeat"></i>
-                        <div>
-                            <h4>Chronic Disease Management</h4>
-                            <p>Ongoing care for diabetes, heart conditions, and chronic illnesses</p>
-                        </div>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-pills"></i>
-                        <div>
-                            <h4>Medication Management</h4>
-                            <p>Professional medication administration and health monitoring</p>
-                        </div>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-walking"></i>
-                        <div>
-                            <h4>Rehabilitation Support</h4>
-                            <p>Physical, occupational, and speech therapy coordination</p>
-                        </div>
-                    </div>
-                </div>
+                    <h2
+                        style="font-size: 2.8rem; font-weight: 900; color: white; margin-bottom: 1.5rem; line-height: 1.2;">
+                        Medical <span
+                            style="background: linear-gradient(135deg, #00e5ff 0%, #4db6ac 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Tourism</span>
+                    </h2>
+                    <p style="color: #94a3b8; font-size: 1.15rem; line-height: 1.8; margin-bottom: 2.5rem;">
+                        Access world-class medical treatments at affordable prices with comprehensive travel and care
+                        coordination.
+                    </p>
 
-                <div class="service-benefits">
-                    <h4>Care Team Professionals:</h4>
-                    <div class="benefits-grid">
-                        <span class="benefit-tag">Registered Nurses</span>
-                        <span class="benefit-tag">Licensed Practical Nurses</span>
-                        <span class="benefit-tag">Physical Therapists</span>
-                        <span class="benefit-tag">Speech Therapists</span>
-                        <span class="benefit-tag">Occupational Therapists</span>
-                        <span class="benefit-tag">24/7 Support Available</span>
-                    </div>
-                </div>
+                    <div style="display: grid; gap: 1.5rem; margin-bottom: 2.5rem;">
+                        <div style="display: flex; gap: 1rem;">
+                            <div
+                                style="width: 50px; height: 50px; background: rgba(0,229,255,0.15); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i class="fas fa-hospital" style="color: #00e5ff; font-size: 1.3rem;"></i>
+                            </div>
+                            <div>
+                                <h4 style="color: white; font-weight: 700; margin-bottom: 0.5rem;">Hospital Coordination
+                                </h4>
+                                <p style="color: #cbd5e1; margin: 0;">Direct partnerships with internationally
+                                    accredited medical facilities</p>
+                            </div>
+                        </div>
 
-                <div class="service-cta">
-                    <a href="contact.html" class="btn btn-primary">Request Care Services</a>
-                    <a href="contact.html" class="btn btn-secondary">Schedule Assessment</a>
-                </div>
-            </div>
-        </div>
-    </section>
+                        <div style="display: flex; gap: 1rem;">
+                            <div
+                                style="width: 50px; height: 50px; background: rgba(0,229,255,0.15); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i class="fas fa-plane-departure" style="color: #00e5ff; font-size: 1.3rem;"></i>
+                            </div>
+                            <div>
+                                <h4 style="color: white; font-weight: 700; margin-bottom: 0.5rem;">Travel Arrangements
+                                </h4>
+                                <p style="color: #cbd5e1; margin: 0;">Complete travel planning including flights, visas,
+                                    and accommodation</p>
+                            </div>
+                        </div>
 
-    <!-- HydraFacial Service -->
-    <section id="hydrafacial" class="container">
-        <div class="service-header">
-            <div class="service-image">
-                <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                    alt="HydraFacial treatment - advanced skincare technology" class="service-img">
-            </div>
-            <div class="service-content">
-                <div class="service-badge">
-                    <i class="fas fa-spa"></i>
-                    <span>Advanced Skincare</span>
-                </div>
-                <h2>HydraFacial Treatment</h2>
-                <p class="service-subtitle">Revolutionary non-surgical skin treatment that cleanses, exfoliates,
-                    extracts, and hydrates your skin for the ultimate glow.</p>
+                        <div style="display: flex; gap: 1rem;">
+                            <div
+                                style="width: 50px; height: 50px; background: rgba(0,229,255,0.15); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i class="fas fa-percent" style="color: #00e5ff; font-size: 1.3rem;"></i>
+                            </div>
+                            <div>
+                                <h4 style="color: white; font-weight: 700; margin-bottom: 0.5rem;">Cost Savings</h4>
+                                <p style="color: #cbd5e1; margin: 0;">Save 40-80% compared to US/UK treatment costs</p>
+                            </div>
+                        </div>
+                    </div>
 
-                <div class="service-features">
-                    <div class="feature">
-                        <i class="fas fa-magic"></i>
-                        <div>
-                            <h4>Advanced Technology</h4>
-                            <p>Multi-step machine treatment with vortex-fusion delivery system</p>
+                    <div
+                        style="background: rgba(0,229,255,0.05); border-radius: 15px; padding: 1.5rem; margin-bottom: 2rem; border: 1px solid rgba(0,229,255,0.2);">
+                        <h4 style="color: white; font-weight: 700; margin-bottom: 1rem;">Popular Destinations:</h4>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
+                            <span
+                                style="background: rgba(255,255,255,0.1); color: #00e5ff; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600;">India
+                                - Cardiac</span>
+                            <span
+                                style="background: rgba(255,255,255,0.1); color: #00e5ff; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600;">Thailand
+                                - Cosmetic</span>
+                            <span
+                                style="background: rgba(255,255,255,0.1); color: #00e5ff; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600;">Singapore
+                                - Cancer</span>
+                            <span
+                                style="background: rgba(255,255,255,0.1); color: #00e5ff; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600;">Turkey
+                                - Hair</span>
+                            <span
+                                style="background: rgba(255,255,255,0.1); color: #00e5ff; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600;">S.
+                                Korea - Plastic</span>
+                            <span
+                                style="background: rgba(255,255,255,0.1); color: #00e5ff; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600;">Mexico
+                                - Dental</span>
                         </div>
                     </div>
-                    <div class="feature">
-                        <i class="fas fa-droplet"></i>
-                        <div>
-                            <h4>Deep Hydration</h4>
-                            <p>Infuses high-quality serums and antioxidants for instant glow</p>
-                        </div>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-users"></i>
-                        <div>
-                            <h4>All Skin Types</h4>
-                            <p>Suitable for sensitive, oily, dry, and combination skin</p>
-                        </div>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-clock"></i>
-                        <div>
-                            <h4>Quick Treatment</h4>
-                            <p>Complete facial in just 40 minutes with instant results</p>
-                        </div>
+
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="contact.html"
+                            style="display: inline-block; background: linear-gradient(135deg, #00e5ff 0%, #009688 100%); color: white; padding: 1rem 2.5rem; font-weight: 700; border-radius: 50px; text-decoration: none; box-shadow: 0 10px 30px rgba(0,229,255,0.3);">Plan
+                            Your Treatment</a>
+                        <a href="contact.html"
+                            style="display: inline-block; background: rgba(0,229,255,0.1); color: #00e5ff; padding: 1rem 2.5rem; font-weight: 700; border-radius: 50px; text-decoration: none; border: 2px solid rgba(0,229,255,0.3);">Get
+                            Quote</a>
                     </div>
                 </div>
 
-                <div class="service-benefits">
-                    <h4>Key Benefits:</h4>
-                    <div class="benefits-grid">
-                        <span class="benefit-tag">Reduces Fine Lines</span>
-                        <span class="benefit-tag">Improves Skin Texture</span>
-                        <span class="benefit-tag">Deep Cleansing</span>
-                        <span class="benefit-tag">Instant Hydration</span>
-                        <span class="benefit-tag">Brightens Skin</span>
-                        <span class="benefit-tag">Minimizes Pores</span>
-                    </div>
-                </div>
-
-                <div class="service-cta">
-                    <a href="hydrafacial.html" class="btn btn-primary">Learn More About HydraFacial</a>
-                    <a href="contact.html" class="btn btn-secondary">Book Consultation</a>
+                <div
+                    style="position: relative; border-radius: 30px; overflow: hidden; box-shadow: 0 25px 50px rgba(0,0,0,0.3);">
+                    <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80"
+                        alt="Medical Tourism" style="width: 100%; display: block;">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why Choose Healio -->
-    <section class="container">
-        <h2 class="section-title">Why Choose Healio for Your Healthcare Needs</h2>
-
-        <div class="grid grid-3">
-            <div class="card">
-                <div class="card-icon">
-                    <i class="fas fa-award"></i>
+    <!-- SERVICE 3: NURSING CARE -->
+    <section id="nursing-care" style="padding: 4rem 0; background: linear-gradient(180deg, #ffffff 0%, #f0f9ff 100%);">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+                <div
+                    style="position: relative; border-radius: 30px; overflow: hidden; box-shadow: 0 25px 50px rgba(0,0,0,0.15);">
+                    <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=800&q=80"
+                        alt="Skilled Nursing" style="width: 100%; display: block;">
                 </div>
-                <h3>Accredited Partners</h3>
-                <p>All our healthcare partners are internationally accredited and maintain the highest quality
-                    standards.</p>
-            </div>
 
-            <div class="card">
-                <div class="card-icon">
-                    <i class="fas fa-money-bill-wave"></i>
-                </div>
-                <h3>Transparent Pricing</h3>
-                <p>No hidden fees. We provide upfront, transparent pricing for all services and treatments.</p>
-            </div>
+                <div>
+                    <h2
+                        style="font-size: 2.8rem; font-weight: 900; color: #0f172a; margin-bottom: 1.5rem; line-height: 1.2;">
+                        Skilled <span
+                            style="background: linear-gradient(135deg, #4db6ac 0%, #009688 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Nursing
+                            Care</span>
+                    </h2>
+                    <p style="color: #64748b; font-size: 1.15rem; line-height: 1.8; margin-bottom: 2.5rem;">
+                        Professional medical support bridging hospital care and full recovery, providing specialized
+                        nursing services in home or facility settings.
+                    </p>
 
-            <div class="card">
-                <div class="card-icon">
-                    <i class="fas fa-headset"></i>
+                    <div style="display: grid; gap: 1.5rem; margin-bottom: 2.5rem;">
+                        <div style="display: flex; gap: 1rem;">
+                            <div
+                                style="width: 50px; height: 50px; background: linear-gradient(135deg, rgba(77,182,172,0.15) 0%, rgba(0,150,136,0.1) 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i class="fas fa-procedures" style="color: #4db6ac; font-size: 1.3rem;"></i>
+                            </div>
+                            <div>
+                                <h4 style="color: #0f172a; font-weight: 700; margin-bottom: 0.5rem;">Post-Surgical
+                                    Recovery</h4>
+                                <p style="color: #64748b; margin: 0;">Specialized recovery care following major surgical
+                                    procedures</p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 1rem;">
+                            <div
+                                style="width: 50px; height: 50px; background: linear-gradient(135deg, rgba(77,182,172,0.15) 0%, rgba(0,150,136,0.1) 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i class="fas fa-heartbeat" style="color: #4db6ac; font-size: 1.3rem;"></i>
+                            </div>
+                            <div>
+                                <h4 style="color: #0f172a; font-weight: 700; margin-bottom: 0.5rem;">Chronic Disease
+                                    Management</h4>
+                                <p style="color: #64748b; margin: 0;">Ongoing care for diabetes, heart conditions, and
+                                    chronic illnesses</p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 1rem;">
+                            <div
+                                style="width: 50px; height: 50px; background: linear-gradient(135deg, rgba(77,182,172,0.15) 0%, rgba(0,150,136,0.1) 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i class="fas fa-walking" style="color: #4db6ac; font-size: 1.3rem;"></i>
+                            </div>
+                            <div>
+                                <h4 style="color: #0f172a; font-weight: 700; margin-bottom: 0.5rem;">Rehabilitation
+                                    Support</h4>
+                                <p style="color: #64748b; margin: 0;">Physical, occupational, and speech therapy
+                                    coordination</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        style="background: rgba(77,182,172,0.05); border-radius: 15px; padding: 1.5rem; margin-bottom: 2rem;">
+                        <h4 style="color: #0f172a; font-weight: 700; margin-bottom: 1rem;">Care Team Professionals:</h4>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
+                            <span
+                                style="background: white; color: #4db6ac; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600; border: 1px solid rgba(77,182,172,0.2);">Registered
+                                Nurses</span>
+                            <span
+                                style="background: white; color: #4db6ac; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600; border: 1px solid rgba(77,182,172,0.2);">Physical
+                                Therapists</span>
+                            <span
+                                style="background: white; color: #4db6ac; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600; border: 1px solid rgba(77,182,172,0.2);">Speech
+                                Therapists</span>
+                            <span
+                                style="background: white; color: #4db6ac; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600; border: 1px solid rgba(77,182,172,0.2);">24/7
+                                Support</span>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="contact.html"
+                            style="display: inline-block; background: linear-gradient(135deg, #4db6ac 0%, #009688 100%); color: white; padding: 1rem 2.5rem; font-weight: 700; border-radius: 50px; text-decoration: none; box-shadow: 0 10px 30px rgba(77,182,172,0.3);">Request
+                            Care Services</a>
+                        <a href="contact.html"
+                            style="display: inline-block; background: rgba(77,182,172,0.1); color: #4db6ac; padding: 1rem 2.5rem; font-weight: 700; border-radius: 50px; text-decoration: none; border: 2px solid rgba(77,182,172,0.3);">Schedule
+                            Assessment</a>
+                    </div>
                 </div>
-                <h3>24/7 Support</h3>
-                <p>Our dedicated support team is available around the clock to assist you throughout your healthcare
-                    journey.</p>
             </div>
         </div>
     </section>
 
-    <!-- Call to Action -->
-    <section style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-color) 100%);">
-        <div class="container text-center" style="color: white;">
-            <h2 style="color: white; margin-bottom: 1rem;">Ready to Get Started?</h2>
-            <p style="font-size: 1.1rem; margin-bottom: 2rem; color: #E0F2F1;">Choose the service that best fits your
-                needs, or speak with our team to create a customized healthcare plan.</p>
+    <!-- SERVICE 4: HYDRAFACIAL -->
+    <section id="hydrafacial" style="padding: 4rem 0; background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+                <div>
+                    <h2
+                        style="font-size: 2.8rem; font-weight: 900; color: #0f172a; margin-bottom: 1.5rem; line-height: 1.2;">
+                        HydraFacial <span
+                            style="background: linear-gradient(135deg, #00ffaa 0%, #4db6ac 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Treatment</span>
+                    </h2>
+                    <p style="color: #64748b; font-size: 1.15rem; line-height: 1.8; margin-bottom: 2.5rem;">
+                        Revolutionary non-surgical skin treatment that cleanses, exfoliates, extracts, and hydrates your
+                        skin for the ultimate glow.
+                    </p>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2.5rem;">
+                        <div
+                            style="text-align: center; background: rgba(0,255,170,0.05); padding: 1.5rem; border-radius: 15px;">
+                            <i class="fas fa-magic"
+                                style="font-size: 2rem; color: #00ffaa; margin-bottom: 0.75rem;"></i>
+                            <h4 style="color: #0f172a; font-weight: 700; margin-bottom: 0.5rem; font-size: 1.1rem;">
+                                Advanced Technology</h4>
+                            <p style="color: #64748b; font-size: 0.95rem; margin: 0;">Multi-step machine treatment</p>
+                        </div>
+
+                        <div
+                            style="text-align: center; background: rgba(0,255,170,0.05); padding: 1.5rem; border-radius: 15px;">
+                            <i class="fas fa-droplet"
+                                style="font-size: 2rem; color: #00ffaa; margin-bottom: 0.75rem;"></i>
+                            <h4 style="color: #0f172a; font-weight: 700; margin-bottom: 0.5rem; font-size: 1.1rem;">Deep
+                                Hydration</h4>
+                            <p style="color: #64748b; font-size: 0.95rem; margin: 0;">Instant glow & antioxidants</p>
+                        </div>
+
+                        <div
+                            style="text-align: center; background: rgba(0,255,170,0.05); padding: 1.5rem; border-radius: 15px;">
+                            <i class="fas fa-users"
+                                style="font-size: 2rem; color: #00ffaa; margin-bottom: 0.75rem;"></i>
+                            <h4 style="color: #0f172a; font-weight: 700; margin-bottom: 0.5rem; font-size: 1.1rem;">All
+                                Skin Types</h4>
+                            <p style="color: #64748b; font-size: 0.95rem; margin: 0;">Suitable for everyone</p>
+                        </div>
+
+                        <div
+                            style="text-align: center; background: rgba(0,255,170,0.05); padding: 1.5rem; border-radius: 15px;">
+                            <i class="fas fa-clock"
+                                style="font-size: 2rem; color: #00ffaa; margin-bottom: 0.75rem;"></i>
+                            <h4 style="color: #0f172a; font-weight: 700; margin-bottom: 0.5rem; font-size: 1.1rem;">
+                                Quick Treatment</h4>
+                            <p style="color: #64748b; font-size: 0.95rem; margin: 0;">Just 40 minutes!</p>
+                        </div>
+                    </div>
+
+                    <div
+                        style="background: rgba(0,255,170,0.05); border-radius: 15px; padding: 1.5rem; margin-bottom: 2rem;">
+                        <h4 style="color: #0f172a; font-weight: 700; margin-bottom: 1rem;">Key Benefits:</h4>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
+                            <span
+                                style="background: white; color: #00ffaa; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600; border: 1px solid rgba(0,255,170,0.2);">Reduces
+                                Fine Lines</span>
+                            <span
+                                style="background: white; color: #00ffaa; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600; border: 1px solid rgba(0,255,170,0.2);">Improves
+                                Texture</span>
+                            <span
+                                style="background: white; color: #00ffaa; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600; border: 1px solid rgba(0,255,170,0.2);">Deep
+                                Cleansing</span>
+                            <span
+                                style="background: white; color: #00ffaa; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600; border: 1px solid rgba(0,255,170,0.2);">Instant
+                                Hydration</span>
+                            <span
+                                style="background: white; color: #00ffaa; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600; border: 1px solid rgba(0,255,170,0.2);">Brightens
+                                Skin</span>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="hydrafacial.html"
+                            style="display: inline-block; background: linear-gradient(135deg, #00ffaa 0%, #009688 100%); color: white; padding: 1rem 2.5rem; font-weight: 700; border-radius: 50px; text-decoration: none; box-shadow: 0 10px 30px rgba(0,255,170,0.3);">Learn
+                            More</a>
+                        <a href="contact.html"
+                            style="display: inline-block; background: rgba(0,255,170,0.1); color: #00ffaa; padding: 1rem 2.5rem; font-weight: 700; border-radius: 50px; text-decoration: none; border: 2px solid rgba(0,255,170,0.3);">Book
+                            Now</a>
+                    </div>
+                </div>
+
+                <div
+                    style="position: relative; border-radius: 30px; overflow: hidden; box-shadow: 0 25px 50px rgba(0,0,0,0.15);">
+                    <img src="https://images.unsplash.com/photo-1519415943484-9fa1873496d4?auto=format&fit=crop&w=800&q=80"
+                        alt="HydraFacial" style="width: 100%; display: block;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE HEALIO -->
+    <section style="padding: 4rem 0; background: linear-gradient(135deg, #000000 0%, #0a1f1c 100%);">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h2 style="color: white; font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 1rem;">
+                    Why Choose <span
+                        style="background: linear-gradient(135deg, #00ffaa 0%, #4db6ac 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Healio</span>
+                </h2>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+                <div
+                    style="text-align: center; background: rgba(255,255,255,0.03); backdrop-filter: blur(20px); padding: 3rem 2rem; border-radius: 25px; border: 1px solid rgba(0,150,136,0.2);">
+                    <div
+                        style="width: 80px; height: 80px; background: linear-gradient(135deg, #00ffaa 0%, #009688 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; box-shadow: 0 15px 35px rgba(0,255,170,0.4);">
+                        <i class="fas fa-award" style="font-size: 2.5rem; color: white;"></i>
+                    </div>
+                    <h3 style="color: white; font-size: 1.6rem; font-weight: 800; margin-bottom: 1rem;">Accredited
+                        Partners</h3>
+                    <p style="color: #cbd5e1; line-height: 1.7;">All our healthcare partners are internationally
+                        accredited and maintain the highest quality standards.</p>
+                </div>
+
+                <div
+                    style="text-align: center; background: rgba(255,255,255,0.03); backdrop-filter: blur(20px); padding: 3rem 2rem; border-radius: 25px; border: 1px solid rgba(0,229,255,0.2); transform: translateY(-15px);">
+                    <div
+                        style="width: 80px; height: 80px; background: linear-gradient(135deg, #00e5ff 0%, #009688 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; box-shadow: 0 15px 35px rgba(0,229,255,0.4);">
+                        <i class="fas fa-money-bill-wave" style="font-size: 2.5rem; color: white;"></i>
+                    </div>
+                    <h3 style="color: white; font-size: 1.6rem; font-weight: 800; margin-bottom: 1rem;">Transparent
+                        Pricing</h3>
+                    <p style="color: #cbd5e1; line-height: 1.7;">No hidden fees. We provide upfront, transparent pricing
+                        for all services and treatments.</p>
+                </div>
+
+                <div
+                    style="text-align: center; background: rgba(255,255,255,0.03); backdrop-filter: blur(20px); padding: 3rem 2rem; border-radius: 25px; border: 1px solid rgba(77,182,172,0.2);">
+                    <div
+                        style="width: 80px; height: 80px; background: linear-gradient(135deg, #4db6ac 0%, #009688 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; box-shadow: 0 15px 35px rgba(77,182,172,0.4);">
+                        <i class="fas fa-headset" style="font-size: 2.5rem; color: white;"></i>
+                    </div>
+                    <h3 style="color: white; font-size: 1.6rem; font-weight: 800; margin-bottom: 1rem;">24/7 Support
+                    </h3>
+                    <p style="color: #cbd5e1; line-height: 1.7;">Our dedicated support team is available around the
+                        clock to assist you throughout your healthcare journey.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section style="padding: 5rem 0; background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%);">
+        <div class="container text-center">
+            <h2 style="font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 900; color: #0f172a; margin-bottom: 1.5rem;">
+                Ready to Get <span
+                    style="background: linear-gradient(135deg, #009688 0%, #4db6ac 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Started?</span>
+            </h2>
+            <p
+                style="font-size: 1.2rem; color: #64748b; margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                Choose the service that best fits your needs, or speak with our team to create a customized healthcare
+                plan.
+            </p>
             <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                <a href="contact.html" class="btn"
-                    style="background-color: white; color: var(--primary-color); font-weight: 600;">Book Your
-                    Consultation</a>
-                <a href="how-it-works.html" class="btn"
-                    style="background-color: transparent; color: white; border: 2px solid white;">Learn How It Works</a>
+                <a href="contact.html"
+                    style="display: inline-block; background: linear-gradient(135deg, #009688 0%, #00796b 100%); color: white; padding: 1.3rem 4rem; font-weight: 700; border-radius: 60px; text-decoration: none; box-shadow: 0 20px 50px rgba(0,150,136,0.3); animation: glow 3s ease-in-out infinite;">Book
+                    Your Consultation</a>
+                <a href="how-it-works.html"
+                    style="display: inline-block; background: rgba(0,150,136,0.1); color: #009688; padding: 1.3rem 4rem; font-weight: 700; border-radius: 60px; text-decoration: none; border: 2px solid rgba(0,150,136,0.3);">Learn
+                    How It Works</a>
             </div>
         </div>
     </section>
@@ -473,7 +664,6 @@
                     <a href="mailto:healiowelness@gmail.com"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
-
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul>
@@ -483,27 +673,24 @@
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
-
             <div class="footer-section">
                 <h3>Services</h3>
                 <ul>
-                    <li><a href="services.html#second-opinion">Medical Second Opinion</a></li>
-                    <li><a href="services.html#medical-tourism">Medical Tourism</a></li>
-                    <li><a href="services.html#nursing-care">Skilled Nursing Care</a></li>
+                    <li><a href="#second-opinion">Medical Second Opinion</a></li>
+                    <li><a href="#medical-tourism">Medical Tourism</a></li>
+                    <li><a href="#nursing-care">Skilled Nursing Care</a></li>
                     <li><a href="hydrafacial.html">HydraFacial Treatment</a></li>
                 </ul>
             </div>
-
             <div class="footer-section">
                 <h3>Contact Info</h3>
                 <ul>
                     <li><i class="fas fa-envelope"></i> healiowelness@gmail.com</li>
-                    <li><i class="fas fa-phone"></i> +91-98765-43210</li>
-                    <li><i class="fab fa-whatsapp"></i> WhatsApp: +91-98765-43210</li>
+                    <li><i class="fas fa-phone"></i> +91-8762204773</li>
+                    <li><i class="fab fa-whatsapp"></i> WhatsApp: +91-8762204773</li>
                 </ul>
             </div>
         </div>
-
         <div class="footer-bottom">
             <div class="footer-bottom-content">
                 <p>&copy; 2025 Healio. All rights reserved. | Privacy Policy | Terms of Service</p>
@@ -513,165 +700,14 @@
                 </div>
             </div>
         </div>
-        </div>
     </footer>
 
-    <!-- WhatsApp Floating Button -->
-    <a href="#" class="whatsapp-float"
-        style="position: fixed; bottom: 20px; right: 20px; background-color: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; text-decoration: none; box-shadow: var(--shadow-hover); z-index: 1000; transition: var(--transition);">
+    <a href="https://wa.me/918762204773" class="whatsapp-float"
+        style="position: fixed; bottom: 20px; right: 20px; background-color: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; text-decoration: none; box-shadow: var(--shadow-hover); z-index: 1000;">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- Scripts -->
     <script src="js/script.js"></script>
-
-    <!-- Structured Data for Services -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "Healio Healthcare Services",
-        "description": "Comprehensive healthcare services including medical second opinions, medical tourism, skilled nursing care, and HydraFacial treatments.",
-        "provider": {
-            "@type": "Organization",
-            "name": "Healio",
-            "url": "https://heliowellnes.com",
-            "telephone": "+91-98765-43210",
-            "email": "healiowelness@gmail.com",
-            "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Mumbai",
-                "addressCountry": "India"
-            }
-        },
-        "serviceType": "Healthcare",
-        "areaServed": "Worldwide",
-        "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Healthcare Services",
-            "itemListElement": [
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "MedicalService",
-                        "name": "Medical Second Opinion",
-                        "description": "Expert medical opinions from leading specialists worldwide to help confirm diagnosis and explore treatment options",
-                        "provider": {
-                            "@type": "Organization",
-                            "name": "Healio"
-                        }
-                    }
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "Medical Tourism",
-                        "description": "Complete medical tourism coordination including treatment planning, travel arrangements, and post-care support",
-                        "provider": {
-                            "@type": "Organization", 
-                            "name": "Healio"
-                        }
-                    }
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "MedicalService",
-                        "name": "Skilled Nursing Care",
-                        "description": "Professional nursing care for post-surgical recovery, chronic disease management, and rehabilitation support",
-                        "provider": {
-                            "@type": "Organization",
-                            "name": "Healio"
-                        }
-                    }
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "MedicalProcedure",
-                        "name": "HydraFacial Treatment",
-                        "description": "Advanced non-surgical skincare treatment using multi-step technology for skin hydration and rejuvenation",
-                        "provider": {
-                            "@type": "Organization",
-                            "name": "Healio"
-                        }
-                    }
-                }
-            ]
-        },
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.9",
-            "reviewCount": "1500",
-            "bestRating": "5"
-        }
-    }
-    </script>
-
-    <!-- FAQ Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "What services does Healio offer?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Healio offers comprehensive healthcare services including medical second opinions from global specialists, medical tourism coordination, skilled nursing care, and advanced HydraFacial treatments."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How long does it take to get a medical second opinion?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Medical second opinions typically take 5-7 days from submission of medical records to receiving a comprehensive report from our specialist network."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "What countries do you coordinate medical tourism to?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "We coordinate medical tourism to top destinations including India, Thailand, Singapore, Turkey, South Korea, and Mexico, depending on your specific treatment needs."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Is skilled nursing care available 24/7?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, we offer 24/7 skilled nursing care options, both in-home and facility-based, tailored to your specific medical and care requirements."
-                }
-            }
-        ]
-    }
-    </script>
-
-    <!-- BreadcrumbList Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://heliowellnes.com/"
-            },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Services",
-                "item": "https://heliowellnes.com/services.html"
-            }
-        ]
-    }
-    </script>
 </body>
 
 </html>
