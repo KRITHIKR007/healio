@@ -5,7 +5,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://healio.com/sitemap.xml
+Sitemap: https://heliowellnes.com/sitemap.xml
 
 # Crawl-delay for being respectful to server resources
 Crawl-delay: 1

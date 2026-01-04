@@ -2,69 +2,69 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
     <!-- Healio Website Sitemap -->
     <url>
-        <loc>https://healio.com/</loc>
-        <lastmod>2025-11-19</lastmod>
+        <loc>https://heliowellnes.com/</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url> 
+        <loc>https://heliowellnes.com/index.html</loc>
+        <lastmod>2026-01-05</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://healio.com/index.html</loc>
-        <lastmod>2025-11-19</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>https://healio.com/about.html</loc>
-        <lastmod>2025-11-19</lastmod>
+        <loc>https://heliowellnes.com/about.html</loc>
+        <lastmod>2026-01-05</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://healio.com/services.html</loc>
-        <lastmod>2025-11-19</lastmod>
+        <loc>https://heliowellnes.com/services.html</loc>
+        <lastmod>2026-01-05</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://healio.com/how-it-works.html</loc>
-        <lastmod>2025-11-19</lastmod>
+        <loc>https://heliowellnes.com/how-it-works.html</loc>
+        <lastmod>2026-01-05</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://healio.com/contact.html</loc>
-        <lastmod>2025-11-19</lastmod>
+        <loc>https://heliowellnes.com/contact.html</loc>
+        <lastmod>2026-01-05</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://healio.com/hydrafacial.html</loc>
-        <lastmod>2025-11-19</lastmod>
+        <loc>https://heliowellnes.com/hydrafacial.html</loc>
+        <lastmod>2026-01-05</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <!-- Service-specific pages -->
     <url>
-        <loc>https://healio.com/services.html#second-opinion</loc>
-        <lastmod>2025-11-19</lastmod>
+        <loc>https://heliowellnes.com/services.html#second-opinion</loc>
+        <lastmod>2026-01-05</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://healio.com/services.html#medical-tourism</loc>
-        <lastmod>2025-11-19</lastmod>
+        <loc>https://heliowellnes.com/services.html#medical-tourism</loc>
+        <lastmod>2026-01-05</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://healio.com/services.html#nursing-care</loc>
-        <lastmod>2025-11-19</lastmod>
+        <loc>https://heliowellnes.com/services.html#nursing-care</loc>
+        <lastmod>2026-01-05</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://healio.com/services.html#hydrafacial</loc>
-        <lastmod>2025-11-19</lastmod>
+        <loc>https://heliowellnes.com/services.html#hydrafacial</loc>
+        <lastmod>2026-01-05</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
