@@ -134,7 +134,7 @@
                         style="display: inline-block; background: linear-gradient(135deg, #009688 0%, #00796b 100%); color: white; padding: 0.65rem 1.8rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.85rem; box-shadow: 0 4px 15px rgba(0,150,136,0.2); transition: all 0.3s ease;">Book
                         Consultation</a></li>
             </ul>
-            <button class="menu-toggle" style="display: none; background: none; border: none; cursor: pointer;">
+            <button class="menu-toggle" style="background: none; border: none; cursor: pointer;">
                 <span style="display: block; width: 22px; height: 2px; background: #0f172a; margin: 4px 0;"></span>
                 <span style="display: block; width: 22px; height: 2px; background: #0f172a; margin: 4px 0;"></span>
                 <span style="display: block; width: 22px; height: 2px; background: #0f172a; margin: 4px 0;"></span>
@@ -143,8 +143,8 @@
     </header>
 
     <!-- HERO - FITS IN ONE FRAME -->
-    <section
-        style="position: relative; height: 100vh; display: flex; align-items: center; overflow: hidden; background: linear-gradient(135deg, #000000 0%, #0a1f1c 50%, #000000 100%); padding-top: 80px;">
+    <section class="hero-section"
+        style="position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden; background: linear-gradient(135deg, #000000 0%, #0a1f1c 50%, #000000 100%); padding-top: 80px;">
         <div class="animate-gradient"
             style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,150,136,0.2) 0%, rgba(0,0,0,0) 30%, rgba(77,182,172,0.15) 60%, rgba(0,0,0,0) 100%); z-index: 1;">
         </div>
@@ -158,7 +158,7 @@
 
         <div class="container"
             style="position: relative; z-index: 10; height: 100%; display: flex; align-items: center;">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; width: 100%;">
+            <div class="grid-responsive-2" style="gap: 3rem; align-items: center;">
                 <div style="animation: slideInLeft 1s ease-out;">
                     <h1
                         style="color: white; font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem; letter-spacing: -2px;">
@@ -173,8 +173,8 @@
                         treatment abroad, and skilled nursing care.
                     </p>
 
-                    <div
-                        style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 2rem; background: rgba(255,255,255,0.03); backdrop-filter: blur(20px); padding: 1.5rem; border-radius: 20px; border: 1px solid rgba(0,150,136,0.2);">
+                    <div class="grid-responsive-4 hero-stats-grid"
+                        style="gap: 1rem; margin-bottom: 2rem; background: rgba(255,255,255,0.03); backdrop-filter: blur(20px); padding: 1.5rem; border-radius: 20px; border: 1px solid rgba(0,150,136,0.2);">
                         <div style="text-align: center;">
                             <div
                                 style="font-size: 2rem; font-weight: 900; background: linear-gradient(135deg, #00ffaa 0%, #4db6ac 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.25rem;">
@@ -214,8 +214,8 @@
                     </div>
                 </div>
 
-                <div
-                    style="position: relative; animation: slideInUp 1s ease-out 0.2s both; height: 75vh; display: flex; align-items: center;">
+                <div class="hero-image-container"
+                    style="position: relative; animation: slideInUp 1s ease-out 0.2s both; display: flex; align-items: center;">
                     <div
                         style="position: absolute; inset: -15px; background: linear-gradient(135deg, rgba(0,255,170,0.2) 0%, rgba(0,229,255,0.1) 100%); border-radius: 30px; filter: blur(25px); z-index: 1;">
                     </div>
@@ -255,7 +255,7 @@
                 </p>
             </div>
 
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+            <div class="grid-responsive-3">
                 <!-- Service 1 -->
                 <div
                     style="background: white; border-radius: 25px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.08); transition: all 03s ease; border: 2px solid transparent;">
@@ -355,7 +355,7 @@
                 </p>
             </div>
 
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem;">
+            <div class="grid-responsive-3" style="gap: 2.5rem;">
                 <!-- Step 1 -->
                 <div
                     style="text-align: center; background: rgba(255,255,255,0.03); backdrop-filter: blur(20px); border: 2px solid rgba(0,150,136,0.2); border-radius: 25px; padding: 3rem 2rem; position: relative;">
@@ -416,7 +416,7 @@
                     through Healio</p>
             </div>
 
-            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;">
+            <div class="grid-responsive-2">
                 <!-- Testimonial 1 -->
                 <div
                     style="background: white; border-radius: 25px; padding: 2.5rem; box-shadow: 0 20px 60px rgba(0,0,0,0.08); border-left: 4px solid #009688;">
