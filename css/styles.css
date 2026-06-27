@@ -674,3 +674,28 @@ footer {
     padding: 1.5rem 0;
   }
 }
+
+/* =========================================
+   GALLERY & LIGHTBOX CUSTOM STYLES
+   ========================================= */
+
+.gallery-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 150, 136, 0.2) !important;
+}
+
+.gallery-item:hover .gallery-img {
+  transform: scale(1.08);
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1 !important;
+}
+
+body.lightbox-active {
+  overflow: hidden !important;
+}
+
+body.lightbox-active #gallery-lightbox #lightbox-img {
+  transform: scale(1);
+}
