@@ -20,11 +20,11 @@
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://heliowellnes.com/about.html">
     <meta property="og:image"
-        content="https://heliowellnes.com/assets/icons/WhatsApp_Image_2025-11-01_at_11.50.08_1a0ff362-removebg-preview.png">
+        content="https://heliowellnes.com/assets/icons/favicon.png">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png"
-        href="assets/icons/WhatsApp_Image_2025-11-01_at_11.50.08_1a0ff362-removebg-preview.png">
+        href="assets/icons/favicon.png">
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/styles.css">
@@ -186,19 +186,67 @@
 
         <div class="container">
             <div class="grid-responsive-2" style="align-items: center;">
-                <!-- Image Side with Effects -->
+                <!-- Image Side: Event Photo Slideshow -->
                 <div style="position: relative; animation: slideInLeft 1s ease-out;">
-                    <div
-                        style="position: absolute; inset: -20px; background: linear-gradient(135deg, #009688, #4db6ac); border-radius: 30px; opacity: 0.1; transform: rotate(-3deg); z-index: 1;">
+                    <div style="position: absolute; inset: -15px; background: linear-gradient(135deg, rgba(0,255,170,0.1) 0%, rgba(0,229,255,0.06) 100%); border-radius: 30px; filter: blur(20px); z-index: 1; pointer-events: none;"></div>
+
+                    <div id="about-slideshow" style="position: relative; z-index: 2; border-radius: 24px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.18); aspect-ratio: 4/3; background: #0a1f1c;">
+
+                        <div class="about-slide" style="position: absolute; inset: 0; opacity: 1; transition: opacity 0.85s ease;">
+                            <img src="assets/masterclass-award-1.png" alt="Excellence Award" style="width: 100%; height: 100%; object-fit: cover;">
+                            <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, transparent 55%); pointer-events: none;"></div>
+                            <div style="position: absolute; bottom: 1.1rem; left: 1.1rem; right: 3.5rem;">
+                                <span style="background: #009688; color: white; padding: 0.2rem 0.65rem; border-radius: 20px; font-size: 0.65rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">Award Ceremony</span>
+                                <div style="color: white; font-size: 0.88rem; font-weight: 600; margin-top: 0.3rem;">Excellence in Global Coordination</div>
+                            </div>
+                        </div>
+
+                        <div class="about-slide" style="position: absolute; inset: 0; opacity: 0; transition: opacity 0.85s ease;">
+                            <img src="assets/masterclass-award-2.png" alt="Awards Ceremony" style="width: 100%; height: 100%; object-fit: cover;">
+                            <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, transparent 55%); pointer-events: none;"></div>
+                            <div style="position: absolute; bottom: 1.1rem; left: 1.1rem; right: 3.5rem;">
+                                <span style="background: #009688; color: white; padding: 0.2rem 0.65rem; border-radius: 20px; font-size: 0.65rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">Awards Night</span>
+                                <div style="color: white; font-size: 0.88rem; font-weight: 600; margin-top: 0.3rem;">Global Exchange Recognition</div>
+                            </div>
+                        </div>
+
+                        <div class="about-slide" style="position: absolute; inset: 0; opacity: 0; transition: opacity 0.85s ease;">
+                            <img src="assets/masterclass-group-1.png" alt="Medical Exchange" style="width: 100%; height: 100%; object-fit: cover;">
+                            <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, transparent 55%); pointer-events: none;"></div>
+                            <div style="position: absolute; bottom: 1.1rem; left: 1.1rem; right: 3.5rem;">
+                                <span style="background: #00e5ff; color: #020617; padding: 0.2rem 0.65rem; border-radius: 20px; font-size: 0.65rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">B2B Networking</span>
+                                <div style="color: white; font-size: 0.88rem; font-weight: 600; margin-top: 0.3rem;">Medical &amp; Wellness Exchange</div>
+                            </div>
+                        </div>
+
+                        <div class="about-slide" style="position: absolute; inset: 0; opacity: 0; transition: opacity 0.85s ease;">
+                            <img src="assets/masterclass-group-2.png" alt="Wellness Summit" style="width: 100%; height: 100%; object-fit: cover;">
+                            <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, transparent 55%); pointer-events: none;"></div>
+                            <div style="position: absolute; bottom: 1.1rem; left: 1.1rem; right: 3.5rem;">
+                                <span style="background: #00e5ff; color: #020617; padding: 0.2rem 0.65rem; border-radius: 20px; font-size: 0.65rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">B2B Summit</span>
+                                <div style="color: white; font-size: 0.88rem; font-weight: 600; margin-top: 0.3rem;">International Wellness Delegates</div>
+                            </div>
+                        </div>
+
+                        <!-- Prev / Next -->
+                        <button onclick="aboutSlideshowStep(-1)" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); z-index: 5; background: rgba(0,0,0,0.45); border: 1px solid rgba(255,255,255,0.15); color: white; width: 36px; height: 36px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; transition: background 0.25s;" onmouseover="this.style.background='rgba(0,150,136,0.75)'" onmouseout="this.style.background='rgba(0,0,0,0.45)'">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button onclick="aboutSlideshowStep(1)" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); z-index: 5; background: rgba(0,0,0,0.45); border: 1px solid rgba(255,255,255,0.15); color: white; width: 36px; height: 36px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; transition: background 0.25s;" onmouseover="this.style.background='rgba(0,150,136,0.75)'" onmouseout="this.style.background='rgba(0,0,0,0.45)'">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+
+                        <!-- Indicator dots -->
+                        <div style="position: absolute; bottom: 12px; right: 12px; z-index: 5; display: flex; gap: 5px; align-items: center;">
+                            <span class="about-dot" onclick="aboutSlideshowGoto(0)" style="width: 20px; height: 4px; border-radius: 2px; background: white; transition: all 0.3s; cursor: pointer;"></span>
+                            <span class="about-dot" onclick="aboutSlideshowGoto(1)" style="width: 8px; height: 4px; border-radius: 2px; background: rgba(255,255,255,0.35); transition: all 0.3s; cursor: pointer;"></span>
+                            <span class="about-dot" onclick="aboutSlideshowGoto(2)" style="width: 8px; height: 4px; border-radius: 2px; background: rgba(255,255,255,0.35); transition: all 0.3s; cursor: pointer;"></span>
+                            <span class="about-dot" onclick="aboutSlideshowGoto(3)" style="width: 8px; height: 4px; border-radius: 2px; background: rgba(255,255,255,0.35); transition: all 0.3s; cursor: pointer;"></span>
+                        </div>
                     </div>
-                    <div
-                        style="position: relative; z-index: 2; border-radius: 30px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.2);">
-                        <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=900&q=80"
-                            alt="Helio Team" style="width: 100%; display: block; transition: transform 0.5s ease;">
-                    </div>
+
                     <!-- Accent Badge -->
-                    <div
-                        style="position: absolute; bottom: -20px; right: -20px; background: linear-gradient(135deg, #009688 0%, #00796b 100%); color: white; padding: 2rem; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,150,136,0.4); z-index: 3; animation: glow 3s ease-in-out infinite;">
+                    <div style="position: absolute; bottom: -20px; right: -20px; background: linear-gradient(135deg, #009688 0%, #00796b 100%); color: white; padding: 1.5rem 2rem; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,150,136,0.4); z-index: 3; animation: glow 3s ease-in-out infinite;">
                         <div style="font-size: 2.5rem; font-weight: 800; line-height: 1;">5K+</div>
                         <div style="font-size: 0.9rem; opacity: 0.9; margin-top: 0.5rem;">Patients Served</div>
                     </div>
@@ -584,7 +632,7 @@
                         rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
                     <a href="https://x.com/Heliowelness?t=uLrIu84lXniWOtTz2ihZbg&s=08" target="_blank"
                         rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
-                    <a href="mailto:heliowelness@gmail.com"><i class="fas fa-envelope"></i></a>
+                    <a href="mailto:heliowellne@.heliowellnes.com"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
 
@@ -611,7 +659,7 @@
             <div class="footer-section">
                 <h3>Contact Info</h3>
                 <ul>
-                    <li><i class="fas fa-envelope"></i> heliowelness@gmail.com</li>
+                    <li><i class="fas fa-envelope"></i> heliowellne@.heliowellnes.com</li>
                     <li><i class="fas fa-phone"></i> +91 97434 28688</li>
                     <li><i class="fab fa-whatsapp"></i> WhatsApp: +91 97434 28688</li>
                 </ul>
@@ -637,6 +685,42 @@
 
     <!-- Scripts -->
     <script type="module" src="js/script.js"></script>
+
+    <!-- About Page Slideshow Engine -->
+    <script>
+        (function () {
+            let _cur = 0, _total = 0, _timer = null;
+
+            function _goTo(idx) {
+                const slides = document.querySelectorAll('.about-slide');
+                const dots   = document.querySelectorAll('.about-dot');
+                if (!slides.length) return;
+                if (slides[_cur]) slides[_cur].style.opacity = '0';
+                if (dots[_cur])  { dots[_cur].style.width = '8px'; dots[_cur].style.background = 'rgba(255,255,255,0.35)'; }
+                _cur = ((idx % _total) + _total) % _total;
+                if (slides[_cur]) slides[_cur].style.opacity = '1';
+                if (dots[_cur])  { dots[_cur].style.width = '20px'; dots[_cur].style.background = 'white'; }
+            }
+
+            window.aboutSlideshowGoto = function (idx) {
+                clearInterval(_timer);
+                _goTo(idx);
+                _timer = setInterval(() => _goTo(_cur + 1), 5000);
+            };
+
+            window.aboutSlideshowStep = function (dir) {
+                window.aboutSlideshowGoto(_cur + dir);
+            };
+
+            document.addEventListener('DOMContentLoaded', function () {
+                const slides = document.querySelectorAll('.about-slide');
+                _total = slides.length;
+                if (!_total) return;
+                slides.forEach(function (el, i) { el.style.opacity = i === 0 ? '1' : '0'; });
+                _timer = setInterval(function () { _goTo(_cur + 1); }, 5000);
+            });
+        })();
+    </script>
 </body>
 
 </html>

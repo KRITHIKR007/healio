@@ -88,7 +88,7 @@ p {
 header {
   position: sticky;
   top: 15px;
-  margin: 15px auto 25px auto;
+  margin: 15px auto 0 auto;
   width: calc(100% - 40px);
   max-width: 1200px;
   background: rgba(255, 255, 255, 0.75);
