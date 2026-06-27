@@ -104,40 +104,25 @@
 </head>
 
 <body>
-    <!-- ULTRA PREMIUM NAVBAR -->
-    <header
-        style="position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: white; box-shadow: 0 2px 15px rgba(0,0,0,0.06); transition: all 0.3s ease;">
-        <nav class="container"
-            style="display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 2rem;">
-            <a href="index.html" class="logo" style="display: flex; align-items: center; text-decoration: none;">
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">
                 <img src="assets/icons/WhatsApp_Image_2025-11-01_at_11.50.08_1a0ff362-removebg-preview.png"
-                    alt="Healio Logo" style="height: 40px; width: auto;">
+                    alt="Healio Logo" class="logo-img">
             </a>
-            <ul class="nav-links"
-                style="display: flex; gap: 2.5rem; list-style: none; margin: 0; padding: 0; align-items: center;">
-                <li><a href="index.html"
-                        style="color: #009688; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: all 0.3s ease; position: relative; padding-bottom: 0.2rem; border-bottom: 2px solid #009688;">Home</a>
-                </li>
-                <li><a href="about.html"
-                        style="color: #0f172a; text-decoration: none; font-weight: 500; font-size: 0.9rem; transition: all 0.3s ease;">About</a>
-                </li>
-                <li><a href="services.html"
-                        style="color: #0f172a; text-decoration: none; font-weight: 500; font-size: 0.9rem; transition: all 0.3s ease;">Services</a>
-                </li>
-                <li><a href="how-it-works.html"
-                        style="color: #0f172a; text-decoration: none; font-weight: 500; font-size: 0.9rem; transition: all 0.3s ease;">How
-                        It Works</a></li>
-                <li><a href="contact.html"
-                        style="color: #0f172a; text-decoration: none; font-weight: 500; font-size: 0.9rem; transition: all 0.3s ease;">Contact</a>
-                </li>
-                <li><a href="contact.html"
-                        style="display: inline-block; background: linear-gradient(135deg, #009688 0%, #00796b 100%); color: white; padding: 0.65rem 1.8rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.85rem; box-shadow: 0 4px 15px rgba(0,150,136,0.2); transition: all 0.3s ease;">Book
-                        Consultation</a></li>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="how-it-works.html">How It Works</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html" class="nav-cta"><span>Book Consultation</span></a></li>
             </ul>
-            <button class="menu-toggle" style="background: none; border: none; cursor: pointer;">
-                <span style="display: block; width: 22px; height: 2px; background: #0f172a; margin: 4px 0;"></span>
-                <span style="display: block; width: 22px; height: 2px; background: #0f172a; margin: 4px 0;"></span>
-                <span style="display: block; width: 22px; height: 2px; background: #0f172a; margin: 4px 0;"></span>
+            <button class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
         </nav>
     </header>
@@ -468,9 +453,9 @@
 
                 <!-- Gallery Category Filter Tabs -->
                 <div class="gallery-filters" style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem;">
-                    <button class="gallery-filter-btn active" data-filter="all" style="background: #009688; color: white; border: none; padding: 0.6rem 1.8rem; border-radius: 50px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(0,150,136,0.2);">All Photos</button>
-                    <button class="gallery-filter-btn" data-filter="awards" style="background: white; color: #0f172a; border: 1px solid #e2e8f0; padding: 0.6rem 1.8rem; border-radius: 50px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">Awards Ceremony</button>
-                    <button class="gallery-filter-btn" data-filter="networking" style="background: white; color: #0f172a; border: 1px solid #e2e8f0; padding: 0.6rem 1.8rem; border-radius: 50px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">Seminars & Networking</button>
+                    <button class="gallery-filter-btn active" data-filter="all">All Photos</button>
+                    <button class="gallery-filter-btn" data-filter="awards">Awards Ceremony</button>
+                    <button class="gallery-filter-btn" data-filter="networking">Seminars & Networking</button>
                 </div>
             </div>
 

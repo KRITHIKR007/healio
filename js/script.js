@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
     
     // Observe cards and other elements for animation
-    const animateElements = document.querySelectorAll('.card, .step, .testimonial');
+    const animateElements = document.querySelectorAll('.card, .step, .testimonial, .gallery-item');
     animateElements.forEach(el => observer.observe(el));
     
     // Highlight active navigation item
@@ -126,8 +126,9 @@ document.addEventListener('DOMContentLoaded', function() {
     navItems.forEach(item => {
         const href = item.getAttribute('href');
         if (href === currentPage || (currentPage === '' && href === 'index.html')) {
-            item.style.color = 'var(--primary-color)';
-            item.style.fontWeight = '600';
+            item.classList.add('nav-active');
+        } else {
+            item.classList.remove('nav-active');
         }
     });
     
@@ -153,21 +154,11 @@ document.addEventListener('DOMContentLoaded', function() {
     if (filterBtns.length > 0 && galleryItems.length > 0) {
         filterBtns.forEach(btn => {
             btn.addEventListener('click', function() {
-                // Remove active class and styles from all buttons
-                filterBtns.forEach(b => {
-                    b.classList.remove('active');
-                    b.style.background = 'white';
-                    b.style.color = '#0f172a';
-                    b.style.boxShadow = 'none';
-                    b.style.border = '1px solid #e2e8f0';
-                });
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
                 
-                // Set active style on clicked button
+                // Set active class on clicked button
                 this.classList.add('active');
-                this.style.background = '#009688';
-                this.style.color = 'white';
-                this.style.boxShadow = '0 4px 12px rgba(0,150,136,0.2)';
-                this.style.border = 'none';
                 
                 const filter = this.getAttribute('data-filter');
                 
