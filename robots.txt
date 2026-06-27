@@ -1,4 +1,4 @@
-# Healio Robots.txt
+# Helio Robots.txt
 # This file tells search engines which pages or files they can or can't request from your site
 
 User-agent: *

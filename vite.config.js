@@ -10,7 +10,9 @@ export default defineConfig({
         contact: resolve(__dirname, 'contact.html'),
         howItWorks: resolve(__dirname, 'how-it-works.html'),
         hydrafacial: resolve(__dirname, 'hydrafacial.html'),
-        services: resolve(__dirname, 'services.html')
+        services: resolve(__dirname, 'services.html'),
+        privacy: resolve(__dirname, 'privacy.html'),
+        terms: resolve(__dirname, 'terms.html')
       }
     }
   }

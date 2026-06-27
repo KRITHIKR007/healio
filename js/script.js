@@ -1,8 +1,22 @@
 // ======================
-// HEALIO JAVASCRIPT
+// HELIO JAVASCRIPT
 // ======================
 
 document.addEventListener('DOMContentLoaded', function() {
+    
+    // Sticky Header Scroll Effect
+    const header = document.querySelector('header');
+    if (header) {
+        const handleScroll = () => {
+            if (window.scrollY > 20) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        };
+        window.addEventListener('scroll', handleScroll);
+        handleScroll(); // Initial check
+    }
     
     // Mobile Menu Toggle
     const menuToggle = document.querySelector('.menu-toggle');
@@ -11,19 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (menuToggle && navLinks) {
         menuToggle.addEventListener('click', function() {
             navLinks.classList.toggle('active');
-            
-            // Animate hamburger icon
-            const spans = menuToggle.querySelectorAll('span');
-            spans.forEach((span, index) => {
-                if (navLinks.classList.contains('active')) {
-                    if (index === 0) span.style.transform = 'rotate(45deg) translate(5px, 5px)';
-                    if (index === 1) span.style.opacity = '0';
-                    if (index === 2) span.style.transform = 'rotate(-45deg) translate(7px, -6px)';
-                } else {
-                    span.style.transform = 'none';
-                    span.style.opacity = '1';
-                }
-            });
+            menuToggle.classList.toggle('active');
         });
     }
     
@@ -33,13 +35,9 @@ document.addEventListener('DOMContentLoaded', function() {
         link.addEventListener('click', function() {
             if (navLinks && navLinks.classList.contains('active')) {
                 navLinks.classList.remove('active');
-                
-                // Reset hamburger icon
-                const spans = menuToggle.querySelectorAll('span');
-                spans.forEach(span => {
-                    span.style.transform = 'none';
-                    span.style.opacity = '1';
-                });
+                if (menuToggle) {
+                    menuToggle.classList.remove('active');
+                }
             }
         });
     });
@@ -137,8 +135,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if (whatsappBtn) {
         whatsappBtn.addEventListener('click', function(e) {
             e.preventDefault();
-            const message = encodeURIComponent('Hello! I would like to know more about Healio services.');
-            const whatsappUrl = `https://wa.me/918762204773?text=${message}`;
+            const message = encodeURIComponent('Hello! I would like to know more about Helio services.');
+            const whatsappUrl = `https://wa.me/919743428688?text=${message}`;
             window.open(whatsappUrl, '_blank');
         });
     }

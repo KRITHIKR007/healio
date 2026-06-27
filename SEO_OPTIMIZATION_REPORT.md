@@ -1,4 +1,4 @@
-# Healio Website - SEO Optimization Summary
+# Helio Website - SEO Optimization Summary
 
 ## ✅ Completed SEO Optimizations
 
@@ -106,7 +106,7 @@
 
 ## 📈 Conclusion
 
-Your Healio website is now fully optimized for search engines with:
+Your Helio website is now fully optimized for search engines with:
 - ✅ **100% SEO-compliant** meta tags and structured data
 - ✅ **Mobile-first responsive** design
 - ✅ **Conversion-optimized** user experience
