@@ -59,44 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Form handling
-    const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
-            
-            // Simple validation
-            if (!data.name || !data.email || !data.message) {
-                alert('Please fill in all required fields.');
-                return;
-            }
-            
-            // Email validation
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(data.email)) {
-                alert('Please enter a valid email address.');
-                return;
-            }
-            
-            // Show loading state
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Sending...';
-            submitBtn.disabled = true;
-            
-            // Simulate form submission (replace with actual form handler)
-            setTimeout(() => {
-                alert('Thank you for your message! We will get back to you soon.');
-                this.reset();
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            }, 2000);
-        });
-    }
+    // Form handling - removed (contact form replaced with mailto link)
     
     // Add animation to cards on scroll
     const observerOptions = {
@@ -310,3 +273,68 @@ function addLoadingState(button, loadingText = 'Loading...') {
         button.disabled = false;
     };
 }
+
+// ==================================================
+// UNIVERSAL SLIDESHOW ENGINE
+// Usage: initSlideshow('prefix') where HTML uses
+//   class="prefix-slide"   and   class="prefix-dot"
+// ==================================================
+const _slideshowState = {};
+
+function initSlideshow(prefix) {
+    const slides = document.querySelectorAll('.' + prefix + '-slide');
+    const dots   = document.querySelectorAll('.' + prefix + '-dot');
+    if (!slides.length) return;
+
+    _slideshowState[prefix] = { current: 0, slides, dots };
+    _updateSlideshow(prefix);
+
+    // Auto-advance every 4s
+    const timer = setInterval(() => {
+        const s = _slideshowState[prefix];
+        s.current = (s.current + 1) % s.slides.length;
+        _updateSlideshow(prefix);
+    }, 4000);
+    _slideshowState[prefix].timer = timer;
+}
+
+function slideshowStep(prefix, dir) {
+    const s = _slideshowState[prefix];
+    if (!s) return;
+    clearInterval(s.timer);
+    s.current = (s.current + dir + s.slides.length) % s.slides.length;
+    _updateSlideshow(prefix);
+    // Restart auto-advance
+    s.timer = setInterval(() => {
+        s.current = (s.current + 1) % s.slides.length;
+        _updateSlideshow(prefix);
+    }, 4000);
+}
+
+function slideshowGoto(prefix, index) {
+    const s = _slideshowState[prefix];
+    if (!s) return;
+    clearInterval(s.timer);
+    s.current = index;
+    _updateSlideshow(prefix);
+    s.timer = setInterval(() => {
+        s.current = (s.current + 1) % s.slides.length;
+        _updateSlideshow(prefix);
+    }, 4000);
+}
+
+function _updateSlideshow(prefix) {
+    const s = _slideshowState[prefix];
+    s.slides.forEach((slide, i) => {
+        slide.style.opacity = i === s.current ? '1' : '0';
+    });
+    s.dots.forEach((dot, i) => {
+        dot.style.width  = i === s.current ? '20px' : '8px';
+        dot.style.background = i === s.current ? 'white' : 'rgba(255,255,255,0.35)';
+    });
+}
+
+// Expose to window scope for HTML inline calls
+window.initSlideshow = initSlideshow;
+window.slideshowStep = slideshowStep;
+window.slideshowGoto = slideshowGoto;

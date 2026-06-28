@@ -23,7 +23,7 @@
         content="https://heliowellnes.com/assets/icons/favicon.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@Heliowelness">
-    <meta name="theme-color" content="#009688">
+    <meta name="theme-color" content="#059669">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png"
@@ -32,6 +32,15 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Vercel Web Analytics -->
+    <script>
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+        const script = document.createElement('script');
+        script.src = '/_vercel/insights/script.js';
+        script.defer = true;
+        document.head.appendChild(script);
+    </script>
 
     <style>
         @keyframes float {
@@ -50,11 +59,11 @@
 
             0%,
             100% {
-                box-shadow: 0 0 20px rgba(0, 150, 136, 0.3);
+                box-shadow: 0 0 20px rgba(5, 150, 105, 0.3);
             }
 
             50% {
-                box-shadow: 0 0 40px rgba(0, 150, 136, 0.6), 0 0 60px rgba(0, 150, 136, 0.4);
+                box-shadow: 0 0 40px rgba(5, 150, 105, 0.6), 0 0 60px rgba(5, 150, 105, 0.4);
             }
         }
 
@@ -120,7 +129,7 @@
         }
 
         #typewriter-text {
-            background: linear-gradient(135deg, #00ffaa 0%, #00e5ff 50%, #4db6ac 100%);
+            background: linear-gradient(135deg, #34d399 0%, #6ee7b7 50%, #10b981 100%);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -168,11 +177,11 @@
         <canvas id="particle-canvas" style="position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; pointer-events: none;"></canvas>
 
         <!-- Tech grid overlay -->
-        <div style="position: absolute; inset: 0; background-image: linear-gradient(rgba(0,255,170,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(0,255,170,0.025) 1px, transparent 1px); background-size: 60px 60px; z-index: 2; pointer-events: none;"></div>
+        <div style="position: absolute; inset: 0; background-image: linear-gradient(rgba(52, 211, 153,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(52, 211, 153,0.025) 1px, transparent 1px); background-size: 60px 60px; z-index: 2; pointer-events: none;"></div>
 
         <!-- Radial glows -->
-        <div style="position: absolute; top: 15%; right: 8%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(0,255,170,0.1) 0%, transparent 70%); z-index: 2; pointer-events: none;"></div>
-        <div style="position: absolute; bottom: 10%; left: 3%; width: 380px; height: 380px; background: radial-gradient(circle, rgba(0,229,255,0.07) 0%, transparent 70%); z-index: 2; pointer-events: none;"></div>
+        <div style="position: absolute; top: 15%; right: 8%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(52, 211, 153,0.1) 0%, transparent 70%); z-index: 2; pointer-events: none;"></div>
+        <div style="position: absolute; bottom: 10%; left: 3%; width: 380px; height: 380px; background: radial-gradient(circle, rgba(110, 231, 183,0.07) 0%, transparent 70%); z-index: 2; pointer-events: none;"></div>
 
         <div class="container" style="position: relative; z-index: 10; height: 100%; display: flex; align-items: center;">
             <div class="grid-responsive-2" style="gap: 3rem; align-items: center;">
@@ -181,14 +190,14 @@
                 <div style="animation: slideInLeft 1s ease-out;">
 
                     <!-- Live badge -->
-                    <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(0,255,170,0.08); border: 1px solid rgba(0,255,170,0.25); border-radius: 50px; padding: 0.4rem 1.2rem; margin-bottom: 1.5rem; backdrop-filter: blur(10px);">
-                        <span style="width: 8px; height: 8px; background: #00ffaa; border-radius: 50%; display: inline-block; animation: pulse 2s infinite;"></span>
-                        <span style="color: #00ffaa; font-weight: 600; font-size: 0.78rem; letter-spacing: 2px;">GLOBAL HEALTHCARE NETWORK</span>
+                    <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(52, 211, 153,0.08); border: 1px solid rgba(52, 211, 153,0.25); border-radius: 50px; padding: 0.4rem 1.2rem; margin-bottom: 1.5rem; backdrop-filter: blur(10px);">
+                        <span style="width: 8px; height: 8px; background: #34d399; border-radius: 50%; display: inline-block; animation: pulse 2s infinite;"></span>
+                        <span style="color: #34d399; font-weight: 600; font-size: 0.78rem; letter-spacing: 2px;">GLOBAL HEALTHCARE NETWORK</span>
                     </div>
 
                     <h1 style="color: white; font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem; letter-spacing: -2px;">
                         Global Healthcare,<br>
-                        <span id="typewriter-text">Simplified.</span><span id="typewriter-cursor" style="color: #00ffaa; animation: blink 1s step-end infinite; font-style: normal;">|</span>
+                        <span id="typewriter-text">Simplified.</span><span id="typewriter-cursor" style="color: #34d399; animation: blink 1s step-end infinite; font-style: normal;">|</span>
                     </h1>
 
                     <p style="color: #94a3b8; font-size: clamp(1rem, 1.8vw, 1.2rem); line-height: 1.75; margin-bottom: 2rem; font-weight: 300;">
@@ -196,27 +205,27 @@
                     </p>
 
                     <!-- Responsive stats row -->
-                    <div style="display: flex; flex-wrap: wrap; margin-bottom: 2rem; background: rgba(255,255,255,0.03); backdrop-filter: blur(20px); padding: 1rem; border-radius: 20px; border: 1px solid rgba(0,255,170,0.12);">
+                    <div style="display: flex; flex-wrap: wrap; margin-bottom: 2rem; background: rgba(255,255,255,0.03); backdrop-filter: blur(20px); padding: 1rem; border-radius: 20px; border: 1px solid rgba(52, 211, 153,0.12);">
                         <div style="flex: 1; min-width: 70px; text-align: center; border-right: 1px solid rgba(255,255,255,0.06); padding: 0.75rem 0.5rem;">
-                            <div style="font-size: 1.6rem; font-weight: 900; background: linear-gradient(135deg, #00ffaa 0%, #4db6ac 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.15rem;">10K+</div>
+                            <div style="font-size: 1.6rem; font-weight: 900; background: linear-gradient(135deg, #34d399 0%, #10b981 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.15rem;">10K+</div>
                             <div style="color: #94a3b8; font-size: 0.7rem;">Patients</div>
                         </div>
                         <div style="flex: 1; min-width: 70px; text-align: center; border-right: 1px solid rgba(255,255,255,0.06); padding: 0.75rem 0.5rem;">
-                            <div style="font-size: 1.6rem; font-weight: 900; background: linear-gradient(135deg, #00e5ff 0%, #4db6ac 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.15rem;">500+</div>
+                            <div style="font-size: 1.6rem; font-weight: 900; background: linear-gradient(135deg, #6ee7b7 0%, #10b981 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.15rem;">500+</div>
                             <div style="color: #94a3b8; font-size: 0.7rem;">Experts</div>
                         </div>
                         <div style="flex: 1; min-width: 70px; text-align: center; border-right: 1px solid rgba(255,255,255,0.06); padding: 0.75rem 0.5rem;">
-                            <div style="font-size: 1.6rem; font-weight: 900; background: linear-gradient(135deg, #4db6ac 0%, #009688 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.15rem;">98%</div>
+                            <div style="font-size: 1.6rem; font-weight: 900; background: linear-gradient(135deg, #10b981 0%, #059669 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.15rem;">98%</div>
                             <div style="color: #94a3b8; font-size: 0.7rem;">Success</div>
                         </div>
                         <div style="flex: 1; min-width: 70px; text-align: center; padding: 0.75rem 0.5rem;">
-                            <div style="font-size: 1.6rem; font-weight: 900; background: linear-gradient(135deg, #00ffaa 0%, #00e5ff 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.15rem;">24/7</div>
+                            <div style="font-size: 1.6rem; font-weight: 900; background: linear-gradient(135deg, #34d399 0%, #6ee7b7 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.15rem;">24/7</div>
                             <div style="color: #94a3b8; font-size: 0.7rem;">Support</div>
                         </div>
                     </div>
 
                     <div>
-                        <a href="contact.html" style="display: inline-block; background: linear-gradient(135deg, #009688 0%, #00796b 100%); color: white; padding: 1.1rem 3rem; font-size: 1.05rem; font-weight: 700; border-radius: 60px; text-decoration: none; box-shadow: 0 20px 50px rgba(0,150,136,0.4); animation: glow 3s ease-in-out infinite; transition: transform 0.2s ease;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">
+                        <a href="contact.html" style="display: inline-block; background: linear-gradient(135deg, #059669 0%, #047857 100%); color: white; padding: 1.1rem 3rem; font-size: 1.05rem; font-weight: 700; border-radius: 60px; text-decoration: none; box-shadow: 0 20px 50px rgba(5, 150, 105,0.4); animation: glow 3s ease-in-out infinite; transition: transform 0.2s ease;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">
                             Get Free Consultation &rarr;
                         </a>
                     </div>
@@ -225,7 +234,7 @@
                 <!-- RIGHT: Photo mosaic (award + networking + stats card) -->
                 <div class="hero-image-container" style="position: relative; animation: slideInUp 1s ease-out 0.2s both;">
                     <!-- Ambient glow -->
-                    <div style="position: absolute; inset: -15px; background: linear-gradient(135deg, rgba(0,255,170,0.14) 0%, rgba(0,229,255,0.07) 100%); border-radius: 30px; filter: blur(28px); z-index: 1; pointer-events: none;"></div>
+                    <div style="position: absolute; inset: -15px; background: linear-gradient(135deg, rgba(52, 211, 153,0.14) 0%, rgba(110, 231, 183,0.07) 100%); border-radius: 30px; filter: blur(28px); z-index: 1; pointer-events: none;"></div>
 
                     <!-- 2-col mosaic grid -->
                     <div style="position: relative; z-index: 2; display: grid; grid-template-columns: 1.2fr 1fr; grid-template-rows: 1fr 1fr; gap: 0.85rem; min-height: 440px;">
@@ -235,8 +244,8 @@
                             <img src="assets/masterclass-award-1.png" alt="Excellence Award" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                             <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 50%); pointer-events: none;"></div>
                             <div style="position: absolute; bottom: 1rem; left: 1rem; right: 1rem;">
-                                <div style="background: rgba(0,0,0,0.55); backdrop-filter: blur(10px); padding: 0.65rem 0.85rem; border-radius: 10px; border: 1px solid rgba(0,255,170,0.2);">
-                                    <div style="color: #00ffaa; font-size: 0.6rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 0.15rem;">Award Presentation</div>
+                                <div style="background: rgba(0,0,0,0.55); backdrop-filter: blur(10px); padding: 0.65rem 0.85rem; border-radius: 10px; border: 1px solid rgba(52, 211, 153,0.2);">
+                                    <div style="color: #34d399; font-size: 0.6rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 0.15rem;">Award Presentation</div>
                                     <div style="color: white; font-size: 0.82rem; font-weight: 600;">Excellence in Global Coordination</div>
                                 </div>
                             </div>
@@ -248,22 +257,11 @@
                         </div>
 
                         <!-- Bottom right: stats tile -->
-                        <div style="border-radius: 20px; background: linear-gradient(135deg, #009688 0%, #00796b 100%); box-shadow: 0 15px 30px rgba(0,150,136,0.4); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.25rem; text-align: center; animation: glow 3s ease-in-out infinite;">
-                            <div style="font-size: 2.4rem; font-weight: 900; color: white; line-height: 1;">5K+</div>
+                        <div style="border-radius: 20px; background: linear-gradient(135deg, #059669 0%, #047857 100%); box-shadow: 0 15px 30px rgba(5, 150, 105,0.4); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.25rem; text-align: center; animation: glow 3s ease-in-out infinite;">
+                            <div style="font-size: 2.4rem; font-weight: 900; color: white; line-height: 1;">10K+</div>
                             <div style="color: rgba(255,255,255,0.85); font-size: 0.8rem; margin-top: 0.4rem; letter-spacing: 1px;">PATIENTS SERVED</div>
                             <div style="width: 30px; height: 2px; background: rgba(255,255,255,0.45); margin: 0.65rem auto;"></div>
                             <div style="color: rgba(255,255,255,0.7); font-size: 0.72rem;">Across 50+ countries</div>
-                        </div>
-                    </div>
-
-                    <!-- Floating badge -->
-                    <div style="position: absolute; bottom: -14px; left: 10px; background: rgba(5,5,5,0.8); backdrop-filter: blur(18px); border: 1px solid rgba(0,255,170,0.22); color: white; padding: 0.75rem 1rem; border-radius: 14px; z-index: 5; display: flex; align-items: center; gap: 0.65rem;">
-                        <div style="width: 36px; height: 36px; background: linear-gradient(135deg, #00ffaa, #009688); border-radius: 9px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                            <i class="fas fa-award" style="color: white; font-size: 1rem;"></i>
-                        </div>
-                        <div>
-                            <div style="font-size: 0.65rem; color: #00ffaa; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">Globally Recognised</div>
-                            <div style="font-size: 0.82rem; font-weight: 600; margin-top: 0.1rem;">Dr. Prem's Masterclass 2024</div>
                         </div>
                     </div>
                 </div>
@@ -276,14 +274,14 @@
         <div class="container">
             <div style="text-align: center; margin-bottom: 3rem;">
                 <div
-                    style="display: inline-block; background: linear-gradient(135deg, rgba(0,150,136,0.1) 0%, rgba(77,182,172,0.1) 100%); border-radius: 50px; padding: 0.5rem 1.5rem; margin-bottom: 1rem;">
-                    <span style="color: #009688; font-weight: 700; font-size: 0.85rem; letter-spacing: 2px;">OUR
+                    style="display: inline-block; background: linear-gradient(135deg, rgba(5, 150, 105,0.1) 0%, rgba(16, 185, 129,0.1) 100%); border-radius: 50px; padding: 0.5rem 1.5rem; margin-bottom: 1rem;">
+                    <span style="color: #059669; font-weight: 700; font-size: 0.85rem; letter-spacing: 2px;">OUR
                         SERVICES</span>
                 </div>
                 <h2
                     style="font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 900; color: #0f172a; margin-bottom: 1rem; letter-spacing: -1px;">
                     Our Healthcare <span
-                        style="background: linear-gradient(135deg, #009688 0%, #4db6ac 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Solutions</span>
+                        style="background: linear-gradient(135deg, #059669 0%, #10b981 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Solutions</span>
                 </h2>
                 <p style="color: #64748b; font-size: 1.1rem; max-width: 700px; margin: 0 auto;">
                     Comprehensive medical services designed to give you the best care, wherever you are in the world.
@@ -300,7 +298,7 @@
                         <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80"
                             alt="Medical consultation" style="width: 100%; height: 100%; object-fit: cover;">
                         <div
-                            style="position: absolute; bottom: 15px; left: 15px; width: 60px; height: 60px; background: linear-gradient(135deg, rgba(0,150,136,0.9) 0%, rgba(77,182,172,0.9) 100%); border-radius: 15px; display: flex; align-items: center; justify-content: center; z-index: 3;">
+                            style="position: absolute; bottom: 15px; left: 15px; width: 60px; height: 60px; background: linear-gradient(135deg, rgba(5, 150, 105,0.9) 0%, rgba(16, 185, 129,0.9) 100%); border-radius: 15px; display: flex; align-items: center; justify-content: center; z-index: 3;">
                             <i class="fas fa-stethoscope" style="font-size: 1.8rem; color: white;"></i>
                         </div>
                     </div>
@@ -311,7 +309,7 @@
                             from leading specialists worldwide. Ensure you're making the right treatment decisions with
                             confidence.</p>
                         <a href="services.html#second-opinion"
-                            style="display: inline-block; color: #009688; font-weight: 600; text-decoration: none; border-bottom: 2px solid #009688; padding-bottom: 2px;">Learn
+                            style="display: inline-block; color: #059669; font-weight: 600; text-decoration: none; border-bottom: 2px solid #059669; padding-bottom: 2px;">Learn
                             More →</a>
                     </div>
                 </div>
@@ -324,7 +322,7 @@
                         <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=600&q=80"
                             alt="Medical tourism" style="width: 100%; height: 100%; object-fit: cover;">
                         <div
-                            style="position: absolute; bottom: 15px; left: 15px; width: 60px; height: 60px; background: linear-gradient(135deg, rgba(0,229,255,0.9) 0%, rgba(0,150,136,0.9) 100%); border-radius: 15px; display: flex; align-items: center; justify-content: center; z-index: 3;">
+                            style="position: absolute; bottom: 15px; left: 15px; width: 60px; height: 60px; background: linear-gradient(135deg, rgba(110, 231, 183,0.9) 0%, rgba(5, 150, 105,0.9) 100%); border-radius: 15px; display: flex; align-items: center; justify-content: center; z-index: 3;">
                             <i class="fas fa-plane" style="font-size: 1.8rem; color: white;"></i>
                         </div>
                     </div>
@@ -335,7 +333,7 @@
                             treatments at affordable prices. We handle everything from consultation to travel
                             arrangements.</p>
                         <a href="services.html#medical-tourism"
-                            style="display: inline-block; color: #009688; font-weight: 600; text-decoration: none; border-bottom: 2px solid #009688; padding-bottom: 2px;">Learn
+                            style="display: inline-block; color: #059669; font-weight: 600; text-decoration: none; border-bottom: 2px solid #059669; padding-bottom: 2px;">Learn
                             More →</a>
                     </div>
                 </div>
@@ -350,7 +348,7 @@
                         <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=600&q=80"
                             alt="Nursing care" style="width: 100%; height: 100%; object-fit: cover;">
                         <div
-                            style="position: absolute; bottom: 15px; left: 15px; width: 60px; height: 60px; background: linear-gradient(135deg, rgba(0,255,170,0.9) 0%, rgba(77,182,172,0.9) 100%); border-radius: 15px; display: flex; align-items: center; justify-content: center; z-index: 3;">
+                            style="position: absolute; bottom: 15px; left: 15px; width: 60px; height: 60px; background: linear-gradient(135deg, rgba(52, 211, 153,0.9) 0%, rgba(16, 185, 129,0.9) 100%); border-radius: 15px; display: flex; align-items: center; justify-content: center; z-index: 3;">
                             <i class="fas fa-heart" style="font-size: 1.8rem; color: white;"></i>
                         </div>
                     </div>
@@ -360,7 +358,7 @@
                         <p style="color: #64748b; line-height: 1.7; margin-bottom: 1.5rem;">Professional nursing care
                             and rehabilitation services for post-surgery recovery and long-term health management.</p>
                         <a href="services.html#nursing-care"
-                            style="display: inline-block; color: #009688; font-weight: 600; text-decoration: none; border-bottom: 2px solid #009688; padding-bottom: 2px;">Learn
+                            style="display: inline-block; color: #059669; font-weight: 600; text-decoration: none; border-bottom: 2px solid #059669; padding-bottom: 2px;">Learn
                             More →</a>
                     </div>
                 </div>
@@ -372,7 +370,7 @@
     <section
         style="padding: 4rem 0; background: linear-gradient(135deg, #0e1e1b 0%, #000000 100%); position: relative; overflow: hidden;">
         <div
-            style="position: absolute; top: 20%; left: 10%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(0,150,136,0.2) 0%, transparent 70%); filter: blur(60px);">
+            style="position: absolute; top: 20%; left: 10%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(5, 150, 105,0.2) 0%, transparent 70%); filter: blur(60px);">
         </div>
 
         <div class="container" style="position: relative; z-index: 10;">
@@ -380,7 +378,7 @@
                 <h2
                     style="color: white; font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 1rem; letter-spacing: -1px;">
                     How <span
-                        style="background: linear-gradient(135deg, #00ffaa 0%, #4db6ac 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Helio</span>
+                        style="background: linear-gradient(135deg, #34d399 0%, #10b981 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Helio</span>
                     Works
                 </h2>
                 <p style="color: #94a3b8; font-size: 1.1rem;">Your journey to better healthcare in three simple steps
@@ -390,9 +388,9 @@
             <div class="grid-responsive-3" style="gap: 2.5rem;">
                 <!-- Step 1 -->
                 <div
-                    style="text-align: center; background: rgba(255,255,255,0.03); backdrop-filter: blur(20px); border: 2px solid rgba(0,150,136,0.2); border-radius: 25px; padding: 3rem 2rem; position: relative;">
+                    style="text-align: center; background: rgba(255,255,255,0.03); backdrop-filter: blur(20px); border: 2px solid rgba(5, 150, 105,0.2); border-radius: 25px; padding: 3rem 2rem; position: relative;">
                     <div
-                        style="width: 80px; height: 80px; background: linear-gradient(135deg, #00ffaa 0%, #009688 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; font-size: 2.5rem; font-weight: 900; color: white; box-shadow: 0 15px 35px rgba(0,255,170,0.4);">
+                        style="width: 80px; height: 80px; background: linear-gradient(135deg, #34d399 0%, #059669 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; font-size: 2.5rem; font-weight: 900; color: white; box-shadow: 0 15px 35px rgba(52, 211, 153,0.4);">
                         1</div>
                     <h3 style="color: white; font-size: 1.6rem; font-weight: 800; margin-bottom: 1rem;">Submit Your
                         Details</h3>
@@ -400,9 +398,9 @@
                         our secure platform.</p>
                 </div>
 
-                <div style="text-align: center; background: rgba(255,255,255,0.03); backdrop-filter: blur(20px); border: 2px solid rgba(0,229,255,0.2); border-radius: 25px; padding: 3rem 2rem;">
+                <div style="text-align: center; background: rgba(255,255,255,0.03); backdrop-filter: blur(20px); border: 2px solid rgba(110, 231, 183,0.2); border-radius: 25px; padding: 3rem 2rem;">
                     <div
-                        style="width: 80px; height: 80px; background: linear-gradient(135deg, #00e5ff 0%, #009688 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; font-size: 2.5rem; font-weight: 900; color: white; box-shadow: 0 15px 35px rgba(0,229,255,0.4);">
+                        style="width: 80px; height: 80px; background: linear-gradient(135deg, #6ee7b7 0%, #059669 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; font-size: 2.5rem; font-weight: 900; color: white; box-shadow: 0 15px 35px rgba(110, 231, 183,0.4);">
                         2</div>
                     <h3 style="color: white; font-size: 1.6rem; font-weight: 800; margin-bottom: 1rem;">Get Expert
                         Advice</h3>
@@ -412,9 +410,9 @@
 
                 <!-- Step 3 -->
                 <div
-                    style="text-align: center; background: rgba(255,255,255,0.03); backdrop-filter: blur(20px); border: 2px solid rgba(77,182,172,0.2); border-radius: 25px; padding: 3rem 2rem;">
+                    style="text-align: center; background: rgba(255,255,255,0.03); backdrop-filter: blur(20px); border: 2px solid rgba(16, 185, 129,0.2); border-radius: 25px; padding: 3rem 2rem;">
                     <div
-                        style="width: 80px; height: 80px; background: linear-gradient(135deg, #4db6ac 0%, #009688 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; font-size: 2.5rem; font-weight: 900; color: white; box-shadow: 0 15px 35px rgba(77,182,172,0.4);">
+                        style="width: 80px; height: 80px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; font-size: 2.5rem; font-weight: 900; color: white; box-shadow: 0 15px 35px rgba(16, 185, 129,0.4);">
                         3</div>
                     <h3 style="color: white; font-size: 1.6rem; font-weight: 800; margin-bottom: 1rem;">Receive Care
                     </h3>
@@ -425,7 +423,7 @@
 
             <div style="text-align: center; margin-top: 3rem;">
                 <a href="how-it-works.html"
-                    style="display: inline-block; background: linear-gradient(135deg, rgba(0,150,136,0.2) 0%, rgba(77,182,172,0.1) 100%); backdrop-filter: blur(10px); color: white; padding: 1rem 2.5rem; font-size: 1.05rem; font-weight: 600; border-radius: 50px; text-decoration: none; border: 2px solid rgba(0,150,136,0.4);">
+                    style="display: inline-block; background: linear-gradient(135deg, rgba(5, 150, 105,0.2) 0%, rgba(16, 185, 129,0.1) 100%); backdrop-filter: blur(10px); color: white; padding: 1rem 2.5rem; font-size: 1.05rem; font-weight: 600; border-radius: 50px; text-decoration: none; border: 2px solid rgba(5, 150, 105,0.4);">
                     See Full Process →
                 </a>
             </div>
@@ -434,21 +432,21 @@
 
     <!-- FEATURED EVENT & RECOGNITION — AUTO SLIDESHOW -->
     <section style="padding: 5rem 0; background: linear-gradient(135deg, #0b1f1c 0%, #0d2420 100%); position: relative; overflow: hidden;">
-        <div style="position: absolute; top: 30%; right: 5%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(0,150,136,0.12) 0%, transparent 70%); filter: blur(50px); pointer-events: none;"></div>
+        <div style="position: absolute; top: 30%; right: 5%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(5, 150, 105,0.12) 0%, transparent 70%); filter: blur(50px); pointer-events: none;"></div>
         <div class="container">
             <div class="grid-responsive-2" style="align-items: center; gap: 4rem;">
 
                 <!-- Column 1: Event Slideshow -->
                 <div style="position: relative;">
-                    <div style="position: absolute; inset: -20px; background: radial-gradient(circle, rgba(0,150,136,0.1) 0%, transparent 70%); filter: blur(30px); pointer-events: none;"></div>
+                    <div style="position: absolute; inset: -20px; background: radial-gradient(circle, rgba(5, 150, 105,0.1) 0%, transparent 70%); filter: blur(30px); pointer-events: none;"></div>
 
-                    <div id="event-slideshow" style="position: relative; border-radius: 24px; overflow: hidden; box-shadow: 0 25px 50px rgba(0,0,0,0.13); border: 2px solid rgba(0,150,136,0.1); aspect-ratio: 4/3; background: #0a1f1c;">
+                    <div id="event-slideshow" style="position: relative; border-radius: 24px; overflow: hidden; box-shadow: 0 25px 50px rgba(0,0,0,0.13); border: 2px solid rgba(5, 150, 105,0.1); aspect-ratio: 4/3; background: #0a1f1c;">
 
                         <div class="event-slide" style="opacity: 1;">
                             <img src="assets/masterclass-award-1.png" alt="Excellence Award" style="width: 100%; height: 100%; object-fit: cover;">
                             <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 55%); pointer-events: none;"></div>
                             <div style="position: absolute; bottom: 1.4rem; left: 1.4rem; right: 4rem;">
-                                <span style="background: #009688; color: white; padding: 0.22rem 0.7rem; border-radius: 30px; font-size: 0.68rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">Award Presentation</span>
+                                <span style="background: #059669; color: white; padding: 0.22rem 0.7rem; border-radius: 30px; font-size: 0.68rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">Award Presentation</span>
                                 <h4 style="color: white; margin: 0.4rem 0 0; font-size: 1rem; font-weight: 700;">Excellence in Global Coordination</h4>
                             </div>
                         </div>
@@ -457,7 +455,7 @@
                             <img src="assets/masterclass-award-2.png" alt="Awards Ceremony" style="width: 100%; height: 100%; object-fit: cover;">
                             <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 55%); pointer-events: none;"></div>
                             <div style="position: absolute; bottom: 1.4rem; left: 1.4rem; right: 4rem;">
-                                <span style="background: #009688; color: white; padding: 0.22rem 0.7rem; border-radius: 30px; font-size: 0.68rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">Awards Ceremony</span>
+                                <span style="background: #059669; color: white; padding: 0.22rem 0.7rem; border-radius: 30px; font-size: 0.68rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">Awards Ceremony</span>
                                 <h4 style="color: white; margin: 0.4rem 0 0; font-size: 1rem; font-weight: 700;">Global Exchange Recognition</h4>
                             </div>
                         </div>
@@ -466,7 +464,7 @@
                             <img src="assets/masterclass-group-1.png" alt="B2B Networking" style="width: 100%; height: 100%; object-fit: cover;">
                             <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 55%); pointer-events: none;"></div>
                             <div style="position: absolute; bottom: 1.4rem; left: 1.4rem; right: 4rem;">
-                                <span style="background: #00e5ff; color: #020617; padding: 0.22rem 0.7rem; border-radius: 30px; font-size: 0.68rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">B2B Networking</span>
+                                <span style="background: #6ee7b7; color: #020617; padding: 0.22rem 0.7rem; border-radius: 30px; font-size: 0.68rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">B2B Networking</span>
                                 <h4 style="color: white; margin: 0.4rem 0 0; font-size: 1rem; font-weight: 700;">Medical &amp; Wellness Exchange</h4>
                             </div>
                         </div>
@@ -475,14 +473,14 @@
                             <img src="assets/masterclass-group-2.png" alt="International Wellness Delegates" style="width: 100%; height: 100%; object-fit: cover;">
                             <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 55%); pointer-events: none;"></div>
                             <div style="position: absolute; bottom: 1.4rem; left: 1.4rem; right: 4rem;">
-                                <span style="background: #00e5ff; color: #020617; padding: 0.22rem 0.7rem; border-radius: 30px; font-size: 0.68rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">B2B Summit</span>
+                                <span style="background: #6ee7b7; color: #020617; padding: 0.22rem 0.7rem; border-radius: 30px; font-size: 0.68rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">B2B Summit</span>
                                 <h4 style="color: white; margin: 0.4rem 0 0; font-size: 1rem; font-weight: 700;">International Wellness Delegates</h4>
                             </div>
                         </div>
 
                         <!-- Prev / Next -->
-                        <button onclick="slideshowStep('event',-1)" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); z-index: 5; background: rgba(0,0,0,0.5); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.2); color: white; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 0.95rem; transition: background 0.3s;" onmouseover="this.style.background='rgba(0,150,136,0.75)'" onmouseout="this.style.background='rgba(0,0,0,0.5)'"><i class="fas fa-chevron-left"></i></button>
-                        <button onclick="slideshowStep('event',1)" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); z-index: 5; background: rgba(0,0,0,0.5); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.2); color: white; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 0.95rem; transition: background 0.3s;" onmouseover="this.style.background='rgba(0,150,136,0.75)'" onmouseout="this.style.background='rgba(0,0,0,0.5)'"><i class="fas fa-chevron-right"></i></button>
+                        <button onclick="slideshowStep('event',-1)" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); z-index: 5; background: rgba(0,0,0,0.5); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.2); color: white; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 0.95rem; transition: background 0.3s;" onmouseover="this.style.background='rgba(5, 150, 105,0.75)'" onmouseout="this.style.background='rgba(0,0,0,0.5)'"><i class="fas fa-chevron-left"></i></button>
+                        <button onclick="slideshowStep('event',1)" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); z-index: 5; background: rgba(0,0,0,0.5); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.2); color: white; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 0.95rem; transition: background 0.3s;" onmouseover="this.style.background='rgba(5, 150, 105,0.75)'" onmouseout="this.style.background='rgba(0,0,0,0.5)'"><i class="fas fa-chevron-right"></i></button>
 
                         <!-- Indicator dots -->
                         <div style="position: absolute; bottom: 14px; right: 14px; z-index: 5; display: flex; gap: 5px; align-items: center;">
@@ -496,26 +494,26 @@
 
                 <!-- Column 2: Text Content -->
                 <div>
-                    <div style="display: inline-block; background: rgba(0,255,170,0.1); border: 1px solid rgba(0,255,170,0.25); border-radius: 50px; padding: 0.5rem 1.5rem; margin-bottom: 1.5rem;">
-                        <span style="color: #00ffaa; font-weight: 700; font-size: 0.85rem; letter-spacing: 2px;">GLOBAL EXCHANGE</span>
+                    <div style="display: inline-block; background: rgba(52, 211, 153,0.1); border: 1px solid rgba(52, 211, 153,0.25); border-radius: 50px; padding: 0.5rem 1.5rem; margin-bottom: 1.5rem;">
+                        <span style="color: #34d399; font-weight: 700; font-size: 0.85rem; letter-spacing: 2px;">GLOBAL EXCHANGE</span>
                     </div>
 
                     <h2 style="font-size: clamp(2.2rem, 4.5vw, 3.2rem); font-weight: 900; color: white; margin-bottom: 1.5rem; line-height: 1.2; letter-spacing: -1px;">
-                        Leading the Future of <span style="background: linear-gradient(135deg, #00ffaa 0%, #4db6ac 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Global Healthcare</span>
+                        Leading the Future of <span style="background: linear-gradient(135deg, #34d399 0%, #10b981 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Global Healthcare</span>
                     </h2>
 
                     <p style="color: #94a3b8; font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">
                         Helio was recently recognized for its contributions at <strong style="color: white;">Dr. Prem's Masterclass: Medical Tourism &amp; Wellness Global Exchange</strong>. This prestigious event brought together top-tier healthcare professionals, international buyers, and industry pioneers from across the globe.
                     </p>
 
-                    <div style="background: rgba(0,255,170,0.05); border-left: 4px solid #00ffaa; padding: 1.5rem; border-radius: 0 16px 16px 0; margin-bottom: 2rem;">
+                    <div style="background: rgba(52, 211, 153,0.05); border-left: 4px solid #34d399; padding: 1.5rem; border-radius: 0 16px 16px 0; margin-bottom: 2rem;">
                         <h4 style="color: white; font-weight: 700; margin-bottom: 0.5rem; font-size: 1.1rem;">Honored with Excellence Award</h4>
                         <p style="color: #94a3b8; margin: 0; font-size: 0.95rem;">
                             Recognized for excellence in connecting patients with top-tier global medical networks, facilitating seamless medical tourism, and providing trusted second opinions.
                         </p>
                     </div>
 
-                    <a href="about.html" style="display: inline-block; background: linear-gradient(135deg, #009688 0%, #00796b 100%); color: white; padding: 1rem 2.5rem; font-size: 1rem; font-weight: 700; border-radius: 50px; text-decoration: none; box-shadow: 0 15px 40px rgba(0,150,136,0.4); transition: transform 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">Learn About Our Network</a>
+                    <a href="about.html" style="display: inline-block; background: linear-gradient(135deg, #059669 0%, #047857 100%); color: white; padding: 1rem 2.5rem; font-size: 1rem; font-weight: 700; border-radius: 50px; text-decoration: none; box-shadow: 0 15px 40px rgba(5, 150, 105,0.4); transition: transform 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">Learn About Our Network</a>
                 </div>
             </div>
         </div>
@@ -525,11 +523,11 @@
     <section style="padding: 5rem 0; background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);">
         <div class="container">
             <div style="text-align: center; margin-bottom: 3.5rem;">
-                <div style="display: inline-block; background: linear-gradient(135deg, rgba(0,150,136,0.1) 0%, rgba(77,182,172,0.1) 100%); border-radius: 50px; padding: 0.5rem 1.5rem; margin-bottom: 1rem;">
-                    <span style="color: #009688; font-weight: 700; font-size: 0.85rem; letter-spacing: 2px;">EVENT GALLERY</span>
+                <div style="display: inline-block; background: linear-gradient(135deg, rgba(5, 150, 105,0.1) 0%, rgba(16, 185, 129,0.1) 100%); border-radius: 50px; padding: 0.5rem 1.5rem; margin-bottom: 1rem;">
+                    <span style="color: #059669; font-weight: 700; font-size: 0.85rem; letter-spacing: 2px;">EVENT GALLERY</span>
                 </div>
                 <h2 style="font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 900; color: #0f172a; margin-bottom: 1.5rem; letter-spacing: -1px;">
-                    Moments from the <span style="background: linear-gradient(135deg, #009688 0%, #4db6ac 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Global Summit</span>
+                    Moments from the <span style="background: linear-gradient(135deg, #059669 0%, #10b981 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Global Summit</span>
                 </h2>
                 <p style="color: #64748b; font-size: 1.1rem; max-width: 700px; margin: 0 auto 2.5rem;">
                     Glance through our participation highlights, awards, and networking sessions at the Medical Tourism & Wellness Exchange.
@@ -550,7 +548,7 @@
                 <div class="gallery-item" data-category="awards" style="position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); aspect-ratio: 4/3; cursor: pointer; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);">
                     <img src="assets/masterclass-award-1.png" alt="Dr. Prem presenting award to Helio delegate" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease;" class="gallery-img">
                     <div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 70%, transparent 100%); opacity: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 1.5rem; transition: opacity 0.4s ease; pointer-events: none;">
-                        <span style="background: #009688; color: white; padding: 0.3rem 0.8rem; border-radius: 50px; font-size: 0.75rem; font-weight: 600; align-self: flex-start; margin-bottom: 0.5rem; letter-spacing: 1px; text-transform: uppercase;">Award Presentation</span>
+                        <span style="background: #059669; color: white; padding: 0.3rem 0.8rem; border-radius: 50px; font-size: 0.75rem; font-weight: 600; align-self: flex-start; margin-bottom: 0.5rem; letter-spacing: 1px; text-transform: uppercase;">Award Presentation</span>
                         <h4 style="color: white; margin: 0; font-size: 1.2rem; font-weight: 700;">Excellence in Global Coordination</h4>
                         <p style="color: #cbd5e1; font-size: 0.85rem; margin: 0.25rem 0 0;">Honoring our contribution to medical tourism and patient care.</p>
                     </div>
@@ -560,7 +558,7 @@
                 <div class="gallery-item" data-category="awards" style="position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); aspect-ratio: 4/3; cursor: pointer; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);">
                     <img src="assets/masterclass-award-2.png" alt="Helio leadership award ceremony" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease;" class="gallery-img">
                     <div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 70%, transparent 100%); opacity: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 1.5rem; transition: opacity 0.4s ease; pointer-events: none;">
-                        <span style="background: #009688; color: white; padding: 0.3rem 0.8rem; border-radius: 50px; font-size: 0.75rem; font-weight: 600; align-self: flex-start; margin-bottom: 0.5rem; letter-spacing: 1px; text-transform: uppercase;">Awards Ceremony</span>
+                        <span style="background: #059669; color: white; padding: 0.3rem 0.8rem; border-radius: 50px; font-size: 0.75rem; font-weight: 600; align-self: flex-start; margin-bottom: 0.5rem; letter-spacing: 1px; text-transform: uppercase;">Awards Ceremony</span>
                         <h4 style="color: white; margin: 0; font-size: 1.2rem; font-weight: 700;">Global Exchange Recognition</h4>
                         <p style="color: #cbd5e1; font-size: 0.85rem; margin: 0.25rem 0 0;">Excellence recognition on stage with B2B delegates.</p>
                     </div>
@@ -570,7 +568,7 @@
                 <div class="gallery-item" data-category="networking" style="position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); aspect-ratio: 4/3; cursor: pointer; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);">
                     <img src="assets/masterclass-group-1.png" alt="Helio delegates and healthcare professionals group photo" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease;" class="gallery-img">
                     <div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 70%, transparent 100%); opacity: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 1.5rem; transition: opacity 0.4s ease; pointer-events: none;">
-                        <span style="background: #00e5ff; color: #020617; padding: 0.3rem 0.8rem; border-radius: 50px; font-size: 0.75rem; font-weight: 700; align-self: flex-start; margin-bottom: 0.5rem; letter-spacing: 1px; text-transform: uppercase;">B2B Networking</span>
+                        <span style="background: #6ee7b7; color: #020617; padding: 0.3rem 0.8rem; border-radius: 50px; font-size: 0.75rem; font-weight: 700; align-self: flex-start; margin-bottom: 0.5rem; letter-spacing: 1px; text-transform: uppercase;">B2B Networking</span>
                         <h4 style="color: white; margin: 0; font-size: 1.2rem; font-weight: 700;">Medical & Wellness Exchange</h4>
                         <p style="color: #cbd5e1; font-size: 0.85rem; margin: 0.25rem 0 0;">Connecting doctors and specialists across borders.</p>
                     </div>
@@ -580,7 +578,7 @@
                 <div class="gallery-item" data-category="networking" style="position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); aspect-ratio: 4/3; cursor: pointer; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);">
                     <img src="assets/masterclass-group-2.png" alt="Dr Prem Masterclass group stage" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease;" class="gallery-img">
                     <div class="gallery-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 70%, transparent 100%); opacity: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 1.5rem; transition: opacity 0.4s ease; pointer-events: none;">
-                        <span style="background: #00e5ff; color: #020617; padding: 0.3rem 0.8rem; border-radius: 50px; font-size: 0.75rem; font-weight: 700; align-self: flex-start; margin-bottom: 0.5rem; letter-spacing: 1px; text-transform: uppercase;">B2B Summit</span>
+                        <span style="background: #6ee7b7; color: #020617; padding: 0.3rem 0.8rem; border-radius: 50px; font-size: 0.75rem; font-weight: 700; align-self: flex-start; margin-bottom: 0.5rem; letter-spacing: 1px; text-transform: uppercase;">B2B Summit</span>
                         <h4 style="color: white; margin: 0; font-size: 1.2rem; font-weight: 700;">International Wellness Delegates</h4>
                         <p style="color: #cbd5e1; font-size: 0.85rem; margin: 0.25rem 0 0;">Facilitating relationships with global healthcare partners.</p>
                     </div>
@@ -597,7 +595,7 @@
                 <h2
                     style="font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 900; color: #0f172a; margin-bottom: 1rem; letter-spacing: -1px;">
                     What Our <span
-                        style="background: linear-gradient(135deg, #009688 0%, #4db6ac 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Patients</span>
+                        style="background: linear-gradient(135deg, #059669 0%, #10b981 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Patients</span>
                     Say
                 </h2>
                 <p style="color: #64748b; font-size: 1.1rem;">Real stories from patients who found hope and healing
@@ -607,10 +605,11 @@
             <div class="grid-responsive-2">
                 <!-- Testimonial 1 -->
                 <div
-                    style="background: white; border-radius: 25px; padding: 2.5rem; box-shadow: 0 20px 60px rgba(0,0,0,0.08); border-left: 4px solid #009688;">
+                    style="background: white; border-radius: 25px; padding: 2.5rem; box-shadow: 0 20px 60px rgba(0,0,0,0.08); border-left: 4px solid #059669;">
                     <div style="display: flex; gap: 1.5rem; margin-bottom: 1.5rem;">
-                        <img src="https://images.unsplash.com/photo-1494790108755-2616c27ae1cd?auto=format&fit=crop&w=100&q=80"
-                            alt="Sarah" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;">
+                        <div style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, #059669, #10b981); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <span style="color: white; font-weight: 700; font-size: 1.2rem; font-family: 'Montserrat', sans-serif;">SJ</span>
+                        </div>
                         <div style="flex: 1;">
                             <div style="font-weight: 700; color: #0f172a; font-size: 1.1rem; margin-bottom: 0.25rem;">
                                 Sarah Johnson</div>
@@ -626,10 +625,11 @@
 
                 <!-- Testimonial 2 -->
                 <div
-                    style="background: white; border-radius: 25px; padding: 2.5rem; box-shadow: 0 20px 60px rgba(0,0,0,0.08); border-left: 4px solid #00e5ff;">
+                    style="background: white; border-radius: 25px; padding: 2.5rem; box-shadow: 0 20px 60px rgba(0,0,0,0.08); border-left: 4px solid #6ee7b7;">
                     <div style="display: flex; gap: 1.5rem; margin-bottom: 1.5rem;">
-                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=100&q=80"
-                            alt="Michael" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;">
+                        <div style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, #6ee7b7, #059669); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <span style="color: white; font-weight: 700; font-size: 1.2rem; font-family: 'Montserrat', sans-serif;">MC</span>
+                        </div>
                         <div style="flex: 1;">
                             <div style="font-weight: 700; color: #0f172a; font-size: 1.1rem; margin-bottom: 0.25rem;">
                                 Michael Chen</div>
@@ -645,10 +645,11 @@
 
                 <!-- Testimonial 3 -->
                 <div
-                    style="background: white; border-radius: 25px; padding: 2.5rem; box-shadow: 0 20px 60px rgba(0,0,0,0.08); border-left: 4px solid #4db6ac;">
+                    style="background: white; border-radius: 25px; padding: 2.5rem; box-shadow: 0 20px 60px rgba(0,0,0,0.08); border-left: 4px solid #10b981;">
                     <div style="display: flex; gap: 1.5rem; margin-bottom: 1.5rem;">
-                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=100&q=80"
-                            alt="Priya" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;">
+                        <div style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, #10b981, #047857); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <span style="color: white; font-weight: 700; font-size: 1.2rem; font-family: 'Montserrat', sans-serif;">PP</span>
+                        </div>
                         <div style="flex: 1;">
                             <div style="font-weight: 700; color: #0f172a; font-size: 1.1rem; margin-bottom: 0.25rem;">
                                 Priya Patel</div>
@@ -664,10 +665,11 @@
 
                 <!-- Testimonial 4 -->
                 <div
-                    style="background: white; border-radius: 25px; padding: 2.5rem; box-shadow: 0 20px 60px rgba(0,0,0,0.08); border-left: 4px solid #00ffaa;">
+                    style="background: white; border-radius: 25px; padding: 2.5rem; box-shadow: 0 20px 60px rgba(0,0,0,0.08); border-left: 4px solid #34d399;">
                     <div style="display: flex; gap: 1.5rem; margin-bottom: 1.5rem;">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80"
-                            alt="James" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;">
+                        <div style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, #34d399, #059669); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <span style="color: white; font-weight: 700; font-size: 1.2rem; font-family: 'Montserrat', sans-serif;">JR</span>
+                        </div>
                         <div style="flex: 1;">
                             <div style="font-weight: 700; color: #0f172a; font-size: 1.1rem; margin-bottom: 0.25rem;">
                                 James Rodriguez</div>
@@ -688,7 +690,7 @@
     <section
         style="padding: 5rem 0; background: linear-gradient(135deg, #000000 0%, #0a1f1c 100%); position: relative; overflow: hidden;">
         <div
-            style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 800px; height: 800px; background: radial-gradient(circle, rgba(0,255,170,0.15) 0%, transparent 70%); animation: float 8s ease-in-out infinite;">
+            style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 800px; height: 800px; background: radial-gradient(circle, rgba(52, 211, 153,0.15) 0%, transparent 70%); animation: float 8s ease-in-out infinite;">
         </div>
 
         <div class="container text-center" style="position: relative; z-index: 10;">
@@ -696,14 +698,14 @@
                 style="color: white; font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 900; margin-bottom: 1.5rem; line-height: 1.2; letter-spacing: -1px;">
                 Ready to Take Control of<br>
                 <span
-                    style="background: linear-gradient(135deg, #00ffaa 0%, #00e5ff 50%, #4db6ac 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Your
+                    style="background: linear-gradient(135deg, #34d399 0%, #6ee7b7 50%, #10b981 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Your
                     Health?</span>
             </h2>
             <p
                 style="font-size: 1.2rem; color: #94a3b8; margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">
                 Join thousands of patients who have found better healthcare solutions with Helio.</p>
             <a href="contact.html"
-                style="display: inline-block; background: linear-gradient(135deg, #009688 0%, #00796b 100%); color: white; padding: 1.3rem 4rem; font-size: 1.2rem; font-weight: 700; border-radius: 60px; text-decoration: none; box-shadow: 0 20px 50px rgba(0,150,136,0.5); animation: glow 3s ease-in-out infinite;">
+                style="display: inline-block; background: linear-gradient(135deg, #059669 0%, #047857 100%); color: white; padding: 1.3rem 4rem; font-size: 1.2rem; font-weight: 700; border-radius: 60px; text-decoration: none; box-shadow: 0 20px 50px rgba(5, 150, 105,0.5); animation: glow 3s ease-in-out infinite;">
                 Start Your Journey Today →
             </a>
         </div>
@@ -717,11 +719,8 @@
                 <p>Global Healthcare, Simplified. We connect patients to world-class medical care, wherever they are.
                 </p>
                 <div class="footer-social">
-                    <a href="https://www.instagram.com/helio73?igsh=bXo0Y2J1aGtlNmVp" target="_blank"
+                    <a href="https://www.instagram.com/heliowellness73?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"
                         rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-                    <a href="https://x.com/Heliowelness?t=uLrIu84lXniWOtTz2ihZbg&s=08" target="_blank"
-                        rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
-                    <a href="mailto:heliowellnes@heliowellnes.com"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
             <div class="footer-section">
@@ -809,7 +808,7 @@
             if (dots[s.cur])  { dots[s.cur].style.width = '8px'; dots[s.cur].style.background = 'rgba(255,255,255,0.35)'; }
             s.cur = ((idx % s.len) + s.len) % s.len;
             if (slides[s.cur]) slides[s.cur].style.opacity = '1';
-            if (dots[s.cur])   { dots[s.cur].style.width = '20px'; dots[s.cur].style.background = isHero ? '#00ffaa' : 'white'; }
+            if (dots[s.cur])   { dots[s.cur].style.width = '20px'; dots[s.cur].style.background = isHero ? '#34d399' : 'white'; }
         }
 
         function slideshowGoto(name, idx) {
@@ -908,7 +907,7 @@
                         if (d < 110) {
                             ctx.beginPath();
                             ctx.moveTo(p.x, p.y); ctx.lineTo(q.x, q.y);
-                            ctx.strokeStyle = `rgba(0,255,170,${0.07 * (1 - d / 110)})`;
+                            ctx.strokeStyle = `rgba(52, 211, 153,${0.07 * (1 - d / 110)})`;
                             ctx.lineWidth = 0.4;
                             ctx.stroke();
                         }
