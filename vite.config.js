@@ -12,7 +12,8 @@ export default defineConfig({
         hydrafacial: resolve(__dirname, 'hydrafacial.html'),
         services: resolve(__dirname, 'services.html'),
         privacy: resolve(__dirname, 'privacy.html'),
-        terms: resolve(__dirname, 'terms.html')
+        terms: resolve(__dirname, 'terms.html'),
+        admin: resolve(__dirname, 'admin.html')
       }
     }
   }
