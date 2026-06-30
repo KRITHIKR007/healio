@@ -767,16 +767,23 @@
                     body: JSON.stringify({ secret: PASSCODE, mode: status })
                 });
                 const data = await res.json();
-                if (!res.ok) throw new Error(data.error || 'API error');
+                if (!res.ok) throw new Error(data.error || `HTTP ${res.status}`);
                 await renderStatus();
                 addLog('[API] ' + logMsg, highlight);
                 showToast(toastMsg, 'success');
             } catch (err) {
-                // Fallback: use localStorage (local dev only)
-                localStorage.setItem('healio_shutdown_mode', status);
-                await renderStatus();
-                addLog('[LOCAL] ' + logMsg, highlight);
-                showToast('Mode set locally (API unavailable in dev)', 'info');
+                const isLocalhost = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+                if (isLocalhost) {
+                    // Expected fallback in local dev (no API available)
+                    localStorage.setItem('healio_shutdown_mode', status);
+                    await renderStatus();
+                    addLog('[LOCAL-DEV] ' + logMsg, highlight);
+                    showToast('Local dev mode — changes are browser-only', 'info');
+                } else {
+                    // On production — API is misconfigured
+                    addLog('[ERROR] API call failed: ' + err.message + ' — Check Vercel env vars', 'highlight-issues');
+                    showToast('⚠ API error: ' + err.message + ' — See setup guide', 'info');
+                }
             }
             
             document.querySelectorAll('.control-btn').forEach(b => b.disabled = false);
