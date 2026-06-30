@@ -12,7 +12,7 @@ export default async function handler(req, res) {
 
     const supabase = createClient(
         process.env.SUPABASE_URL,
-        process.env.SUPABASE_SERVICE_ROLE_KEY
+        process.env.SUPABASE_KEY
     );
 
     // GET — return current site mode
@@ -36,7 +36,7 @@ export default async function handler(req, res) {
     if (req.method === 'POST') {
         const ADMIN_SECRET = process.env.ADMIN_SECRET;
         if (!ADMIN_SECRET) {
-            return res.status(500).json({ error: 'ADMIN_SECRET not configured in Vercel env vars.' });
+            return res.status(500).json({ error: 'ADMIN_SECRET not set in Vercel environment variables.' });
         }
 
         const { secret, mode } = req.body || {};
