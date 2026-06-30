@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healio Admin Console - System Control Panel</title>
+    <link rel="icon" type="image/png" href="assets/icons/favicon.png">
+    
+    <!-- Google Fonts & Font Awesome -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background: radial-gradient(circle at center, #0f172a 0%, #020617 100%);
+            color: #f1f5f9;
+            font-family: 'Outfit', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        /* Decorative Glow Orbs */
+        .glow-orb {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            filter: blur(150px);
+            opacity: 0.12;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .orb-blue {
+            top: -100px;
+            left: -100px;
+            background: #3b82f6;
+        }
+        .orb-emerald {
+            bottom: -150px;
+            right: -100px;
+            background: #10b981;
+        }
+        
+        /* Glassmorphic Wrappers */
+        .admin-wrapper {
+            position: relative;
+            z-index: 10;
+            width: 90%;
+            max-width: 850px;
+            margin: 2rem 0;
+        }
+        
+        .panel {
+            background: rgba(15, 23, 42, 0.45);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 28px;
+            padding: 3rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        /* Login Screen */
+        .login-card {
+            max-width: 450px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .login-logo {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.05em;
+            background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+        
+        .login-subtitle {
+            color: #94a3b8;
+            font-size: 1rem;
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+        }
+        
+        .input-group {
+            position: relative;
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+        
+        .input-label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #94a3b8;
+            margin-bottom: 0.5rem;
+        }
+        
+        .input-field-wrapper {
+            position: relative;
+        }
+        
+        .input-field-wrapper i {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #64748b;
+            font-size: 1.1rem;
+        }
+        
+        .input-field {
+            width: 100%;
+            padding: 1rem 1rem 1rem 3rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            color: #f1f5f9;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .input-field:focus {
+            outline: none;
+            border-color: #10b981;
+            background: rgba(255, 255, 255, 0.06);
+            box-shadow: 0 0 15px rgba(16, 119, 129, 0.15);
+        }
+        
+        .btn-submit {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            border: none;
+            border-radius: 14px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+        }
+        
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4);
+        }
+        
+        .error-message {
+            color: #ef4444;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            display: none;
+            animation: shake 0.4s ease;
+        }
+        
+        /* Dashboard Styling */
+        .dashboard-container {
+            display: none;
+        }
+        
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+        }
+        
+        .logo-text span {
+            color: #10b981;
+        }
+        
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+        }
+        
+        .server-status {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85rem;
+            background: rgba(255, 255, 255, 0.04);
+            padding: 6px 12px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #10b981;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulseStatus 2s infinite;
+        }
+        
+        .btn-signout {
+            background: rgba(239, 68, 68, 0.1);
+            color: #ef4444;
+            border: 1px solid rgba(239, 68, 68, 0.2);
+            padding: 6px 14px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-signout:hover {
+            background: #ef4444;
+            color: white;
+        }
+        
+        /* Stats row */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .stat-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: 18px;
+            padding: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .stat-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+        
+        .stat-icon.health { background: rgba(16, 185, 129, 0.1); color: #10b981; }
+        .stat-icon.users { background: rgba(59, 130, 246, 0.1); color: #3b82f6; }
+        .stat-icon.uptime { background: rgba(245, 158, 11, 0.1); color: #f59e0b; }
+        
+        .stat-info h4 {
+            font-size: 0.8rem;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .stat-info p {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #e2e8f0;
+        }
+        
+        /* Active Status Indicator Alert */
+        .active-status-alert {
+            background: rgba(16, 185, 129, 0.08);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 18px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.4s ease;
+        }
+        
+        .active-status-alert.alert-maintenance {
+            background: rgba(245, 158, 11, 0.08);
+            border-color: rgba(245, 158, 11, 0.2);
+        }
+        
+        .active-status-alert.alert-issues {
+            background: rgba(239, 68, 68, 0.08);
+            border-color: rgba(239, 68, 68, 0.2);
+        }
+        
+        .active-status-alert.alert-plan {
+            background: rgba(59, 130, 246, 0.08);
+            border-color: rgba(59, 130, 246, 0.2);
+        }
+        
+        .alert-details h3 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #94a3b8;
+            margin-bottom: 4px;
+        }
+        
+        .current-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.4rem;
+            font-weight: 800;
+        }
+        
+        .badge-active { color: #10b981; }
+        .badge-maintenance { color: #f59e0b; }
+        .badge-issues { color: #ef4444; }
+        .badge-plan { color: #3b82f6; }
+        
+        /* Controls layout */
+        .dashboard-body {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 2rem;
+        }
+        
+        .controls-panel h3, .logs-panel h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            color: #cbd5e1;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .action-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+        
+        .action-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: 16px;
+            padding: 1.2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .action-card:hover {
+            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(255, 255, 255, 0.08);
+        }
+        
+        .action-info {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .action-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+        
+        .card-maintenance .action-icon { background: rgba(245, 158, 11, 0.1); color: #f59e0b; }
+        .card-issues .action-icon { background: rgba(239, 68, 68, 0.1); color: #ef4444; }
+        .card-plan .action-icon { background: rgba(59, 130, 246, 0.1); color: #3b82f6; }
+        .card-restore .action-icon { background: rgba(16, 185, 129, 0.1); color: #10b981; }
+        
+        .action-text h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #f1f5f9;
+        }
+        
+        .action-text p {
+            font-size: 0.8rem;
+            color: #64748b;
+            margin-top: 2px;
+        }
+        
+        .btn-action-trigger {
+            padding: 8px 14px;
+            border-radius: 8px;
+            border: none;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .card-maintenance .btn-action-trigger { background: #f59e0b; color: #020617; }
+        .card-issues .btn-action-trigger { background: #ef4444; color: white; }
+        .card-plan .btn-action-trigger { background: #3b82f6; color: white; }
+        .card-restore .btn-action-trigger { background: #10b981; color: white; }
+        
+        .btn-action-trigger:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Logs display */
+        .logs-list {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: 16px;
+            padding: 1.2rem;
+            height: 290px;
+            overflow-y: auto;
+            font-family: monospace;
+            font-size: 0.8rem;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .log-item {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            padding-bottom: 8px;
+            line-height: 1.4;
+        }
+        
+        .log-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        
+        .log-time {
+            color: #64748b;
+        }
+        
+        .log-msg {
+            color: #cbd5e1;
+        }
+        
+        .log-msg.highlight-active { color: #10b981; }
+        .log-msg.highlight-maintenance { color: #f59e0b; }
+        .log-msg.highlight-issues { color: #ef4444; }
+        .log-msg.highlight-plan { color: #3b82f6; }
+        
+        /* Toasts Container */
+        #toast-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .toast {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #f1f5f9;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            animation: slideInRight 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        
+        .toast.toast-success {
+            border-left: 4px solid #10b981;
+        }
+        
+        .toast.toast-info {
+            border-left: 4px solid #3b82f6;
+        }
+        
+        /* Animations */
+        @keyframes pulseStatus {
+            0%, 100% { box-shadow: 0 0 4px #10b981; opacity: 1; }
+            50% { box-shadow: 0 0 12px #10b981; opacity: 0.7; }
+        }
+        
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-8px); }
+            75% { transform: translateX(8px); }
+        }
+        
+        @keyframes slideInRight {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        @keyframes fadeOut {
+            to { opacity: 0; transform: translateY(-10px); }
+        }
+        
+        /* Responsive rules */
+        @media (max-width: 768px) {
+            .dashboard-body {
+                grid-template-columns: 1fr;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .panel {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="glow-orb orb-blue"></div>
+    <div class="glow-orb orb-emerald"></div>
+    
+    <div class="admin-wrapper">
+        <!-- 1. LOGIN SCREEN -->
+        <div id="login-container" class="panel login-card">
+            <div class="login-logo"><i class="fa-solid fa-shield-halved"></i> HEALIO</div>
+            <p class="login-subtitle">Secure Administration Gateway</p>
+            
+            <form id="login-form" onsubmit="handleLogin(event)">
+                <div class="input-group">
+                    <label class="input-label" for="passcode">Verification Key</label>
+                    <div class="input-field-wrapper">
+                        <i class="fa-solid fa-lock"></i>
+                        <input class="input-field" type="password" id="passcode" placeholder="Enter administrative passcode..." required autocomplete="current-password">
+                    </div>
+                </div>
+                
+                <button class="btn-submit" type="submit">Authenticate Portal</button>
+            </form>
+            
+            <p id="error-alert" class="error-message"><i class="fa-solid fa-triangle-exclamation"></i> Authentication failed. Passcode invalid.</p>
+        </div>
+        
+        <!-- 2. DASHBOARD PANEL -->
+        <div id="dashboard-container" class="panel dashboard-container">
+            <!-- Header -->
+            <div class="dashboard-header">
+                <div class="logo-text">HEALIO<span>ADMIN</span></div>
+                <div class="header-actions">
+                    <div class="server-status">
+                        <span class="status-dot"></span>
+                        <span>Gateway Active</span>
+                    </div>
+                    <button class="btn-signout" onclick="handleSignOut()"><i class="fa-solid fa-right-from-bracket"></i> Sign Out</button>
+                </div>
+            </div>
+            
+            <!-- Health Stats Row -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon health"><i class="fa-solid fa-heart-pulse"></i></div>
+                    <div class="stat-info">
+                        <h4>System Health</h4>
+                        <p>99.98% OK</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon users"><i class="fa-solid fa-users-viewfinder"></i></div>
+                    <div class="stat-info">
+                        <h4>Active Envoys</h4>
+                        <p>14 Clients Live</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon uptime"><i class="fa-solid fa-gauge-high"></i></div>
+                    <div class="stat-info">
+                        <h4>Node Uptime</h4>
+                        <p>724 Hours</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Global State Card -->
+            <div id="status-card-alert" class="active-status-alert">
+                <div class="alert-details">
+                    <h3>Current Workspace Status</h3>
+                    <div id="status-badge-container" class="current-badge">
+                        <!-- Filled dynamically -->
+                    </div>
+                </div>
+                <div>
+                    <a href="index.html" class="btn-signout" style="background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.08); color: #94a3b8; text-decoration: none;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Visit Website</a>
+                </div>
+            </div>
+            
+            <!-- Controls and Logs -->
+            <div class="dashboard-body">
+                <!-- Controls -->
+                <div class="controls-panel">
+                    <h3><i class="fa-solid fa-sliders"></i> System Intercept Switches</h3>
+                    
+                    <div class="action-cards">
+                        <!-- Restore -->
+                        <div class="action-card card-restore" onclick="setSiteStatus('active')">
+                            <div class="action-info">
+                                <div class="action-icon"><i class="fa-solid fa-circle-check"></i></div>
+                                <div class="action-text">
+                                    <h4>Restore Normal Site</h4>
+                                    <p>Deactivates shutdown overlays. Site is live.</p>
+                                </div>
+                            </div>
+                            <button class="btn-action-trigger">Activate</button>
+                        </div>
+                        
+                        <!-- Maintenance -->
+                        <div class="action-card card-maintenance" onclick="setSiteStatus('maintenance')">
+                            <div class="action-info">
+                                <div class="action-icon"><i class="fa-solid fa-gears"></i></div>
+                                <div class="action-text">
+                                    <h4>Maintenance Protocol</h4>
+                                    <p>Fully lock website. Serves maintenance info.</p>
+                                </div>
+                            </div>
+                            <button class="btn-action-trigger">Activate</button>
+                        </div>
+                        
+                        <!-- Unresolved Issues -->
+                        <div class="action-card card-issues" onclick="setSiteStatus('unresolved_issues')">
+                            <div class="action-info">
+                                <div class="action-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                                <div class="action-text">
+                                    <h4>Unresolved Technical Issues</h4>
+                                    <p>Offline redirect due to unexpected outage.</p>
+                                </div>
+                            </div>
+                            <button class="btn-action-trigger">Activate</button>
+                        </div>
+                        
+                        <!-- Inactive Plans -->
+                        <div class="action-card card-plan" onclick="setSiteStatus('inactive_plan')">
+                            <div class="action-info">
+                                <div class="action-icon"><i class="fa-solid fa-credit-card"></i></div>
+                                <div class="action-text">
+                                    <h4>Inactive Plan Overlays</h4>
+                                    <p>Display subscription license payment notice.</p>
+                                </div>
+                            </div>
+                            <button class="btn-action-trigger">Activate</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Logs -->
+                <div class="logs-panel">
+                    <h3><i class="fa-solid fa-list-check"></i> Gateway Action Logs</h3>
+                    <div id="logs-list" class="logs-list">
+                        <!-- Logs added here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Toast notifications -->
+    <div id="toast-container"></div>
+    
+    <script>
+        const PASSCODE = 'admin123';
+        
+        // Initial setup
+        window.addEventListener('DOMContentLoaded', () => {
+            // Check auth state
+            if (localStorage.getItem('healio_admin_auth') === 'true') {
+                showDashboard();
+            } else {
+                showLogin();
+            }
+        });
+        
+        function handleLogin(event) {
+            event.preventDefault();
+            const inputVal = document.getElementById('passcode').value;
+            const errorAlert = document.getElementById('error-alert');
+            
+            if (inputVal === PASSCODE) {
+                errorAlert.style.display = 'none';
+                localStorage.setItem('healio_admin_auth', 'true');
+                showDashboard();
+                showToast('Authentication successful', 'success');
+                addLog('Admin authenticated successfully');
+            } else {
+                errorAlert.style.display = 'block';
+                document.getElementById('passcode').value = '';
+                showToast('Authentication failed', 'info');
+            }
+        }
+        
+        function handleSignOut() {
+            localStorage.removeItem('healio_admin_auth');
+            showLogin();
+            showToast('Signed out of admin dashboard', 'info');
+        }
+        
+        function showLogin() {
+            document.getElementById('login-container').style.display = 'block';
+            document.getElementById('dashboard-container').style.display = 'none';
+        }
+        
+        function showDashboard() {
+            document.getElementById('login-container').style.display = 'none';
+            document.getElementById('dashboard-container').style.display = 'block';
+            renderStatus();
+            renderLogs();
+        }
+        
+        function setSiteStatus(status) {
+            localStorage.setItem('healio_shutdown_mode', status);
+            renderStatus();
+            
+            let logMsg = '';
+            let highlight = '';
+            let toastMsg = '';
+            
+            switch (status) {
+                case 'active':
+                    logMsg = 'RESTORE: Website status set to Active and Public';
+                    highlight = 'highlight-active';
+                    toastMsg = 'Website restored to Normal operation!';
+                    break;
+                case 'maintenance':
+                    logMsg = 'INTERCEPT: Maintenance Mode protocol activated';
+                    highlight = 'highlight-maintenance';
+                    toastMsg = 'Maintenance mode activated site-wide.';
+                    break;
+                case 'unresolved_issues':
+                    logMsg = 'INTERCEPT: Technical Outage mode activated';
+                    highlight = 'highlight-issues';
+                    toastMsg = 'Unresolved issues warning screen activated.';
+                    break;
+                case 'inactive_plan':
+                    logMsg = 'INTERCEPT: Service Subscription Inactive overlay activated';
+                    highlight = 'highlight-plan';
+                    toastMsg = 'Inactive plan warning screen activated.';
+                    break;
+            }
+            
+            addLog(logMsg, highlight);
+            showToast(toastMsg, 'success');
+        }
+        
+        function renderStatus() {
+            const currentMode = localStorage.getItem('healio_shutdown_mode') || 'active';
+            const badgeContainer = document.getElementById('status-badge-container');
+            const alertCard = document.getElementById('status-card-alert');
+            
+            alertCard.className = 'active-status-alert';
+            
+            let badgeHtml = '';
+            
+            if (currentMode === 'active') {
+                badgeHtml = '<i class="fa-solid fa-circle-check badge-active"></i> <span class="badge-active">ACTIVE & ONLINE</span>';
+            } else if (currentMode === 'maintenance') {
+                alertCard.classList.add('alert-maintenance');
+                badgeHtml = '<i class="fa-solid fa-gears badge-maintenance"></i> <span class="badge-maintenance">UNDER MAINTENANCE</span>';
+            } else if (currentMode === 'unresolved_issues') {
+                alertCard.classList.add('alert-issues');
+                badgeHtml = '<i class="fa-solid fa-triangle-exclamation badge-issues"></i> <span class="badge-issues">SYSTEM OUTAGE</span>';
+            } else if (currentMode === 'inactive_plan') {
+                alertCard.classList.add('alert-plan');
+                badgeHtml = '<i class="fa-solid fa-credit-card badge-plan"></i> <span class="badge-plan">PLAN SUSPENDED</span>';
+            }
+            
+            badgeContainer.innerHTML = badgeHtml;
+        }
+        
+        function getLogs() {
+            const logsStr = localStorage.getItem('healio_admin_logs');
+            return logsStr ? JSON.parse(logsStr) : [
+                { time: new Date(Date.now() - 10000000).toLocaleString(), msg: 'Gateway initialised successfully.', highlight: '' },
+                { time: new Date(Date.now() - 5000000).toLocaleString(), msg: 'Portal registry synchronized.', highlight: '' }
+            ];
+        }
+        
+        function addLog(msg, highlight = '') {
+            const logs = getLogs();
+            logs.unshift({
+                time: new Date().toLocaleString(),
+                msg: msg,
+                highlight: highlight
+            });
+            localStorage.setItem('healio_admin_logs', JSON.stringify(logs.slice(0, 50))); // Keep last 50 logs
+            renderLogs();
+        }
+        
+        function renderLogs() {
+            const logs = getLogs();
+            const logsList = document.getElementById('logs-list');
+            
+            logsList.innerHTML = logs.map(log => `
+                <div class="log-item">
+                    <span class="log-time">[${log.time}]</span>
+                    <span class="log-msg ${log.highlight || ''}">${log.msg}</span>
+                </div>
+            `).join('');
+        }
+        
+        function showToast(message, type = 'success') {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = `toast toast-${type}`;
+            
+            const icon = type === 'success' ? 'fa-circle-check' : 'fa-circle-info';
+            toast.innerHTML = `<i class="fa-solid ${icon}"></i> ${message}`;
+            
+            container.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.style.animation = 'fadeOut 0.3s ease forwards';
+                setTimeout(() => {
+                    toast.remove();
+                }, 300);
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
