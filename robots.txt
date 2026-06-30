@@ -1,11 +1,11 @@
-# Helio Robots.txt
+﻿# Healio Robots.txt
 # This file tells search engines which pages or files they can or can't request from your site
 
 User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://heliowellnes.com/sitemap.xml
+Sitemap: https://healiowellnes.com/sitemap.xml
 
 # Crawl-delay for being respectful to server resources
 Crawl-delay: 1
