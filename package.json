@@ -12,10 +12,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@upstash/redis": "^1.38.0",
     "@vercel/analytics": "^1.6.1"
   },
   "devDependencies": {
     "vite": "^5.4.21"
   }
 }
-

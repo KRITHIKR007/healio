@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -722,16 +722,16 @@
             document.getElementById('dashboard-container').style.display = 'none';
         }
         
-        function showDashboard() {
+        async function showDashboard() {
             document.getElementById('login-container').style.display = 'none';
             document.getElementById('dashboard-container').style.display = 'block';
-            renderStatus();
+            await renderStatus();
             renderLogs();
         }
         
-        function setSiteStatus(status) {
-            localStorage.setItem('healio_shutdown_mode', status);
-            renderStatus();
+        async function setSiteStatus(status) {
+            // Disable all status buttons while request is in flight
+            document.querySelectorAll('.control-btn').forEach(b => b.disabled = true);
             
             let logMsg = '';
             let highlight = '';
@@ -760,21 +760,48 @@
                     break;
             }
             
-            addLog(logMsg, highlight);
-            showToast(toastMsg, 'success');
+            try {
+                const res = await fetch('/api/mode', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ secret: PASSCODE, mode: status })
+                });
+                const data = await res.json();
+                if (!res.ok) throw new Error(data.error || 'API error');
+                await renderStatus();
+                addLog('[API] ' + logMsg, highlight);
+                showToast(toastMsg, 'success');
+            } catch (err) {
+                // Fallback: use localStorage (local dev only)
+                localStorage.setItem('healio_shutdown_mode', status);
+                await renderStatus();
+                addLog('[LOCAL] ' + logMsg, highlight);
+                showToast('Mode set locally (API unavailable in dev)', 'info');
+            }
+            
+            document.querySelectorAll('.control-btn').forEach(b => b.disabled = false);
         }
         
-        function renderStatus() {
-            const currentMode = localStorage.getItem('healio_shutdown_mode') || 'active';
+        async function renderStatus() {
             const badgeContainer = document.getElementById('status-badge-container');
             const alertCard = document.getElementById('status-card-alert');
             
-            alertCard.className = 'active-status-alert';
+            badgeContainer.innerHTML = '<i class="fa-solid fa-spinner" style="animation: pulse 1s infinite;"></i> loading...';
             
+            let currentMode = 'active';
+            try {
+                const res = await fetch('/api/mode', { cache: 'no-store' });
+                const data = await res.json();
+                currentMode = data.mode || 'active';
+            } catch {
+                currentMode = localStorage.getItem('healio_shutdown_mode') || 'active';
+            }
+            
+            alertCard.className = 'active-status-alert';
             let badgeHtml = '';
             
             if (currentMode === 'active') {
-                badgeHtml = '<i class="fa-solid fa-circle-check badge-active"></i> <span class="badge-active">ACTIVE & ONLINE</span>';
+                badgeHtml = '<i class="fa-solid fa-circle-check badge-active"></i> <span class="badge-active">ACTIVE &amp; ONLINE</span>';
             } else if (currentMode === 'maintenance') {
                 alertCard.classList.add('alert-maintenance');
                 badgeHtml = '<i class="fa-solid fa-gears badge-maintenance"></i> <span class="badge-maintenance">UNDER MAINTENANCE</span>';
