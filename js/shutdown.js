@@ -12,7 +12,7 @@
             // Apply fonts and base overlay stylesheet
             const style = document.createElement('style');
             style.textContent = `
-                @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+                @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
                 
                 * {
                     box-sizing: border-box;
@@ -21,9 +21,10 @@
                 }
                 
                 body {
-                    background: radial-gradient(circle at center, #0f172a 0%, #020617 100%) !important;
+                    background-color: #08090d !important;
+                    background-image: radial-gradient(circle at 50% 50%, #11131c 0%, #08090d 100%) !important;
                     color: #f1f5f9 !important;
-                    font-family: 'Outfit', sans-serif !important;
+                    font-family: 'Outfit', -apple-system, sans-serif !important;
                     height: 100vh !important;
                     width: 100vw !important;
                     display: flex !important;
@@ -33,342 +34,262 @@
                     position: relative !important;
                 }
                 
-                .shutdown-container {
-                    max-width: 650px;
+                .shutdown-wrapper {
+                    max-width: 520px;
                     width: 90%;
-                    padding: 3rem;
-                    background: rgba(15, 23, 42, 0.45);
-                    backdrop-filter: blur(20px);
-                    -webkit-backdrop-filter: blur(20px);
-                    border: 1px solid rgba(255, 255, 255, 0.08);
-                    border-radius: 24px;
-                    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
                     text-align: center;
-                    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+                    animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
                     z-index: 10;
                 }
                 
-                .icon-wrapper {
-                    position: relative;
-                    width: 90px;
-                    height: 90px;
-                    margin: 0 auto 2rem;
-                    display: flex;
+                .status-indicator {
+                    display: inline-flex;
                     align-items: center;
-                    justify-content: center;
+                    gap: 8px;
+                    padding: 6px 12px;
+                    border-radius: 20px;
+                    background: rgba(255, 255, 255, 0.03);
+                    border: 1px solid rgba(255, 255, 255, 0.06);
+                    font-size: 0.8rem;
+                    font-weight: 500;
+                    letter-spacing: 0.05em;
+                    text-transform: uppercase;
+                    margin-bottom: 2rem;
+                }
+                
+                .dot {
+                    width: 8px;
+                    height: 8px;
                     border-radius: 50%;
                 }
                 
                 .shutdown-title {
-                    font-size: 2.2rem;
-                    font-weight: 800;
-                    letter-spacing: -0.025em;
+                    font-size: 2.5rem;
+                    font-weight: 700;
+                    letter-spacing: -0.03em;
+                    color: #ffffff;
                     margin-bottom: 1.2rem;
-                    text-transform: uppercase;
+                    line-height: 1.15;
                 }
                 
                 .shutdown-desc {
-                    font-size: 1.1rem;
+                    font-size: 1.05rem;
                     color: #94a3b8;
                     line-height: 1.6;
-                    margin-bottom: 2rem;
+                    margin-bottom: 2.5rem;
                     font-weight: 300;
                 }
                 
-                /* Option-specific Themes & Styles */
-                
-                /* 1. Maintenance Mode */
-                .theme-maintenance .icon-wrapper {
-                    background: rgba(245, 158, 11, 0.1);
-                    border: 1px solid rgba(245, 158, 11, 0.2);
-                    box-shadow: 0 0 30px rgba(245, 158, 11, 0.15);
-                }
-                
-                .theme-maintenance .icon-wrapper i {
-                    color: #f59e0b;
-                    font-size: 2.8rem;
-                    animation: rotateGear 8s linear infinite;
-                }
-                
-                .theme-maintenance .shutdown-title {
-                    background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
-                }
-                
-                /* 2. Unresolved Issues Mode */
-                .theme-issues .icon-wrapper {
-                    background: rgba(239, 68, 68, 0.1);
-                    border: 1px solid rgba(239, 68, 68, 0.2);
-                    box-shadow: 0 0 30px rgba(239, 68, 68, 0.15);
-                }
-                
-                .theme-issues .icon-wrapper i {
-                    color: #ef4444;
-                    font-size: 2.8rem;
-                    animation: pulseAlert 2s infinite ease-in-out;
-                }
-                
-                .theme-issues .shutdown-title {
-                    background: linear-gradient(135deg, #ef4444 0%, #f87171 100%);
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
-                }
-                
-                /* 3. Inactive Plans Mode */
-                .theme-plan .icon-wrapper {
-                    background: rgba(59, 130, 246, 0.1);
-                    border: 1px solid rgba(59, 130, 246, 0.2);
-                    box-shadow: 0 0 30px rgba(59, 130, 246, 0.15);
-                }
-                
-                .theme-plan .icon-wrapper i {
-                    color: #3b82f6;
-                    font-size: 2.8rem;
-                    animation: floatIcon 4s infinite ease-in-out;
-                }
-                
-                .theme-plan .shutdown-title {
-                    background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
-                }
-                
-                /* Interactive Checklists and Cards */
-                .maintenance-checklist {
-                    background: rgba(255, 255, 255, 0.02);
-                    border: 1px solid rgba(255, 255, 255, 0.04);
-                    border-radius: 16px;
-                    padding: 1.2rem;
-                    margin-bottom: 2rem;
+                /* Minimal Checklist (For Maintenance) */
+                .minimal-list {
                     text-align: left;
+                    margin: 0 auto 2.5rem;
+                    max-width: 400px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 12px;
+                    padding: 1.5rem;
+                    background: rgba(255, 255, 255, 0.01);
+                    border: 1px solid rgba(255, 255, 255, 0.03);
+                    border-radius: 16px;
                 }
                 
-                .checklist-item {
+                .list-item {
                     display: flex;
                     align-items: center;
-                    gap: 0.8rem;
-                    font-size: 0.95rem;
-                    margin-bottom: 0.75rem;
+                    gap: 12px;
+                    font-size: 0.9rem;
                     color: #cbd5e1;
                 }
                 
-                .checklist-item:last-child {
-                    margin-bottom: 0;
+                .list-item i {
+                    font-size: 0.85rem;
                 }
                 
-                .checklist-item i.status-done {
-                    color: #10b981;
-                }
+                .list-item .done { color: #10b981; }
+                .list-item .pending { color: #f59e0b; animation: pulse 2s infinite; }
                 
-                .checklist-item i.status-loading {
-                    color: #f59e0b;
-                    animation: rotateGear 2s linear infinite;
-                }
-                
-                .btn {
-                    display: inline-flex;
+                /* Minimal Modern Contact Box */
+                .contact-card {
+                    border-top: 1px solid rgba(255, 255, 255, 0.05);
+                    padding-top: 2rem;
+                    margin-top: 2rem;
+                    display: flex;
+                    flex-direction: column;
                     align-items: center;
-                    gap: 0.5rem;
-                    padding: 0.8rem 1.8rem;
-                    border-radius: 12px;
+                    gap: 12px;
+                }
+                
+                .contact-card-title {
+                    font-size: 0.8rem;
+                    text-transform: uppercase;
+                    letter-spacing: 0.1em;
+                    color: #64748b;
                     font-weight: 600;
-                    text-decoration: none;
-                    transition: all 0.3s ease;
-                    cursor: pointer;
                 }
                 
-                .btn-maintenance {
-                    background: #f59e0b;
-                    color: #0f172a;
-                    border: none;
-                }
-                
-                .btn-maintenance:hover {
-                    background: #d97706;
-                    transform: translateY(-2px);
-                }
-                
-                .btn-issues {
-                    background: #ef4444;
-                    color: #ffffff;
-                    border: none;
-                }
-                
-                .btn-issues:hover {
-                    background: #dc2626;
-                    transform: translateY(-2px);
-                    box-shadow: 0 10px 20px rgba(239, 68, 68, 0.2);
-                }
-                
-                .btn-plan {
-                    background: #3b82f6;
-                    color: #ffffff;
-                    border: none;
-                }
-                
-                .btn-plan:hover {
-                    background: #2563eb;
-                    transform: translateY(-2px);
-                    box-shadow: 0 10px 20px rgba(59, 130, 246, 0.2);
-                }
-                
-                /* Hidden/Subtle Admin Link */
-                .admin-secret-access {
-                    position: absolute;
-                    bottom: 20px;
-                    right: 20px;
-                    color: rgba(255, 255, 255, 0.15) !important;
-                    text-decoration: none;
-                    font-size: 0.95rem;
-                    transition: all 0.3s ease;
+                .contact-links {
                     display: flex;
                     align-items: center;
+                    justify-content: center;
+                    gap: 1.5rem;
+                    flex-wrap: wrap;
+                }
+                
+                .contact-link {
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 8px;
+                    color: #94a3b8 !important;
+                    text-decoration: none;
+                    font-size: 0.9rem;
+                    transition: color 0.3s ease;
+                }
+                
+                .contact-link:hover {
+                    color: #ffffff !important;
+                }
+                
+                .contact-link i {
+                    font-size: 0.95rem;
+                }
+                
+                /* Option Themes */
+                .theme-maintenance .dot {
+                    background: #f59e0b;
+                    box-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+                }
+                .theme-maintenance .status-indicator {
+                    color: #f59e0b;
+                }
+                
+                .theme-issues .dot {
+                    background: #ef4444;
+                    box-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
+                }
+                .theme-issues .status-indicator {
+                    color: #ef4444;
+                }
+                
+                .theme-plan .dot {
+                    background: #3b82f6;
+                    box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+                }
+                .theme-plan .status-indicator {
+                    color: #3b82f6;
+                }
+                
+                /* Discreet Admin Link */
+                .admin-secret-access {
+                    position: absolute;
+                    bottom: 25px;
+                    right: 25px;
+                    color: rgba(255, 255, 255, 0.1) !important;
+                    text-decoration: none;
+                    font-size: 0.8rem;
+                    transition: all 0.3s ease;
+                    display: inline-flex;
+                    align-items: center;
                     gap: 6px;
-                    z-index: 100;
-                    padding: 10px;
+                    padding: 8px;
+                    letter-spacing: 0.05em;
                 }
                 
                 .admin-secret-access:hover {
-                    color: rgba(255, 255, 255, 0.75) !important;
-                    background: rgba(255, 255, 255, 0.05);
-                    border-radius: 8px;
+                    color: rgba(255, 255, 255, 0.5) !important;
+                    background: rgba(255, 255, 255, 0.02);
+                    border-radius: 6px;
                 }
                 
-                /* Decorative background particles */
-                .bg-glow-orb {
-                    position: absolute;
-                    width: 400px;
-                    height: 400px;
-                    border-radius: 50%;
-                    filter: blur(120px);
-                    opacity: 0.15;
-                    pointer-events: none;
+                @keyframes fadeIn {
+                    from { opacity: 0; transform: translateY(15px); }
+                    to { opacity: 1; transform: translateY(0); }
                 }
                 
-                .orb-1 {
-                    top: -100px;
-                    left: -100px;
-                    background: #3b82f6;
-                }
-                
-                .orb-2 {
-                    bottom: -150px;
-                    right: -100px;
-                    background: #f59e0b;
-                }
-                
-                /* Animations */
-                @keyframes fadeInUp {
-                    from {
-                        opacity: 0;
-                        transform: translateY(30px);
-                    }
-                    to {
-                        opacity: 1;
-                        transform: translateY(0);
-                    }
-                }
-                
-                @keyframes rotateGear {
-                    0% { transform: rotate(0deg); }
-                    100% { transform: rotate(360deg); }
-                }
-                
-                @keyframes pulseAlert {
-                    0%, 100% { transform: scale(1); opacity: 1; }
-                    50% { transform: scale(1.15); opacity: 0.8; }
-                }
-                
-                @keyframes floatIcon {
-                    0%, 100% { transform: translateY(0); }
-                    50% { transform: translateY(-10px); }
+                @keyframes pulse {
+                    0%, 100% { opacity: 1; }
+                    50% { opacity: 0.4; }
                 }
             `;
             document.head.appendChild(style);
 
-            // Set up HTML templates
+            // Determine HTML contents based on mode
             let innerHtml = '';
-            let themeClass = '';
+            let wrapperClass = '';
 
             if (shutdownMode === 'maintenance') {
-                themeClass = 'theme-maintenance';
+                wrapperClass = 'theme-maintenance';
                 innerHtml = `
-                    <div class="icon-wrapper">
-                        <i class="fa-solid fa-gears"></i>
+                    <div class="status-indicator">
+                        <span class="dot"></span> Maintenance Protocol Active
                     </div>
-                    <h1 class="shutdown-title">System Maintenance</h1>
-                    <p class="shutdown-desc">Healio is currently undergoing scheduled performance tuning and database upgrades. We will be back online shortly to continue providing premium global healthcare support.</p>
+                    <h1 class="shutdown-title">Down for maintenance.</h1>
+                    <p class="shutdown-desc">Healio is undergoing system upgrades and scheduled performance tuning. We will return shortly with optimized medical booking capabilities.</p>
                     
-                    <div class="maintenance-checklist">
-                        <div class="checklist-item">
-                            <i class="fa-solid fa-circle-check status-done"></i>
-                            <span>Securing client communications & database backup (Completed)</span>
+                    <div class="minimal-list">
+                        <div class="list-item">
+                            <i class="fa-solid fa-circle-check done"></i>
+                            <span>Secure database replication completed</span>
                         </div>
-                        <div class="checklist-item">
-                            <i class="fa-solid fa-circle-check status-done"></i>
-                            <span>Updating medical provider portal registry (Completed)</span>
+                        <div class="list-item">
+                            <i class="fa-solid fa-circle-check done"></i>
+                            <span>Provider network registry updated</span>
                         </div>
-                        <div class="checklist-item">
-                            <i class="fa-solid fa-gear status-loading"></i>
-                            <span>Rebalancing system clusters and cache memory (In Progress)</span>
+                        <div class="list-item">
+                            <i class="fa-solid fa-circle pending"></i>
+                            <span>Optimizing node cache memory configurations</span>
                         </div>
                     </div>
-                    
-                    <button onclick="window.location.reload();" class="btn btn-maintenance">
-                        <i class="fa-solid fa-rotate"></i> Check Status
-                    </button>
                 `;
             } else if (shutdownMode === 'unresolved_issues') {
-                themeClass = 'theme-issues';
+                wrapperClass = 'theme-issues';
                 innerHtml = `
-                    <div class="icon-wrapper">
-                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    <div class="status-indicator">
+                        <span class="dot"></span> Temporary Outage Detected
                     </div>
-                    <h1 class="shutdown-title">Temporary Outage</h1>
-                    <p class="shutdown-desc">Our technical staff has detected an anomalous server condition. For security and system stability, the platform has been temporarily taken offline. We are working diligently to resolve the issue.</p>
-                    
-                    <a href="mailto:support@heliowellness.com?subject=Outage Inquiry" class="btn btn-issues">
-                        <i class="fa-solid fa-envelope"></i> Contact Medical Support Desk
-                    </a>
+                    <h1 class="shutdown-title">Service unavailable.</h1>
+                    <p class="shutdown-desc">We have detected an unexpected database interruption. Our technical administrators are troubleshooting the connection to restore services as fast as possible.</p>
                 `;
             } else if (shutdownMode === 'inactive_plan') {
-                themeClass = 'theme-plan';
+                wrapperClass = 'theme-plan';
                 innerHtml = `
-                    <div class="icon-wrapper">
-                        <i class="fa-solid fa-credit-card"></i>
+                    <div class="status-indicator">
+                        <span class="dot"></span> Subscription Inactive
                     </div>
-                    <h1 class="shutdown-title">Subscription Inactive</h1>
-                    <p class="shutdown-desc">The workspace license plan for this service has expired or has been paused. Please contact your system administrator or billing representative to renew subscription services immediately.</p>
-                    
-                    <a href="mailto:billing@heliowellness.com?subject=Healio License Renewal Plan" class="btn btn-plan">
-                        <i class="fa-solid fa-wallet"></i> Renew Subscription Plan
-                    </a>
+                    <h1 class="shutdown-title">License paused.</h1>
+                    <p class="shutdown-desc">The workspace license plan for this platform has expired. If you are the system manager, please complete billing details to re-enable service access.</p>
                 `;
             }
 
-            // Create background ambient glows
-            const orb1 = document.createElement('div');
-            orb1.className = 'bg-glow-orb orb-1';
-            const orb2 = document.createElement('div');
-            orb2.className = 'bg-glow-orb orb-2';
-            
-            // Build the main wrapper
-            const wrapper = document.createElement('div');
-            wrapper.className = `shutdown-container ${themeClass}`;
-            wrapper.innerHTML = innerHtml;
+            // Contact Info Box (Integrated on all shutdown screens)
+            const contactBox = `
+                <div class="contact-card">
+                    <span class="contact-card-title">ApexOne Studios Support</span>
+                    <div class="contact-links">
+                        <a href="mailto:apexonestudio@gmail.com" class="contact-link">
+                            <i class="fa-solid fa-envelope"></i> apexonestudio@gmail.com
+                        </a>
+                        <a href="https://wa.me/918073355047" target="_blank" class="contact-link">
+                            <i class="fa-brands fa-whatsapp"></i> +91 8073355047
+                        </a>
+                    </div>
+                </div>
+            `;
 
-            // Admin secret navigation link
+            // Build wrapper
+            const wrapper = document.createElement('div');
+            wrapper.className = `shutdown-wrapper ${wrapperClass}`;
+            wrapper.innerHTML = innerHtml + contactBox;
+
+            // Discreet admin link in bottom corner
             const secretLink = document.createElement('a');
             secretLink.className = 'admin-secret-access';
             secretLink.href = 'admin.html';
-            secretLink.innerHTML = '<i class="fa-solid fa-key"></i> Admin Access';
+            secretLink.innerHTML = '<i class="fa-solid fa-key"></i> administrative console';
 
             // Clear body completely and inject our structures
             document.body.className = '';
             document.body.innerHTML = '';
-            document.body.appendChild(orb1);
-            document.body.appendChild(orb2);
             document.body.appendChild(wrapper);
             document.body.appendChild(secretLink);
 
