@@ -1,5 +1,5 @@
 ﻿// ======================
-// Healio JAVASCRIPT
+// Helio JAVASCRIPT
 // ======================
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (whatsappBtn) {
         whatsappBtn.addEventListener('click', function(e) {
             e.preventDefault();
-            const message = encodeURIComponent('Hello! I would like to know more about Healio services.');
+            const message = encodeURIComponent('Hello! I would like to know more about Helio services.');
             const whatsappUrl = `https://wa.me/919743428688?text=${message}`;
             window.open(whatsappUrl, '_blank');
         });

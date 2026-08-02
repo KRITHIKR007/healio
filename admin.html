@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Healio Admin Console - System Control Panel</title>
+    <title>Helio Admin Console - System Control Panel</title>
     <link rel="icon" type="image/png" href="assets/icons/favicon.png">
     
     <!-- Google Fonts & Font Awesome -->
@@ -539,7 +539,7 @@
     <div class="admin-wrapper">
         <!-- 1. LOGIN SCREEN -->
         <div id="login-container" class="panel login-card">
-            <div class="login-logo"><i class="fa-solid fa-shield-halved"></i> HEALIO</div>
+            <div class="login-logo"><i class="fa-solid fa-shield-halved"></i> HELIO</div>
             <p class="login-subtitle">Secure Administration Gateway</p>
             
             <form id="login-form" onsubmit="handleLogin(event)">
@@ -561,7 +561,7 @@
         <div id="dashboard-container" class="panel dashboard-container">
             <!-- Header -->
             <div class="dashboard-header">
-                <div class="logo-text">HEALIO<span>ADMIN</span></div>
+                <div class="logo-text">HELIO<span>ADMIN</span></div>
                 <div class="header-actions">
                     <div class="server-status">
                         <span class="status-dot"></span>
@@ -681,12 +681,12 @@
     <div id="toast-container"></div>
     
     <script>
-        const PASSCODE = 'Healio-*987654';
+        const PASSCODE = 'Helio-*987654';
         
         // Initial setup
         window.addEventListener('DOMContentLoaded', () => {
             // Check auth state
-            if (localStorage.getItem('healio_admin_auth') === 'true') {
+            if (localStorage.getItem('helio_admin_auth') === 'true') {
                 showDashboard();
             } else {
                 showLogin();
@@ -700,7 +700,7 @@
             
             if (inputVal === PASSCODE) {
                 errorAlert.style.display = 'none';
-                localStorage.setItem('healio_admin_auth', 'true');
+                localStorage.setItem('helio_admin_auth', 'true');
                 showDashboard();
                 showToast('Authentication successful', 'success');
                 addLog('Admin authenticated successfully');
@@ -712,7 +712,7 @@
         }
         
         function handleSignOut() {
-            localStorage.removeItem('healio_admin_auth');
+            localStorage.removeItem('helio_admin_auth');
             showLogin();
             showToast('Signed out of admin dashboard', 'info');
         }
@@ -775,7 +775,7 @@
                 const isLocalhost = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
                 if (isLocalhost) {
                     // Expected fallback in local dev (no API available)
-                    localStorage.setItem('healio_shutdown_mode', status);
+                    localStorage.setItem('helio_shutdown_mode', status);
                     await renderStatus();
                     addLog('[LOCAL-DEV] ' + logMsg, highlight);
                     showToast('Local dev mode — changes are browser-only', 'info');
@@ -801,7 +801,7 @@
                 const data = await res.json();
                 currentMode = data.mode || 'active';
             } catch {
-                currentMode = localStorage.getItem('healio_shutdown_mode') || 'active';
+                currentMode = localStorage.getItem('helio_shutdown_mode') || 'active';
             }
             
             alertCard.className = 'active-status-alert';
@@ -824,7 +824,7 @@
         }
         
         function getLogs() {
-            const logsStr = localStorage.getItem('healio_admin_logs');
+            const logsStr = localStorage.getItem('helio_admin_logs');
             return logsStr ? JSON.parse(logsStr) : [
                 { time: new Date(Date.now() - 10000000).toLocaleString(), msg: 'Gateway initialised successfully.', highlight: '' },
                 { time: new Date(Date.now() - 5000000).toLocaleString(), msg: 'Portal registry synchronized.', highlight: '' }
@@ -838,7 +838,7 @@
                 msg: msg,
                 highlight: highlight
             });
-            localStorage.setItem('healio_admin_logs', JSON.stringify(logs.slice(0, 50))); // Keep last 50 logs
+            localStorage.setItem('helio_admin_logs', JSON.stringify(logs.slice(0, 50))); // Keep last 50 logs
             renderLogs();
         }
         

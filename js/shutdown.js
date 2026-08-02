@@ -17,7 +17,7 @@
             })
             .catch(function () {
                 // Fallback for local development (vite dev server has no API)
-                return localStorage.getItem('healio_shutdown_mode') || 'active';
+                return localStorage.getItem('helio_shutdown_mode') || 'active';
             });
     }
 
@@ -73,7 +73,7 @@
                 innerHtml = [
                     '<div class="status-indicator"><span class="dot"></span> Maintenance Protocol Active</div>',
                     '<h1 class="shutdown-title">Down for maintenance.</h1>',
-                    '<p class="shutdown-desc">Healio is undergoing system upgrades and scheduled performance tuning. We will return shortly with optimized medical booking capabilities.</p>',
+                    '<p class="shutdown-desc">Helio is undergoing system upgrades and scheduled performance tuning. We will return shortly with optimized medical booking capabilities.</p>',
                     '<div class="minimal-list">',
                     '  <div class="list-item"><i class="fa-solid fa-circle-check done"></i><span>Secure database replication completed</span></div>',
                     '  <div class="list-item"><i class="fa-solid fa-circle-check done"></i><span>Provider network registry updated</span></div>',
